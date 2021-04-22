@@ -14,6 +14,7 @@ struct ContentView: View {
         TabView(selection: $selection) {
             
             Text("Stephen Content View")
+            
                     .tabItem {
                         Label("Home", systemImage: "house.fill").foregroundColor(.orange)
                     }
@@ -28,9 +29,11 @@ struct ContentView: View {
                             Label("Highlights", systemImage: "star.fill")
                         }
                 .tag(3)
+            
             Text("Sean Content View")
                     .tabItem {
                         Label("About", systemImage: "questionmark.circle")
+                        
                     }
                 .tag(4)
             }
