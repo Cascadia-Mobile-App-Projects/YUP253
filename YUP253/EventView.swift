@@ -47,10 +47,14 @@ struct EventView: View {
             List(EventList) { aEvent in
                 EventInfoRow(whichEvent:aEvent)
             }
+            
         }
-        
+
     }
 }
+
+
+
 
 struct EventView_Previews: PreviewProvider {
     static var previews: some View {
