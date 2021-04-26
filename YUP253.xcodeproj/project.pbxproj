@@ -13,6 +13,7 @@
 		3FAE0FC32630C91C0094FEBF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE0FC22630C91C0094FEBF /* Preview Assets.xcassets */; };
 		3FAE0FCE2630C91D0094FEBF /* YUP253Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FCD2630C91D0094FEBF /* YUP253Tests.swift */; };
 		3FAE0FD92630C91D0094FEBF /* YUP253UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FD82630C91D0094FEBF /* YUP253UITests.swift */; };
+		558D963C26375EF900B4A860 /* Highlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D963B26375EF900B4A860 /* Highlights.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		3FAE0FD42630C91D0094FEBF /* YUP253UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YUP253UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAE0FD82630C91D0094FEBF /* YUP253UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUP253UITests.swift; sourceTree = "<group>"; };
 		3FAE0FDA2630C91D0094FEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		558D963B26375EF900B4A860 /* Highlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlights.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */,
 				3FAE0FBD2630C91C0094FEBF /* ContentView.swift */,
+				558D963B26375EF900B4A860 /* Highlights.swift */,
 				3FAE0FBF2630C91C0094FEBF /* Assets.xcassets */,
 				3FAE0FC42630C91C0094FEBF /* Info.plist */,
 				3FAE0FC12630C91C0094FEBF /* Preview Content */,
@@ -261,6 +264,7 @@
 			files = (
 				3FAE0FBE2630C91C0094FEBF /* ContentView.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
+				558D963C26375EF900B4A860 /* Highlights.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
