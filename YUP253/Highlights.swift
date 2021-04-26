@@ -13,17 +13,36 @@ struct Highlights: View {
                    Color.blue
                    .edgesIgnoringSafeArea(.all)
             
-            VStack(alignment: .center) {
-                
-                
-        
+            VStack(alignment: .center){
                 Text("Highlights")
+                    .background(Color.white)
                 Spacer()
+                    .frame(height: 500)
                 
-                Image("ic_253")
+            }
+            VStack(alignment: .leading) {
+                
+                
+                
+                Spacer()
+                    .frame(height: 50)
+                
+                Label("Walter White", systemImage: "person.crop.circle")
+                Image("frisbee1").resizable()
+                    .scaledToFit()
+                
+                Spacer()
+                    .frame(height: 10)
+            
+                Label("Abraham Lincoln", systemImage: "person.crop.circle")
+                Image("frisbee2").resizable()
+                    .scaledToFit()
+                
+                
+                    
 
                 
-                Spacer()
+                
                         
             
                 .contentShape(Rectangle())
