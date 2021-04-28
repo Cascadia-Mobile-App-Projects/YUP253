@@ -25,7 +25,7 @@ struct Highlights: View {
                 
                 
                 Spacer()
-                    .frame(height: 50)
+                    .frame(height: 100)
                 
                 Label("Walter White", systemImage: "person.crop.circle")
                 Image("frisbee1").resizable()
