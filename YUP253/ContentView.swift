@@ -14,7 +14,7 @@ struct ContentView: View {
         TabView(selection: $selection) {
             
             Text("Stephen Content View")
-            
+                    
                     .tabItem {
                         Label("Home", systemImage: "house.fill").foregroundColor(.orange)
                     }
@@ -30,15 +30,17 @@ struct ContentView: View {
                         }
                 .tag(3)
             
-            Text("Sean Content View")
+            About()
                     .tabItem {
                         Label("About", systemImage: "questionmark.circle")
+                        
+                        
                         
                     }
                 .tag(4)
             }
-        .accentColor(.orange)
-        .font(.largeTitle)
+        .accentColor(.black)
+        
         }
 }
 

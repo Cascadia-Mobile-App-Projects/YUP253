@@ -23,7 +23,7 @@ struct About: View {
                 VStack {
                     
 
-                    (Color(red: 0.0, green: 0.8, blue: 1.5, opacity: 0.1))
+                    (Color(red: 0.022, green: 0.24, blue: 0.561))
                     
                         Image("253")
                             
@@ -33,6 +33,7 @@ struct About: View {
                        
                 
                     NavigationLink(destination:  Text("The 253 Youth Ultimate Program\n\n has a mission to create a youth ultimate program in the Greater Tacoma Area that provides a radically inclusive, empowered, and joyful community. The program is committed to providing a safe place for all youth to participate, empower youth through ultimate, and play ultimate with joy. We plan to host clinics, tournaments, leagues, and more to help bring ultimate to all!")
+                                        
                                         .font(.subheadline)
                                         .fontWeight(.bold)
                                         .multilineTextAlignment(.center)
@@ -73,14 +74,14 @@ struct About: View {
                             self.selection = "Fourth"
                         }
                            .padding(15.0)
-                   /* NavigationLink(
+                    /*NavigationLink(
                         destination: ContentView().listStyle(InsetListStyle()).navigationBarTitle("InsetListStyle", displayMode: .inline) ,
                         label: {
                             Label("Return to home page:", systemImage: "house.circle").padding()
                         })*/
                        }
                 .padding(35.0)
-                .background(Color(red: 0.0, green: 0.8, blue: 1.5, opacity: 0.7))
+                .background(Color(red: 0.022, green: 0.24, blue: 0.561))
                        .navigationBarTitle("ABOUT", displayMode: .inline)
                 
                 
