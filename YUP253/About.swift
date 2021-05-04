@@ -23,7 +23,7 @@ struct About: View {
                 VStack {
                     
 
-                    (Color(red: 0.0, green: 0.8, blue: 1.5, opacity: 0.1))
+                    (Color(red: 0.002, green: 0.24, blue: 0.561))
                     
                         Image("253")
                             

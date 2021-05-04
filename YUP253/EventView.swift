@@ -23,7 +23,9 @@ struct EventInfoRow: View {
             }
             label: {
                 Text("Sign UP")
-                    .padding(20) .background(Color.blue)
+                    .padding(15)
+                    .background(Color.blue)
+                    
             }
             .contentShape(Rectangle())
                 
@@ -42,13 +44,22 @@ struct EventView: View {
     
     var body: some View {
         VStack {
+            
+            //(Color(red: 0.002, green: 0.24, blue: 0.561))
             Text("Ultimate Events:").font(.title)
+            
+                Image("253")
+            
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.bottom)
+            
+           
             
             List(EventList) { aEvent in
                 EventInfoRow(whichEvent:aEvent)
             }
             
-        }
+        }.background(Color(red: 0.0, green: 0.8, blue: 1.5, opacity: 0.7))
 
     }
 }
