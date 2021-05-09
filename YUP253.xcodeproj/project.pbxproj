@@ -14,6 +14,7 @@
 		3FAE0FC32630C91C0094FEBF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE0FC22630C91C0094FEBF /* Preview Assets.xcassets */; };
 		3FAE0FCE2630C91D0094FEBF /* YUP253Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FCD2630C91D0094FEBF /* YUP253Tests.swift */; };
 		3FAE0FD92630C91D0094FEBF /* YUP253UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FD82630C91D0094FEBF /* YUP253UITests.swift */; };
+		55686EA226432C3600B4A848 /* highlightPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55686EA126432C3600B4A848 /* highlightPage.swift */; };
 		DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC91F8E72637616B001C88BB /* AppSettings.swift */; };
 		E9D2B0592630E3E00053234F /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D2B0582630E3E00053234F /* About.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		3FAE0FD42630C91D0094FEBF /* YUP253UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YUP253UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAE0FD82630C91D0094FEBF /* YUP253UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUP253UITests.swift; sourceTree = "<group>"; };
 		3FAE0FDA2630C91D0094FEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55686EA126432C3600B4A848 /* highlightPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highlightPage.swift; sourceTree = "<group>"; };
 		DC91F8E72637616B001C88BB /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		E9D2B0582630E3E00053234F /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */,
 				3FAE0FBD2630C91C0094FEBF /* ContentView.swift */,
 				3F52E7162630DD3700EC6112 /* EventView.swift */,
+				55686EA126432C3600B4A848 /* highlightPage.swift */,
 				3FAE0FBF2630C91C0094FEBF /* Assets.xcassets */,
 				3FAE0FC42630C91C0094FEBF /* Info.plist */,
 				3FAE0FC12630C91C0094FEBF /* Preview Content */,
@@ -273,6 +276,7 @@
 				E9D2B0592630E3E00053234F /* About.swift in Sources */,
 				DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
+				55686EA226432C3600B4A848 /* highlightPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
