@@ -24,7 +24,7 @@ struct ContentView: View {
                             Label("Events", systemImage: "calendar")
                         }
                 .tag(2)
-            highlightPage()
+            loginView()
                         .tabItem {
                             Label("Highlights", systemImage: "star.fill")
                         }
