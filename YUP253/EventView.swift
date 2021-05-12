@@ -18,6 +18,7 @@ struct EventInfoRow: View {
     var body: some View {
         HStack {
             Text("Event Title:\n\(whichEvent.title)");
+            Spacer()
             Button() {
 
             }

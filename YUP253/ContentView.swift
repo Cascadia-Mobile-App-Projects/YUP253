@@ -19,7 +19,7 @@ struct ContentView: View {
                         Label("Home", systemImage: "house.fill").foregroundColor(.orange)
                     }
                 .tag(1)
-            Text("Adam Content View")
+            EventView()
                         .tabItem {
                             Label("Events", systemImage: "calendar")
                         }
