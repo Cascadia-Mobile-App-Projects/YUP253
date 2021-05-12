@@ -11,48 +11,50 @@ struct highlightPage: View {
     var body: some View {
         
         ZStack{
-            Image("yupbackground").ignoresSafeArea()
             
-            
+            Color.blue.ignoresSafeArea()
             
             VStack{
                 
+                Text("Highlight")
+                    .padding()
+                    .background(Color.white)
                 Spacer()
                 
-                Text("Highlights")
+            
                 
-                
-                    VStack(alignment: .leading){
-                        Label("Walter White", systemImage: "person.crop.circle")
-                        Image("frisbee1")
-                            .resizable()
-                                .frame(width: 256.0, height: 128.0)
-                        
-                    }
-                
+                VStack(alignment: .leading){
                     
+                    Spacer()
                     
+                    Label("Walter White", systemImage: "person.crop.circle")
+                    Image("frisbee1")
+                    .resizable()
+                    .frame(width: 256.0, height: 128.0)
                     
-                    VStack(alignment: .leading){
-                        Label("Jackie Chan", systemImage: "person.crop.circle")
-                        Image("frisbee2")
-                            .resizable()
-                                .frame(width: 256.0, height: 128.0)
-                    }
-               
-                Spacer()
-                
-                
-                
-                
-                
-                
-                    
-                
+                    Label("John Cena", systemImage: "person.crop.circle")
+                    Image("frisbee2")
+                    .resizable()
+                    .frame(width: 256.0, height: 128.0)
+                    Spacer()
+                    Spacer()
+                }
                 
             }
+            
+            
+            
+            
+            
+            
+            
         }
-    }
+        
+        
+        
+        
+        
+}
 }
 
 struct highlightPage_Previews: PreviewProvider {
