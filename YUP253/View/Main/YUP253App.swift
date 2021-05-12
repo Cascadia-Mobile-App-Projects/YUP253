@@ -11,7 +11,8 @@ import SwiftUI
 struct YUP253App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
+          //  ContentView()
         }
     }
 }

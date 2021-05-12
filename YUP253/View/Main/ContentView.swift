@@ -13,22 +13,23 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection) {
             
-            Text("Stephen Content View")
-                    
-                    .tabItem {
-                        Label("Home", systemImage: "house.fill").foregroundColor(.orange)
-                    }
-                .tag(1)
-            Text("Adam Content View")
-                        .tabItem {
-                            Label("Events", systemImage: "calendar")
-                        }
-                .tag(2)
+
             loginView()
+                        .tabItem {
+                            Label("Home", systemImage: "house.fill")
+                        }
+                .tag(0)
+            EventView()
+                .tabItem {
+                    Label("Events", systemImage: "calendar")
+                }
+                .tag(0)
+            highlightPage()
                         .tabItem {
                             Label("Highlights", systemImage: "star.fill")
                         }
-                .tag(3)
+
+                .tag(2)
             
             About()
                     .tabItem {
@@ -37,7 +38,7 @@ struct ContentView: View {
                         
                         
                     }
-                .tag(4)
+                .tag(3)
             }
         .accentColor(.black)
         
