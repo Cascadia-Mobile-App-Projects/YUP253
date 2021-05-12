@@ -19,7 +19,7 @@ struct loginView: View {
     var body: some View {
         
         ZStack{
-            Color.blue
+            Color(red: 0.022, green: 0.24, blue: 0.561)
                 .ignoresSafeArea()
         VStack{
             TitleView()
@@ -52,7 +52,7 @@ struct loginView: View {
         }
         .padding()
             if authenticationDidSuccess{
-                Text("Login Succesful")
+                Text("Login Successful")
                     .font(.headline)
                     .frame(width: 250, height: 80)
                     .background(Color.green)
