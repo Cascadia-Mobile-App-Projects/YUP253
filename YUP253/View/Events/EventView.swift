@@ -45,7 +45,6 @@ struct EventView: View {
     
     var body: some View {
         VStack {
-            
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
             Text("Ultimate Events:").font(.title)
             
@@ -60,7 +59,10 @@ struct EventView: View {
                 EventInfoRow(whichEvent:aEvent)
             }
             
-        }.background(Color(red: 0.0, green: 0.8, blue: 1.5, opacity: 0.7))
+        }
+        .padding(.top, 40)
+        .background((Color(red: 0.022, green: 0.24, blue: 0.561)))
+        .edgesIgnoringSafeArea(.all)
 
     }
 }
