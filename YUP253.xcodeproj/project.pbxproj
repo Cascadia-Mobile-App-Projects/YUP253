@@ -14,12 +14,13 @@
 		3FAE0FC32630C91C0094FEBF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE0FC22630C91C0094FEBF /* Preview Assets.xcassets */; };
 		3FAE0FCE2630C91D0094FEBF /* YUP253Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FCD2630C91D0094FEBF /* YUP253Tests.swift */; };
 		3FAE0FD92630C91D0094FEBF /* YUP253UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FD82630C91D0094FEBF /* YUP253UITests.swift */; };
-		E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C762649E24B00EF7CDC /* About_Us.swift */; };
-		E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */; };
-		E99C0C812649EC0600EF7CDC /* Core_Val.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C802649EC0600EF7CDC /* Core_Val.swift */; };
 		55686EA226432C3600B4A848 /* highlightPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55686EA126432C3600B4A848 /* highlightPage.swift */; };
 		559C371D2649129300960668 /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C371C2649129300960668 /* loginView.swift */; };
 		DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC91F8E72637616B001C88BB /* AppSettings.swift */; };
+		DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF9D2A264C463F006ED4E8 /* SplashView.swift */; };
+		E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C762649E24B00EF7CDC /* About_Us.swift */; };
+		E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */; };
+		E99C0C812649EC0600EF7CDC /* Core_Val.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C802649EC0600EF7CDC /* Core_Val.swift */; };
 		E9D2B0592630E3E00053234F /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D2B0582630E3E00053234F /* About.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,13 +55,13 @@
 		3FAE0FD42630C91D0094FEBF /* YUP253UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YUP253UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAE0FD82630C91D0094FEBF /* YUP253UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUP253UITests.swift; sourceTree = "<group>"; };
 		3FAE0FDA2630C91D0094FEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E99C0C762649E24B00EF7CDC /* About_Us.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About_Us.swift; sourceTree = "<group>"; };
-		E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission_V.swift; sourceTree = "<group>"; };
-		E99C0C802649EC0600EF7CDC /* Core_Val.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core_Val.swift; sourceTree = "<group>"; };
 		55686EA126432C3600B4A848 /* highlightPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highlightPage.swift; sourceTree = "<group>"; };
 		559C371C2649129300960668 /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		DC91F8E72637616B001C88BB /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-
+		DCBF9D2A264C463F006ED4E8 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		E99C0C762649E24B00EF7CDC /* About_Us.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About_Us.swift; sourceTree = "<group>"; };
+		E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission_V.swift; sourceTree = "<group>"; };
+		E99C0C802649EC0600EF7CDC /* Core_Val.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core_Val.swift; sourceTree = "<group>"; };
 		E9D2B0582630E3E00053234F /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
@@ -112,6 +113,7 @@
 		3FAE0FBA2630C91C0094FEBF /* YUP253 */ = {
 			isa = PBXGroup;
 			children = (
+				DCBF9D2A264C463F006ED4E8 /* SplashView.swift */,
 				DC91F8E72637616B001C88BB /* AppSettings.swift */,
 				E9D2B0582630E3E00053234F /* About.swift */,
 				E99C0C802649EC0600EF7CDC /* Core_Val.swift */,
@@ -289,13 +291,13 @@
 				559C371D2649129300960668 /* loginView.swift in Sources */,
 				E9D2B0592630E3E00053234F /* About.swift in Sources */,
 				E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */,
+				DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
 				E99C0C812649EC0600EF7CDC /* Core_Val.swift in Sources */,
 				E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */,
 				DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
 				55686EA226432C3600B4A848 /* highlightPage.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
