@@ -10,13 +10,17 @@ import SwiftUI
 struct About_Us: View {
     var body: some View {
         
+        ZStack{
+            Color(red: 0.022, green: 0.24, blue: 0.561).ignoresSafeArea()
+
+        
         VStack {
             
            
             
                 Image("253")
             
-        Text("The 253 Youth Ultimate Program\n\n has a mission to create a youth ultimate program in the Greater Tacoma Area that provides a radically inclusive, empowered, and joyful community. The program is committed to providing a safe place for all youth to participate, empower youth through ultimate, and play ultimate with joy. We plan to host clinics, tournaments, leagues, and more to help bring ultimate to all!")
+        Text("ABOUT US \n\nThe 253 Youth Ultimate Program\n has a mission to create a youth ultimate program in the Greater Tacoma Area that provides a radically inclusive, empowered, and joyful community. The program is committed to providing a safe place for all youth to participate, empower youth through ultimate, and play ultimate with joy. We plan to host clinics, tournaments, leagues, and more to help bring ultimate to all!")
             .font(.subheadline)
                              .fontWeight(.bold)
                              .multilineTextAlignment(.center)
@@ -25,6 +29,7 @@ struct About_Us: View {
                              .padding(.bottom, 35.0)
             
             
+        }
     }
 }
 

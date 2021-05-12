@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var selection = 1
+    @State private var selection = 0
     var body: some View {
         TabView(selection: $selection) {
             
@@ -23,7 +23,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Events", systemImage: "calendar")
                 }
-                .tag(0)
+                .tag(1)
             highlightPage()
                         .tabItem {
                             Label("Highlights", systemImage: "star.fill")
@@ -34,8 +34,6 @@ struct ContentView: View {
             About()
                     .tabItem {
                         Label("About", systemImage: "questionmark.circle")
-                        
-                        
                         
                     }
                 .tag(3)

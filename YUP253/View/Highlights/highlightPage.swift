@@ -12,7 +12,7 @@ struct highlightPage: View {
         
         ZStack{
             
-            Color.blue.ignoresSafeArea()
+            Color(red: 0.022, green: 0.24, blue: 0.561).ignoresSafeArea()
             
             VStack{
                 
