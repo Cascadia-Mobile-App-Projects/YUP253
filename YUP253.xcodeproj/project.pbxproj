@@ -93,6 +93,8 @@
 		3FAE0FAF2630C91C0094FEBF = {
 			isa = PBXGroup;
 			children = (
+				DC4673F9264C6A5A00704066 /* Assets */,
+				DC4673F8264C6A4A00704066 /* Documentation */,
 				3FAE0FBA2630C91C0094FEBF /* YUP253 */,
 				3FAE0FCC2630C91D0094FEBF /* YUP253Tests */,
 				3FAE0FD72630C91D0094FEBF /* YUP253UITests */,
@@ -113,17 +115,9 @@
 		3FAE0FBA2630C91C0094FEBF /* YUP253 */ = {
 			isa = PBXGroup;
 			children = (
-				DCBF9D2A264C463F006ED4E8 /* SplashView.swift */,
-				DC91F8E72637616B001C88BB /* AppSettings.swift */,
-				E9D2B0582630E3E00053234F /* About.swift */,
-				E99C0C802649EC0600EF7CDC /* Core_Val.swift */,
-				E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */,
-				E99C0C762649E24B00EF7CDC /* About_Us.swift */,
-				3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */,
-				559C371C2649129300960668 /* loginView.swift */,
-				3F52E7162630DD3700EC6112 /* EventView.swift */,
-				3FAE0FBD2630C91C0094FEBF /* ContentView.swift */,
-				55686EA126432C3600B4A848 /* highlightPage.swift */,
+				DC4673F7264C6A4100704066 /* Controller */,
+				DC4673F6264C6A2D00704066 /* Model */,
+				DC4673F5264C6A0E00704066 /* View */,
 				3FAE0FBF2630C91C0094FEBF /* Assets.xcassets */,
 				3FAE0FC42630C91C0094FEBF /* Info.plist */,
 				3FAE0FC12630C91C0094FEBF /* Preview Content */,
@@ -155,6 +149,108 @@
 				3FAE0FDA2630C91D0094FEBF /* Info.plist */,
 			);
 			path = YUP253UITests;
+			sourceTree = "<group>";
+		};
+		DC4673F5264C6A0E00704066 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC467401264C6BEF00704066 /* Account */,
+				DC467400264C6B8400704066 /* Admin */,
+				DC4673FE264C6B6700704066 /* Highlights */,
+				DC4673FD264C6B5E00704066 /* Events */,
+				DC4673FC264C6B5700704066 /* About */,
+				DC4673FB264C6B4900704066 /* Feed */,
+				DC4673FA264C6B3500704066 /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC4673F6264C6A2D00704066 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC4673F7264C6A4100704066 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DC91F8E72637616B001C88BB /* AppSettings.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DC4673F8264C6A4A00704066 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		DC4673F9264C6A5A00704066 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DC4673FA264C6B3500704066 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3FAE0FBD2630C91C0094FEBF /* ContentView.swift */,
+				DCBF9D2A264C463F006ED4E8 /* SplashView.swift */,
+				3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DC4673FB264C6B4900704066 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		DC4673FC264C6B5700704066 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E9D2B0582630E3E00053234F /* About.swift */,
+				E99C0C802649EC0600EF7CDC /* Core_Val.swift */,
+				E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */,
+				E99C0C762649E24B00EF7CDC /* About_Us.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		DC4673FD264C6B5E00704066 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				3F52E7162630DD3700EC6112 /* EventView.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		DC4673FE264C6B6700704066 /* Highlights */ = {
+			isa = PBXGroup;
+			children = (
+				55686EA126432C3600B4A848 /* highlightPage.swift */,
+			);
+			path = Highlights;
+			sourceTree = "<group>";
+		};
+		DC467400264C6B8400704066 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		DC467401264C6BEF00704066 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				559C371C2649129300960668 /* loginView.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
