@@ -22,6 +22,18 @@ struct AddEvents: View {
     
     func saveNewEvent() {
         //Save logic needed
+        if (self.EventName.isEmpty) {
+            print("Event Name Empty")
+            return
+        }
+        if (self.EventDate.isEmpty) {
+            print("Event Date Empty")
+            return
+        }
+        
+        
+        //For Debugging, show user input
+        showFormElts()
         
         
         // Return to previous screen
