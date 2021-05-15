@@ -45,6 +45,7 @@ struct EventView: View {
     ]
     
     var body: some View {
+        NavigationView{
         VStack {
 
             
@@ -56,16 +57,20 @@ struct EventView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
             
-            Button() {
-                selection = "AddEvent"
-            }
-            label: {
-                Text("Add Event")
-                    .padding(15)
-                    .background(Color.white)
-                    
-            }
-            .contentShape(Rectangle())
+            NavigationLink(destination: AddEvents()){
+                Text("Add New Event")
+            }.padding()
+            
+//            Button() {
+//                selection = "AddEvent"
+//            }
+//            label: {
+//                Text("Add Event")
+//                    .padding(15)
+//                    .background(Color.white)
+//
+//            }
+//            .contentShape(Rectangle())
             
             List(EventList) { aEvent in
                 EventInfoRow(whichEvent:aEvent)
@@ -76,6 +81,7 @@ struct EventView: View {
         .background((Color(red: 0.022, green: 0.24, blue: 0.561)))
         .edgesIgnoringSafeArea(.all)
 
+    }
     }
 }
 
