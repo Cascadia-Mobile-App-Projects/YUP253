@@ -35,6 +35,7 @@ struct EventInfoRow: View {
     }
 
 struct EventView: View {
+    @State private var selection: String? = nil
     
     let EventList = [
         EventInfo(title: "Meetup @ Madison Park 4/20/21"),
@@ -45,6 +46,8 @@ struct EventView: View {
     
     var body: some View {
         VStack {
+
+            
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
             Text("Ultimate Events:").font(.title)
             
@@ -53,7 +56,16 @@ struct EventView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
             
-           
+            Button() {
+                selection = "AddEvent"
+            }
+            label: {
+                Text("Add Event")
+                    .padding(15)
+                    .background(Color.white)
+                    
+            }
+            .contentShape(Rectangle())
             
             List(EventList) { aEvent in
                 EventInfoRow(whichEvent:aEvent)
