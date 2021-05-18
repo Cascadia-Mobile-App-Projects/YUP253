@@ -61,6 +61,7 @@
 		DCBF9D2A264C463F006ED4E8 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DCE901002653A69C00E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCE901012653A78700E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DCE901022653A80100E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E99C0C762649E24B00EF7CDC /* About_Us.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About_Us.swift; sourceTree = "<group>"; };
 		E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission_V.swift; sourceTree = "<group>"; };
 		E99C0C802649EC0600EF7CDC /* Core_Val.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core_Val.swift; sourceTree = "<group>"; };
@@ -187,6 +188,7 @@
 		DC4673F8264C6A4A00704066 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				DCE901022653A80100E853D0 /* README.md */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";
