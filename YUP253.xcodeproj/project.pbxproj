@@ -94,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				DC4673F9264C6A5A00704066 /* Assets */,
+				DCE900FE26539E1100E853D0 /* API */,
+				DCE900FF26539E9300E853D0 /* Scripts */,
 				DC4673F8264C6A4A00704066 /* Documentation */,
 				3FAE0FBA2630C91C0094FEBF /* YUP253 */,
 				3FAE0FCC2630C91D0094FEBF /* YUP253Tests */,
@@ -251,6 +253,20 @@
 				559C371C2649129300960668 /* loginView.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		DCE900FE26539E1100E853D0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		DCE900FF26539E9300E853D0 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
