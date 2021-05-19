@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct highlightPage: View {
+    @State private var selection: String? = nil
+    
     var body: some View {
+        
+        NavigationView {
         
         ZStack{
             
             Color(red: 0.022, green: 0.24, blue: 0.561).ignoresSafeArea()
             
             VStack{
+                Image("253")
+                    
+                    .aspectRatio(contentMode: .fit)
                 
-                Text("Highlight")
-                    .padding()
-                    .background(Color.white)
+                
                 Spacer()
                 
             
@@ -38,6 +43,7 @@ struct highlightPage: View {
                     .frame(width: 256.0, height: 128.0)
                     Spacer()
                     Spacer()
+                        .navigationBarTitle("HIGHLIGHTS", displayMode: .inline)
                 }
                 
             }
@@ -61,4 +67,5 @@ struct highlightPage_Previews: PreviewProvider {
     static var previews: some View {
         highlightPage()
     }
+}
 }

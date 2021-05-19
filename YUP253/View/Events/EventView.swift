@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EventInfo : Identifiable {
+    @State private var selection: String? = nil
     let id = UUID()
     let title: String
 }
@@ -44,6 +45,7 @@ struct EventView: View {
     ]
     
     var body: some View {
+        NavigationView {
         VStack {
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
             Text("Ultimate Events:").font(.title)
@@ -52,7 +54,7 @@ struct EventView: View {
             
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
-            
+                    .navigationBarTitle("EVENTS", displayMode: .inline)
            
             
             List(EventList) { aEvent in
@@ -74,4 +76,5 @@ struct EventView_Previews: PreviewProvider {
     static var previews: some View {
         EventView()
     }
+}
 }
