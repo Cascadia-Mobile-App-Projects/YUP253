@@ -15,21 +15,40 @@ struct EventInfo : Identifiable {
 struct EventInfoRow: View {
     let whichEvent: EventInfo
     
+    @State private var ToggleUser = true
+    
     var body: some View {
         HStack {
             Text("Event Title:\n\(whichEvent.title)");
             Spacer()
-            Button() {
-
-            }
-            label: {
+            Toggle("Show Toggle", isOn: $ToggleUser)
+            
+            /*Button() {}
+                label: {
                 Text("Sign UP")
                     .padding(15)
                     .background(Color.blue)
                     
             }
-            .contentShape(Rectangle())
-                
+            .contentShape(Rectangle())*/
+            if ToggleUser {
+            NavigationLink(destination: loginView()){
+                Text("Sign Up")
+            }.padding()}
+            
+            if !ToggleUser {
+            NavigationLink(destination: EditEvent()){
+                Text("Edit Event")
+            }.padding()}
+            
+            /*Button() {}
+                label: {
+                Text("Edit Event")
+                    .padding(15)
+                    .background(Color.blue)
+            }
+            .contentShape(Rectangle())*/
+            
             }
         }
     }
