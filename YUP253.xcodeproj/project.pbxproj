@@ -16,6 +16,8 @@
 		3FAE0FD92630C91D0094FEBF /* YUP253UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FD82630C91D0094FEBF /* YUP253UITests.swift */; };
 		55686EA226432C3600B4A848 /* highlightPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55686EA126432C3600B4A848 /* highlightPage.swift */; };
 		559C371D2649129300960668 /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C371C2649129300960668 /* loginView.swift */; };
+		55DD70082655A53800ADC314 /* createAccountLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DD70072655A53800ADC314 /* createAccountLoginView.swift */; };
+		55F889842655B9390032831A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F889832655B9390032831A /* HomeView.swift */; };
 		DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC91F8E72637616B001C88BB /* AppSettings.swift */; };
 		DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF9D2A264C463F006ED4E8 /* SplashView.swift */; };
 		DCE901042653A89200E853D0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE901032653A89200E853D0 /* Person.swift */; };
@@ -59,6 +61,8 @@
 		3FAE0FDA2630C91D0094FEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55686EA126432C3600B4A848 /* highlightPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highlightPage.swift; sourceTree = "<group>"; };
 		559C371C2649129300960668 /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
+		55DD70072655A53800ADC314 /* createAccountLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAccountLoginView.swift; sourceTree = "<group>"; };
+		55F889832655B9390032831A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DC91F8E72637616B001C88BB /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		DCBF9D2A264C463F006ED4E8 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DCE901002653A69C00E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -160,9 +164,18 @@
 			path = YUP253UITests;
 			sourceTree = "<group>";
 		};
+		55F889822655B92A0032831A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				55F889832655B9390032831A /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		DC4673F5264C6A0E00704066 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55F889822655B92A0032831A /* Home */,
 				DC467401264C6BEF00704066 /* Account */,
 				DC467400264C6B8400704066 /* Admin */,
 				DC4673FE264C6B6700704066 /* Highlights */,
@@ -261,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				559C371C2649129300960668 /* loginView.swift */,
+				55DD70072655A53800ADC314 /* createAccountLoginView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -414,6 +428,7 @@
 				3F52E7172630DD3700EC6112 /* EventView.swift in Sources */,
 				3FAE0FBE2630C91C0094FEBF /* ContentView.swift in Sources */,
 				559C371D2649129300960668 /* loginView.swift in Sources */,
+				55F889842655B9390032831A /* HomeView.swift in Sources */,
 				E9D2B0592630E3E00053234F /* About.swift in Sources */,
 				E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */,
 				DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */,
@@ -423,6 +438,7 @@
 				DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */,
 				DCE901042653A89200E853D0 /* Person.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
+				55DD70082655A53800ADC314 /* createAccountLoginView.swift in Sources */,
 				55686EA226432C3600B4A848 /* highlightPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

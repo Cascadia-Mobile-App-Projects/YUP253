@@ -14,7 +14,7 @@ struct ContentView: View {
         TabView(selection: $selection) {
             
 
-            loginView()
+            HomeView()
                         .tabItem {
                             Label("Home", systemImage: "house.fill")
                         }

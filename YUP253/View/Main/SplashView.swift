@@ -21,7 +21,7 @@ struct SplashView: View {
     
     var body: some View {
         if self.dismiss {
-            ContentView()
+            loginView()
         } else  {
             VStack {
                 Spacer(minLength: 0)
