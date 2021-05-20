@@ -9,33 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var selection = 1
+    @State private var selection = 0
     var body: some View {
         TabView(selection: $selection) {
             
-            Text("Stephen Content View")
-                    .tabItem {
-                        Label("Home", systemImage: "house.fill").foregroundColor(.orange)
-                    }
-                .tag(1)
-            Text("Adam Content View")
+
+            loginView()
                         .tabItem {
-                            Label("Events", systemImage: "calendar")
+                            Label("Home", systemImage: "house.fill")
                         }
-                .tag(2)
-            Text("Anton Content View")
+                .tag(0)
+            EventView()
+                .tabItem {
+                    Label("Events", systemImage: "calendar")
+                }
+                .tag(1)
+            highlightPage()
                         .tabItem {
                             Label("Highlights", systemImage: "star.fill")
                         }
-                .tag(3)
-            Text("Sean Content View")
+
+                .tag(2)
+            
+            About()
                     .tabItem {
                         Label("About", systemImage: "questionmark.circle")
+                        
                     }
-                .tag(4)
+                .tag(3)
             }
-        .accentColor(.orange)
-        .font(.largeTitle)
+        .accentColor(.black)
+        
         }
 }
 
