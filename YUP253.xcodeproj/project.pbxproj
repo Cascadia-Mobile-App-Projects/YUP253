@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3F3C74F1264F78D100A4FCA1 /* AddEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */; };
 		3F3C74F52655AF8500A4FCA1 /* EditEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */; };
 		3F52E7172630DD3700EC6112 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E7162630DD3700EC6112 /* EventView.swift */; };
+		3F9400492655B0E600CBFC3D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9400482655B0E600CBFC3D /* EventModel.swift */; };
+		3F94004B2655B10100CBFC3D /* EventRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94004A2655B10100CBFC3D /* EventRepo.swift */; };
+		3F94004E2655B22E00CBFC3D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3F94004D2655B22E00CBFC3D /* Realm */; };
+		3F9400502655B22E00CBFC3D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F94004F2655B22E00CBFC3D /* RealmSwift */; };
 		3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */; };
 		3FAE0FBE2630C91C0094FEBF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FBD2630C91C0094FEBF /* ContentView.swift */; };
 		3FAE0FC02630C91C0094FEBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FAE0FBF2630C91C0094FEBF /* Assets.xcassets */; };
@@ -49,6 +53,8 @@
 		3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvents.swift; sourceTree = "<group>"; };
 		3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEvent.swift; sourceTree = "<group>"; };
 		3F52E7162630DD3700EC6112 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		3F9400482655B0E600CBFC3D /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		3F94004A2655B10100CBFC3D /* EventRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepo.swift; sourceTree = "<group>"; };
 		3FAE0FB82630C91C0094FEBF /* YUP253.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUP253.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUP253App.swift; sourceTree = "<group>"; };
 		3FAE0FBD2630C91C0094FEBF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9400502655B22E00CBFC3D /* RealmSwift in Frameworks */,
+				3F94004E2655B22E00CBFC3D /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				DCE901032653A89200E853D0 /* Person.swift */,
+				3F9400482655B0E600CBFC3D /* EventModel.swift */,
+				3F94004A2655B10100CBFC3D /* EventRepo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +313,10 @@
 			dependencies = (
 			);
 			name = YUP253;
+			packageProductDependencies = (
+				3F94004D2655B22E00CBFC3D /* Realm */,
+				3F94004F2655B22E00CBFC3D /* RealmSwift */,
+			);
 			productName = YUP253;
 			productReference = 3FAE0FB82630C91C0094FEBF /* YUP253.app */;
 			productType = "com.apple.product-type.application";
@@ -374,6 +388,9 @@
 				Base,
 			);
 			mainGroup = 3FAE0FAF2630C91C0094FEBF;
+			packageReferences = (
+				3F94004C2655B22E00CBFC3D /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 3FAE0FB92630C91C0094FEBF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -422,6 +439,7 @@
 				3F3C74F52655AF8500A4FCA1 /* EditEvent.swift in Sources */,
 				559C371D2649129300960668 /* loginView.swift in Sources */,
 				E9D2B0592630E3E00053234F /* About.swift in Sources */,
+				3F9400492655B0E600CBFC3D /* EventModel.swift in Sources */,
 				E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */,
 				DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
@@ -429,6 +447,7 @@
 				E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */,
 				3F3C74F1264F78D100A4FCA1 /* AddEvents.swift in Sources */,
 				DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */,
+				3F94004B2655B10100CBFC3D /* EventRepo.swift in Sources */,
 				DCE901042653A89200E853D0 /* Person.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
 				55686EA226432C3600B4A848 /* highlightPage.swift in Sources */,
@@ -745,6 +764,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F94004C2655B22E00CBFC3D /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.7.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F94004D2655B22E00CBFC3D /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F94004C2655B22E00CBFC3D /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		3F94004F2655B22E00CBFC3D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F94004C2655B22E00CBFC3D /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3FAE0FB02630C91C0094FEBF /* Project object */;
 }
