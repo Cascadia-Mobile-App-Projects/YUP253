@@ -15,26 +15,46 @@ struct EventInfo : Identifiable {
 struct EventInfoRow: View {
     let whichEvent: EventInfo
     
+    @State private var ToggleUser = true
+    
     var body: some View {
         HStack {
             Text("Event Title:\n\(whichEvent.title)");
             Spacer()
-            Button() {
-
-            }
-            label: {
+            Toggle("Show Toggle", isOn: $ToggleUser)
+            
+            /*Button() {}
+                label: {
                 Text("Sign UP")
                     .padding(15)
                     .background(Color.blue)
                     
             }
-            .contentShape(Rectangle())
-                
+            .contentShape(Rectangle())*/
+            if ToggleUser {
+            NavigationLink(destination: loginView()){
+                Text("Sign Up")
+            }.padding()}
+            
+            if !ToggleUser {
+            NavigationLink(destination: EditEvent()){
+                Text("Edit Event")
+            }.padding()}
+            
+            /*Button() {}
+                label: {
+                Text("Edit Event")
+                    .padding(15)
+                    .background(Color.blue)
+            }
+            .contentShape(Rectangle())*/
+            
             }
         }
     }
 
 struct EventView: View {
+    @State private var selection: String? = nil
     
     let EventList = [
         EventInfo(title: "Meetup @ Madison Park 4/20/21"),
@@ -44,7 +64,10 @@ struct EventView: View {
     ]
     
     var body: some View {
+        NavigationView{
         VStack {
+
+            
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
             Text("Ultimate Events:").font(.title)
             
@@ -53,7 +76,20 @@ struct EventView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
             
-           
+            NavigationLink(destination: AddEvents()){
+                Text("Add New Event")
+            }.padding()
+            
+//            Button() {
+//                selection = "AddEvent"
+//            }
+//            label: {
+//                Text("Add Event")
+//                    .padding(15)
+//                    .background(Color.white)
+//
+//            }
+//            .contentShape(Rectangle())
             
             List(EventList) { aEvent in
                 EventInfoRow(whichEvent:aEvent)
@@ -64,6 +100,7 @@ struct EventView: View {
         .background((Color(red: 0.022, green: 0.24, blue: 0.561)))
         .edgesIgnoringSafeArea(.all)
 
+    }
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3C74F1264F78D100A4FCA1 /* AddEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */; };
+		3F3C74F52655AF8500A4FCA1 /* EditEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */; };
 		3F52E7172630DD3700EC6112 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E7162630DD3700EC6112 /* EventView.swift */; };
 		3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */; };
 		3FAE0FBE2630C91C0094FEBF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FBD2630C91C0094FEBF /* ContentView.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvents.swift; sourceTree = "<group>"; };
+		3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEvent.swift; sourceTree = "<group>"; };
 		3F52E7162630DD3700EC6112 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		3FAE0FB82630C91C0094FEBF /* YUP253.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUP253.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUP253App.swift; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				3F52E7162630DD3700EC6112 /* EventView.swift */,
+				3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */,
+				3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 			files = (
 				3F52E7172630DD3700EC6112 /* EventView.swift in Sources */,
 				3FAE0FBE2630C91C0094FEBF /* ContentView.swift in Sources */,
+				3F3C74F52655AF8500A4FCA1 /* EditEvent.swift in Sources */,
 				559C371D2649129300960668 /* loginView.swift in Sources */,
 				55F889842655B9390032831A /* HomeView.swift in Sources */,
 				E9D2B0592630E3E00053234F /* About.swift in Sources */,
@@ -435,6 +442,7 @@
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
 				E99C0C812649EC0600EF7CDC /* Core_Val.swift in Sources */,
 				E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */,
+				3F3C74F1264F78D100A4FCA1 /* AddEvents.swift in Sources */,
 				DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */,
 				DCE901042653A89200E853D0 /* Person.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
