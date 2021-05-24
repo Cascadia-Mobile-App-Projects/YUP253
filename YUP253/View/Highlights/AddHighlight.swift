@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct AddHighlight: View {
-    @State var user: String = ""
     @State var text: String = ""
     
     
@@ -18,7 +17,6 @@ struct AddHighlight: View {
     
     func showForm() {
         print("showForm")
-        print("\(user)")
         print("\(text)")
         
     }
@@ -32,7 +30,7 @@ struct AddHighlight: View {
         
         showForm()
         
-        theDataRepo.saveHighlight(newUser: self.user, newText: self.text)
+        theDataRepo.saveHighlight(newText: self.text)
         
         // return to previous screen:
         self.presentationMode.wrappedValue.dismiss()
@@ -42,7 +40,6 @@ struct AddHighlight: View {
         NavigationView {
             Form {
                 Section(header: Text("New Highlight Info:")) {
-                    TextField("Enter Username", text: $user)
                     TextField("Enter Text", text: $text)
                     
                 }

@@ -11,7 +11,6 @@ import SwiftUI
 struct UpdateHighlight: View {
         
     
-    @State var user: String = ""
     @State var text: String = ""
     
     
@@ -23,14 +22,12 @@ struct UpdateHighlight: View {
         self.init()
         original = OD
         text = OD.text
-        user = OD.user
     }
 
     @EnvironmentObject var theDataRepo: DataRepository
     
     func showForm() {
         print("showForm")
-        print("user: \(user)")
         print("text: \(text)")
         
     }
@@ -44,7 +41,7 @@ struct UpdateHighlight: View {
         
         showForm()
         
-        theDataRepo.updateHighlight(id: self.original.id, newUser: self.user, newText: self.text)
+        theDataRepo.updateHighlight(id: self.original.id, newText: self.text)
         
         // return to previous screen:
         self.presentationMode.wrappedValue.dismiss()
@@ -54,7 +51,6 @@ struct UpdateHighlight: View {
         NavigationView {
             Form {
                 Section(header: Text("Edit Text:")) {
-                    TextField("\(self.original.user)", text: self.$user)
                     TextField("\(self.original.text)", text: self.$text)
                     
                 }
