@@ -24,8 +24,12 @@ struct highlightPage: View {
     }
     
     var body: some View {
+        
+        
+            
     
         NavigationView {
+            
             
             VStack{
                 
@@ -45,7 +49,10 @@ struct highlightPage: View {
                 NavigationLink(destination: AddHighlight()) {
                     Text("Add")
                         .padding()
-                        .background(Color.green)
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                    
+                        
                     Spacer()
                     
                 }
@@ -54,7 +61,8 @@ struct highlightPage: View {
                 NavigationLink(destination: ListAllHighlights(whichMode:.List)) {
                     Text("View")
                         .padding()
-                        .background(Color.green)
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
                     Spacer()
                 }
                     
@@ -62,7 +70,8 @@ struct highlightPage: View {
                 NavigationLink(destination: ListAllHighlights(whichMode: .Update)) {
                     Text("Edit")
                         .padding()
-                        .background(Color.green)
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
                     Spacer()
     
                 }
@@ -71,7 +80,8 @@ struct highlightPage: View {
                 NavigationLink(destination: ListAllHighlights(whichMode: .Delete)) {
                     Text("Delete")
                         .padding()
-                        .background(Color.green)
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
                     Spacer()
                 }
                     
@@ -84,9 +94,14 @@ struct highlightPage: View {
         }
             
             
+            
+            
         }
+        
             .padding()
             .environmentObject(DataRepository(realm: realmObj))
+            
+        
     }
 }
 

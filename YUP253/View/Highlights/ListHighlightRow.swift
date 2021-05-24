@@ -49,8 +49,10 @@ struct ListHighlightRow: View {
                         .frame(width: 32.0, height: 32.0)
                     
                     
-                    Text("\(thisHighlight.user)" + ":")
+                    Text("John Cena:")
                     Text("\(thisHighlight.text)")
+                    
+
                     
                     
                     
@@ -91,7 +93,7 @@ struct ListHighlightRow_Previews: PreviewProvider {
     
 
     static var previews: some View {
-        let demoHighlight = Highlight(id: UUID().hashValue, user: "John", text: "Fido")
+        let demoHighlight = Highlight(id: UUID().hashValue, text: "Fred")
         
         ListHighlightRow(theHighlight: demoHighlight, mode: .Update)
     }

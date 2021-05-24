@@ -10,12 +10,10 @@ import RealmSwift
 
 class Highlight: Object {
     @objc dynamic var id = 0
-    @objc dynamic var user = ""
     @objc dynamic var text = ""
-    convenience init(id: Int, user:String, text:String) {
-        self.init() 
+    convenience init(id: Int, text:String) {
+        self.init()
         self.id = id
-        self.user = user
         self.text = text
         
     }
