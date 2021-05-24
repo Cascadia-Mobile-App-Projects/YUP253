@@ -59,7 +59,7 @@ struct UpdateHighlight: View {
                     Text("Update")
                 }
             }
-            .navigationBarTitle("Update Post")
+            .navigationBarTitle("Edit Post")
             
         }
         
