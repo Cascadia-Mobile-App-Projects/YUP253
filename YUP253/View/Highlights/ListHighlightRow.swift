@@ -71,7 +71,7 @@ struct ListHighlightRow: View {
             }
             else if mode == .Update {
                 NavigationLink(destination: UpdateHighlight(originalHighlight:thisHighlight)) {
-                    Text("Update")
+                    Text("Edit")
                 }
             }
             else if mode == .Delete {
