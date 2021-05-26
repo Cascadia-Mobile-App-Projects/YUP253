@@ -14,7 +14,7 @@ struct ContentView: View {
         TabView(selection: $selection) {
             
 
-            loginView()
+            HomeView()
                         .tabItem {
                             Label("Home", systemImage: "house.fill")
                         }
@@ -38,7 +38,7 @@ struct ContentView: View {
                     }
                 .tag(3)
             }
-        .accentColor(.black)
+        .accentColor(.gray)
         
         }
 }

@@ -5,56 +5,119 @@
 //  Created by Anton Tran on 5/5/21.
 //
 
+
+
 import SwiftUI
+import RealmSwift
 
 struct highlightPage: View {
+    
+
+    
+    let realmObj: Realm
+    
+    init() {
+        do {
+          realmObj = try Realm()
+        } catch let error {
+          // Handle error
+            fatalError("Failed to open Realm. Error: \(error.localizedDescription)")
+            
+        }
+        
+    }
+    
     var body: some View {
         
-        ZStack{
+        
             
-            Color(red: 0.022, green: 0.24, blue: 0.561).ignoresSafeArea()
+    
+        NavigationView {
+            
+            
             
             VStack{
                 
-                Text("Highlight")
-                    .padding()
-                    .background(Color.white)
-                Spacer()
                 
-            
+                Image("253")
                 
-                VStack(alignment: .leading){
+                
+                VStack{
                     
                     Spacer()
                     
-                    Label("Walter White", systemImage: "person.crop.circle")
-                    Image("frisbee1")
-                    .resizable()
-                    .frame(width: 256.0, height: 128.0)
-                    
-                    Label("John Cena", systemImage: "person.crop.circle")
-                    Image("frisbee2")
-                    .resizable()
-                    .frame(width: 256.0, height: 128.0)
                     Spacer()
+                    
+            HStack{
+                
+                NavigationLink(destination: AddHighlight()) {
+                    Text("Add")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                    
+                    
+                        
+                    Spacer()
+                    
+                }
+                    
+                
+                NavigationLink(destination: ListAllHighlights(whichMode:.List)) {
+                    Text("View")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
                     Spacer()
                 }
+                    
                 
+                NavigationLink(destination: ListAllHighlights(whichMode: .Update)) {
+                    Text("Edit")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                    Spacer()
+                    
+    
+                }
+                    
+                
+                NavigationLink(destination: ListAllHighlights(whichMode: .Delete)) {
+                    Text("Delete")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                    
+                    Spacer()
+                        
+                    
+                }
+                    
+                .edgesIgnoringSafeArea(.all)
+                .navigationBarTitle("Highlights", displayMode: .inline)
+                
+                    
             }
+                    
+                }
             
+        }
             
-            
-            
+            .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
             
             
             
         }
         
+            
+            .environmentObject(DataRepository(realm: realmObj))
+        .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: .leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing))
         
         
         
-        
-}
+    }
+    
 }
 
 struct highlightPage_Previews: PreviewProvider {
@@ -62,3 +125,10 @@ struct highlightPage_Previews: PreviewProvider {
         highlightPage()
     }
 }
+
+
+
+
+
+
+

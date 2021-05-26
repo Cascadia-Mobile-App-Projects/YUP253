@@ -14,14 +14,16 @@ struct loginView: View {
     
     @State var username: String = ""
     @State var password: String = ""
+    @State var createAccountPressed: Bool = false
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSuccess: Bool = false
     var body: some View {
         
         ZStack{
-            Color(red: 0.022, green: 0.24, blue: 0.561)
-                .ignoresSafeArea()
+            (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
         VStack{
+            
+            
             TitleView()
             UserImage()
             UsernameTextField(username: $username)
@@ -34,16 +36,36 @@ struct loginView: View {
                 
             }
             
+            
+            
+            Button(action: {
+                if createAccountPressed == false {
+                    self.createAccountPressed = true
+                    
+                    
+                    
+                }            }){
+                createLoginContent()
+            }
+
+                    
+            
+            
+            
             Button(action: {
                 if self.username == storedUsername && self.password == storedpassword {
                     self.authenticationDidSuccess = true
                     self.authenticationDidFail = false
+                    
+                    
                 } else {
                     self.authenticationDidFail = true
                     self.authenticationDidSuccess = false
                 }            }){
                 loginContent()
             }
+            
+            
             
             
             
@@ -58,6 +80,15 @@ struct loginView: View {
                     .background(Color.green)
                     .cornerRadius(20.0)
                     .animation(Animation.default)
+                ContentView()
+                    .animation(.spring())
+                    .transition(.slide)
+            }
+            
+            if createAccountPressed{
+                createAccountLoginView()
+                    .animation(.spring())
+                                        .transition(.slide)
             }
         
         }
@@ -81,6 +112,7 @@ struct TitleView: View{
             .font(.largeTitle)
             .fontWeight(.semibold)
             .padding(.bottom, 20)
+            .foregroundColor(.white)
     }
 }
 
@@ -96,16 +128,32 @@ struct UserImage: View{
     }
 }
 
+struct createLoginContent: View{
+    var body: some View{
+        Text("Create Account")
+            .font(.headline)
+            .foregroundColor(.black)
+            .padding()
+            .frame(width: 220, height: 60)
+            .background(Color.gray)
+            .cornerRadius(35.0)
+            
+    }
+}
+
 struct loginContent: View{
     var body: some View{
         Text("LOGIN")
             .font(.headline)
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .padding()
             .frame(width: 220, height: 60)
-            .background(Color.black)
+            .background(Color.gray)
             .cornerRadius(35.0)
+            .navigationBarTitle("LOGIN", displayMode: .inline)
     }
+    
+    
 }
 
 struct UsernameTextField: View {
@@ -113,9 +161,10 @@ struct UsernameTextField: View {
     var body: some View {
         TextField("Username", text: $username)
             .padding()
-            .background(Color.gray)
+            .background(Color.white)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            
     }
 }
 
@@ -124,8 +173,10 @@ struct passwordTextField: View {
     var body: some View {
         SecureField("Password", text: $password)
             .padding()
-            .background(Color.gray)
+            .background(Color.white)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
     }
 }
+
+
