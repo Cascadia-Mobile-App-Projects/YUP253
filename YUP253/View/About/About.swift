@@ -52,26 +52,26 @@ struct About: View {
                 .padding(15.0)
                 Button("Mission/Vision") {
                     self.selection = "Third"
+                        
                 }
                 .padding(15.0)
                 Button("Core Values") {
                     self.selection = "Fourth"
+                        
                 }
                 .padding(15.0)
                 
             }
-            .padding(35.0)
-            .background(Color(red: 0.022, green: 0.24, blue: 0.561))
-            .navigationBarTitle("ABOUT", displayMode: .inline)
+            .padding(110.0)
+            
+            .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+            //.background(Color(red: 0.022, green: 0.24, blue: 0.561))
             .edgesIgnoringSafeArea(.all)
-            
-            
-        
-        }
-            .padding(2.0)
+            .navigationBarTitle("ABOUT", displayMode: .inline)
+            }
+           
                }
-        
-    }
+        }
 
 
 struct About_Previews: PreviewProvider {

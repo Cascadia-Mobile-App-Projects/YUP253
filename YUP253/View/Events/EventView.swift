@@ -69,15 +69,17 @@ struct EventView: View {
 
             
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
-            Text("Ultimate Events:").font(.title)
+            Text("Ultimate Events:").font(.title).foregroundColor(.white)
             
                 Image("253")
             
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
+                    .navigationBarTitle("EVENTS", displayMode: .inline)
             
             NavigationLink(destination: AddEvents()){
                 Text("Add New Event")
+                    .foregroundColor(.white)
             }.padding()
             
 //            Button() {
@@ -97,8 +99,7 @@ struct EventView: View {
             
         }
         .padding(.top, 40)
-        .background((Color(red: 0.022, green: 0.24, blue: 0.561)))
-        .edgesIgnoringSafeArea(.all)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
 
     }
     }

@@ -12,6 +12,8 @@ import RealmSwift
 
 struct highlightPage: View {
     
+
+    
     let realmObj: Realm
     
     init() {
@@ -20,7 +22,9 @@ struct highlightPage: View {
         } catch let error {
           // Handle error
             fatalError("Failed to open Realm. Error: \(error.localizedDescription)")
+            
         }
+        
     }
     
     var body: some View {
@@ -31,18 +35,18 @@ struct highlightPage: View {
         NavigationView {
             
             
+            
             VStack{
                 
                 
-                Text("Highlight")
-                    .bold()
-                    .font(.title)
                 Image("253")
                 
                 
                 VStack{
+                    
                     Spacer()
                     
+                    Spacer()
                     
             HStack{
                 
@@ -51,6 +55,7 @@ struct highlightPage: View {
                         .padding()
                         .foregroundColor(Color.white)
                         .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                    
                     
                         
                     Spacer()
@@ -73,6 +78,7 @@ struct highlightPage: View {
                         .foregroundColor(Color.white)
                         .background(Color(red: 0.022, green: 0.24, blue: 0.561))
                     Spacer()
+                    
     
                 }
                     
@@ -82,27 +88,36 @@ struct highlightPage: View {
                         .padding()
                         .foregroundColor(Color.white)
                         .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                    
                     Spacer()
+                        
+                    
                 }
                     
-                
+                .edgesIgnoringSafeArea(.all)
+                .navigationBarTitle("Highlights", displayMode: .inline)
                 
                     
             }
+                    
                 }
             
         }
             
+            .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
             
             
             
         }
         
-            .padding()
-            .environmentObject(DataRepository(realm: realmObj))
             
+            .environmentObject(DataRepository(realm: realmObj))
+        .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: .leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing))
+        
+        
         
     }
+    
 }
 
 struct highlightPage_Previews: PreviewProvider {
