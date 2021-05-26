@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F253C46265EFA0700395521 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F253C45265EFA0700395521 /* DataRepository.swift */; };
+		3F253C48265EFA1200395521 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F253C47265EFA1200395521 /* Event.swift */; };
+		3F253C4A265EFA1A00395521 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F253C49265EFA1A00395521 /* Highlight.swift */; };
+		3F253C4C265EFA2000395521 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F253C4B265EFA2000395521 /* Person.swift */; };
 		3F3C74F1264F78D100A4FCA1 /* AddEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */; };
 		3F3C74F52655AF8500A4FCA1 /* EditEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */; };
 		3F52E7172630DD3700EC6112 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E7162630DD3700EC6112 /* EventView.swift */; };
-		3F9400492655B0E600CBFC3D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9400482655B0E600CBFC3D /* EventModel.swift */; };
-		3F94004B2655B10100CBFC3D /* DataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94004A2655B10100CBFC3D /* DataRepo.swift */; };
 		3F94004E2655B22E00CBFC3D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3F94004D2655B22E00CBFC3D /* Realm */; };
 		3F9400502655B22E00CBFC3D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F94004F2655B22E00CBFC3D /* RealmSwift */; };
 		3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */; };
@@ -27,16 +29,15 @@
 		55F88986265B0F640032831A /* AddHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F88985265B0F640032831A /* AddHighlight.swift */; };
 		55F88988265B10760032831A /* ClearDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F88987265B10760032831A /* ClearDB.swift */; };
 		55F8898A265B109B0032831A /* UpdateHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F88989265B109B0032831A /* UpdateHighlight.swift */; };
-		55F8898C265B11EC0032831A /* ListAllHighlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8898B265B11EC0032831A /* ListAllHighlights.swift */; };
 		55F8898E265B15DF0032831A /* ListHighlightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8898D265B15DF0032831A /* ListHighlightRow.swift */; };
-		55F88990265B16980032831A /* HighlightListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8898F265B16980032831A /* HighlightListMode.swift */; };
 		55F88996265B1E3E0032831A /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F88995265B1E3E0032831A /* Highlight.swift */; };
 		55F8899A265B1E930032831A /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F88999265B1E930032831A /* DataRepository.swift */; };
+
 		55F8899D265B20D70032831A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 55F8899C265B20D70032831A /* RealmSwift */; };
 		DC2CE722265E4CA4002AEA57 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2CE721265E4CA4002AEA57 /* Auth.swift */; };
+
 		DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC91F8E72637616B001C88BB /* AppSettings.swift */; };
 		DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF9D2A264C463F006ED4E8 /* SplashView.swift */; };
-		DCE901042653A89200E853D0 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE901032653A89200E853D0 /* PersonModel.swift */; };
 		DCE9010C2653A93600E853D0 /* yup_splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCE9010B2653A93600E853D0 /* yup_splash.jpg */; };
 		E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C762649E24B00EF7CDC /* About_Us.swift */; };
 		E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */; };
@@ -62,11 +63,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F253C45265EFA0700395521 /* DataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		3F253C47265EFA1200395521 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		3F253C49265EFA1A00395521 /* Highlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
+		3F253C4B265EFA2000395521 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvents.swift; sourceTree = "<group>"; };
 		3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEvent.swift; sourceTree = "<group>"; };
 		3F52E7162630DD3700EC6112 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
-		3F9400482655B0E600CBFC3D /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
-		3F94004A2655B10100CBFC3D /* DataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepo.swift; sourceTree = "<group>"; };
 		3FAE0FB82630C91C0094FEBF /* YUP253.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUP253.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUP253App.swift; sourceTree = "<group>"; };
 		3FAE0FBD2630C91C0094FEBF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,7 +100,6 @@
 		DCE901002653A69C00E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCE901012653A78700E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCE901022653A80100E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		DCE901032653A89200E853D0 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		DCE9010B2653A93600E853D0 /* yup_splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yup_splash.jpg; sourceTree = "<group>"; };
 		E99C0C762649E24B00EF7CDC /* About_Us.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About_Us.swift; sourceTree = "<group>"; };
 		E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission_V.swift; sourceTree = "<group>"; };
@@ -230,9 +232,10 @@
 		DC4673F6264C6A2D00704066 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DCE901032653A89200E853D0 /* PersonModel.swift */,
-				3F9400482655B0E600CBFC3D /* EventModel.swift */,
-				3F94004A2655B10100CBFC3D /* DataRepo.swift */,
+				3F253C4B265EFA2000395521 /* Person.swift */,
+				3F253C49265EFA1A00395521 /* Highlight.swift */,
+				3F253C47265EFA1200395521 /* Event.swift */,
+				3F253C45265EFA0700395521 /* DataRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -490,26 +493,27 @@
 				55F88986265B0F640032831A /* AddHighlight.swift in Sources */,
 				3F3C74F52655AF8500A4FCA1 /* EditEvent.swift in Sources */,
 				559C371D2649129300960668 /* loginView.swift in Sources */,
+				3F253C46265EFA0700395521 /* DataRepository.swift in Sources */,
 				55F8899A265B1E930032831A /* DataRepository.swift in Sources */,
 				55F889842655B9390032831A /* HomeView.swift in Sources */,
 				55F8898A265B109B0032831A /* UpdateHighlight.swift in Sources */,
+				3F253C4C265EFA2000395521 /* Person.swift in Sources */,
 				E9D2B0592630E3E00053234F /* About.swift in Sources */,
-				3F9400492655B0E600CBFC3D /* EventModel.swift in Sources */,
 				E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */,
 				55F88996265B1E3E0032831A /* Highlight.swift in Sources */,
 				DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */,
 				DC2CE722265E4CA4002AEA57 /* Auth.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
 				E99C0C812649EC0600EF7CDC /* Core_Val.swift in Sources */,
+				3F253C48265EFA1200395521 /* Event.swift in Sources */,
 				E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */,
 				3F3C74F1264F78D100A4FCA1 /* AddEvents.swift in Sources */,
 				DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */,
-				3F94004B2655B10100CBFC3D /* DataRepo.swift in Sources */,
-				DCE901042653A89200E853D0 /* PersonModel.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
 				55DD70082655A53800ADC314 /* createAccountLoginView.swift in Sources */,
 				55686EA226432C3600B4A848 /* highlightPage.swift in Sources */,
 				55F8898E265B15DF0032831A /* ListHighlightRow.swift in Sources */,
+				3F253C4A265EFA1A00395521 /* Highlight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
