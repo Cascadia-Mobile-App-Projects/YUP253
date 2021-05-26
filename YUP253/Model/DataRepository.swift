@@ -31,7 +31,6 @@ class DataRepository: ObservableObject {
         objectWillChange.send()
 
         do {
-            // 3
             let realm = try Realm()
             let results = realm.objects(Event.self).filter( "id = " + String(theEvent.id) + "  ")
             
@@ -40,7 +39,6 @@ class DataRepository: ObservableObject {
             }
 
             try realm.write {
-                // 4
                 realm.delete(results[0])
             }
         } catch let error {
@@ -133,7 +131,6 @@ class DataRepository: ObservableObject {
             do {
               let realm = try Realm()
               try realm.write {
-                // 3
                 realm.create(
                   Person.self,
                     value: ["id": id, "username": newUserName, "fName": newFName, "lName": newLName, "age": newAge, "phNum": newNum, "email": newEmail],
@@ -144,4 +141,86 @@ class DataRepository: ObservableObject {
               print(error.localizedDescription)
             }
         }
+    
+    
+    //--------------------------------
+    //Functions for Highlight data models
+    //--------------------------------
+
+    
+    func saveHighlight(newText: String) {
+        objectWillChange.send()
+        let realm = try! Realm()
+
+        try! realm.write {
+            let theHighlight = Highlight(id: UUID().hashValue, text: newText)
+            realm.add(theHighlight)
+        }
     }
+    
+    func loadHighlight() -> Results<Highlight> {
+        let realm = try! Realm()
+        return realm.objects(Highlight.self)
+    }
+    
+    func findAHighlight(text: String) -> Highlight? {
+        let realm = try! Realm()
+        let results = realm.objects(Highlight.self).filter("text = " + text)
+        if results.count != 1 {
+            return nil
+        } else {
+            
+            return results.map(Highlight.init)[0]
+        }
+    }
+    
+    func deleteHighlight(theHighlight: Highlight) {
+        objectWillChange.send()
+
+        do {
+            let realm = try Realm()
+            let results = realm.objects(Highlight.self).filter( "id = " + String(theHighlight.id) + "  ")
+            
+            if results.count != 1 {
+                return
+            }
+
+            try realm.write {
+                realm.delete(results[0])
+            }
+        } catch let error {
+          // Handle error
+          print(error.localizedDescription)
+        }
+    }
+    
+    func deleteAllHighlight() {
+        objectWillChange.send()
+
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch let error {
+          // Handle error
+          print(error.localizedDescription)
+        }
+    }
+    
+    func updateHighlight( id: Int, newText:String) {
+        objectWillChange.send()
+        do {
+          let realm = try Realm()
+          try realm.write {
+            realm.create(
+              Highlight.self,
+                value: ["id": id, "text": newText],
+              update: .modified)
+          }
+        } catch let error {
+          // Handle error
+          print(error.localizedDescription)
+        }
+    }
+}
