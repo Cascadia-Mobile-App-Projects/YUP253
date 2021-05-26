@@ -13,6 +13,10 @@ struct EventInfo : Identifiable {
 }
 
 struct EventInfoRow: View {
+    
+    //var User = "User"
+    var currUser = "Admin"
+    
     let whichEvent: EventInfo
     
     @State private var ToggleUser = true
@@ -21,33 +25,34 @@ struct EventInfoRow: View {
         HStack {
             Text("Event Title:\n\(whichEvent.title)");
             Spacer()
-            Toggle("Show Toggle", isOn: $ToggleUser)
             
-            /*Button() {}
-                label: {
-                Text("Sign UP")
-                    .padding(15)
-                    .background(Color.blue)
-                    
+            
+            if (currUser == "Admin")
+            {
+                Toggle("Event Toggle", isOn: $ToggleUser)
+                
+                if ToggleUser {
+                    NavigationLink(destination: AddEvents()){
+                        Text("Add Event")
+                    }.padding()}
+                
+                
+                if !ToggleUser {
+                    NavigationLink(destination: EditEvent()){
+                        Text("Edit Event")
+                    }.padding()}
             }
-            .contentShape(Rectangle())*/
-            if ToggleUser {
-            NavigationLink(destination: loginView()){
-                Text("Sign Up")
-            }.padding()}
-            
-            if !ToggleUser {
-            NavigationLink(destination: EditEvent()){
-                Text("Edit Event")
-            }.padding()}
-            
-            /*Button() {}
-                label: {
-                Text("Edit Event")
-                    .padding(15)
-                    .background(Color.blue)
+            else
+            {
+                Button() {}
+                    label: {
+                    Text("Sign Up")
+                        .padding(15)
+                        .background(Color.blue)
+                        
+                }
+                .contentShape(Rectangle())
             }
-            .contentShape(Rectangle())*/
             
             }
         }
@@ -76,25 +81,9 @@ struct EventView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
             
-            NavigationLink(destination: AddEvents()){
-                Text("Add New Event")
-            }.padding()
-            
-//            Button() {
-//                selection = "AddEvent"
-//            }
-//            label: {
-//                Text("Add Event")
-//                    .padding(15)
-//                    .background(Color.white)
-//
-//            }
-//            .contentShape(Rectangle())
-            
             List(EventList) { aEvent in
                 EventInfoRow(whichEvent:aEvent)
             }
-            
         }
         .padding(.top, 40)
         .background((Color(red: 0.022, green: 0.24, blue: 0.561)))
@@ -103,8 +92,6 @@ struct EventView: View {
     }
     }
 }
-
-
 
 
 struct EventView_Previews: PreviewProvider {

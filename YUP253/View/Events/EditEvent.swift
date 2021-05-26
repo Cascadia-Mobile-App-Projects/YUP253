@@ -9,8 +9,8 @@ import SwiftUI
 
 struct EditEvent: View {
     
-    @State var EventName: String = ""
-    @State var EventDate: String = ""
+    @State var EventName: String = ""    
+    @State private var selectedDate = Date()
     
     func noop() {}
     //Mock code for Event Into read from DB
@@ -28,7 +28,7 @@ struct EditEvent: View {
     func showFormElts() {
         print("showFormElts")
         print("Updated Event Name: \(EventName)")
-        print("Updated Event Date: \(EventDate)")
+        print("Updated Event Date: \(selectedDate)")
     }
     
     @Environment(\.presentationMode) var presentationMode:
@@ -49,7 +49,7 @@ struct EditEvent: View {
                 //Need to add calls to get Original Event info and display
                 Section(header: Text("New Info")) {
                     TextField("Name:", text:self.$EventName)
-                    TextField("Event Date:", text:self.$EventDate)
+                    DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
                 Button(action: noop)
                 {
