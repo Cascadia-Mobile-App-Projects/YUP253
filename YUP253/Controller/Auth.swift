@@ -7,13 +7,19 @@
 
 import Foundation
 
-enum Auth: UInt16 {
-    case None =               0x000
-    case ViewEvents =         0x001
-    case ViewHighlights =     0x002
-    case ViewFeed =           0x004
-    case ModifyEvents     =   0x008
-    case ModifyHighlights =   0x128
-    case ParentalAuthority =  0x256
 
+
+
+// OptionSet for
+struct Auth: OptionSet, SetAlgebra, RawRepresentable {
+
+    let rawValue: Int
+    static let None =               Auth([])
+    static let ViewEvents =         Auth(rawValue: 1 << 1) // bit rotation = 1
+    static let ViewHighlights =     Auth(rawValue: 1 << 2) // = 2
+    static let ViewFeed =           Auth(rawValue: 1 << 3) // = 4
+    static let ModifyEvents     =   Auth(rawValue: 1 << 4) // = 8
+    static let ModifyHighlights =   Auth(rawValue: 1 << 5) // = 16
+    static let ParentalAuthority =  Auth(rawValue: 1 << 6) // = 32
+    
 }
