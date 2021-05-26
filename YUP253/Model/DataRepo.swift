@@ -9,6 +9,8 @@ import Foundation
 import RealmSwift
 
 class DataRepository: ObservableObject {
+    init(realm: Realm) {
+    }
     
     func saveEvent(newEventName: String, newEventDate: Int) {
         objectWillChange.send()
@@ -81,50 +83,43 @@ class DataRepository: ObservableObject {
     //Functions for Person data models
     //--------------------------------
     
-        func savePerson(newPersonF: String, newPersonL: Int) {
+    func savePerson(pUserName: String, pFName: String, pLName: String, pAge: Int, pNum: Int, pEmail: String) {
             objectWillChange.send()
             let realm = try! Realm()
 
             try! realm.write {
-                let newEvent = Event(id: UUID().hashValue, name: newPersonName, date: newEventDate)
-                realm.add(newEvent)
+                let newPerson = Person(id: UUID().hashValue, username: pUserName, fName: pFName, lName: pLName, age: pAge, phNum: pNum, email: pEmail)
+                realm.add(newPerson)
             }
         }
         
-        func loadPerson() -> Results<Event> {
+        func loadPerson() -> Results<Person> {
             let realm = try! Realm()
-            return realm.objects(Event.self)
+            return realm.objects(Person.self)
         }
         
-        func findPerson(eventName: String) -> Event? {
+        func findPerson(personName: String) -> Person? {
             let realm = try! Realm()
-            let results = realm.objects(Event.self).filter("Event = " + eventName)
+            let results = realm.objects(Person.self).filter("User = " + personName)
             if results.count != 1 {
                 return nil
             } else {
-                // return a 'normal' Dog object, not a Realm Results thingee
-                // call the initializer / constructor on the 1 thing in the Results using map
-                // remember that .map returns an array
-                // so get element 0, the one and only thing in the array
-                // then return that
-                return results.map(Event.init)[0]
+                return results.map(Person.init)[0]
             }
         }
         
-        func deletePerson(theEvent: Event) {
+        func deletePerson(thePerson: Person) {
             objectWillChange.send()
 
             do {
-                // 3
                 let realm = try Realm()
-                let results = realm.objects(Event.self).filter( "id = " + String(theEvent.id) + "  ")
+                let results = realm.objects(Person.self).filter( "id = " + String(thePerson.id) + "  ")
                 
                 if results.count != 1 {
                     return
                 }
 
                 try realm.write {
-                    // 4
                     realm.delete(results[0])
                 }
             } catch let error {
@@ -133,31 +128,15 @@ class DataRepository: ObservableObject {
             }
         }
         
-        func deleteAllPerson() {
-            objectWillChange.send()
-
-            do {
-                let realm = try Realm()
-                try realm.write {
-                    realm.deleteAll()
-                }
-            } catch let error {
-              // Handle error
-              print(error.localizedDescription)
-            }
-        }
-        
-        func updatePerson( id: Int, newPersonName:String, newEventDate:Int) {
-            // 1
+    func updatePerson(id: Int, newUserName: String, newFName: String, newLName: String, newAge: Int, newNum: Int, newEmail: String) {
             objectWillChange.send()
             do {
-              // 2
               let realm = try Realm()
               try realm.write {
                 // 3
                 realm.create(
-                  Event.self,
-                    value: ["id": id, "name": newEventName, "age": newEventDate],
+                  Person.self,
+                    value: ["id": id, "username": newUserName, "fName": newFName, "lName": newLName, "age": newAge, "phNum": newNum, "email": newEmail],
                   update: .modified)
               }
             } catch let error {
