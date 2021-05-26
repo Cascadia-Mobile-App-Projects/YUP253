@@ -1,20 +1,20 @@
 //
-//  loginView.swift
+//  createAccountLoginView.swift
 //  YUP253
 //
-//  Created by Anton Tran on 5/10/21.
+//  Created by Anton Tran on 5/19/21.
 //
 
 import SwiftUI
 
-let storedUsername = "John"
-let storedpassword = "Cena"
 
-struct loginView: View {
-    
+
+struct createAccountLoginView: View {
+    let storedUsername = ""
+    let storedpassword = ""
     @State var username: String = ""
     @State var password: String = ""
-    @State var createAccountPressed: Bool = false
+    @State var backPressed: Bool = false
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSuccess: Bool = false
     var body: some View {
@@ -23,50 +23,31 @@ struct loginView: View {
             Color(red: 0.022, green: 0.24, blue: 0.561)
                 .ignoresSafeArea()
         VStack{
+            newTitleView()
+            newUserImage()
+            UsernameText(username: $username)
             
-            
-            TitleView()
-            UserImage()
-            UsernameTextField(username: $username)
-            
-            passwordTextField(password: $password)
+            passwordText(password: $password)
             if authenticationDidFail{
-                Text("Incorrect. Please try again")
+                Text("Please enter input")
                     .offset(y: -10)
                     .foregroundColor(.red)
                 
             }
             
-            
+            Button(action: {}){
+                createAccountLoginContent()
+            }
             
             Button(action: {
-                if createAccountPressed == false {
-                    self.createAccountPressed = true
+                if backPressed == false {
+                    self.backPressed = true
                     
                     
                     
                 }            }){
-                createLoginContent()
+                backButtonView()
             }
-
-                    
-            
-            
-            
-            Button(action: {
-                if self.username == storedUsername && self.password == storedpassword {
-                    self.authenticationDidSuccess = true
-                    self.authenticationDidFail = false
-                    
-                    
-                } else {
-                    self.authenticationDidFail = true
-                    self.authenticationDidSuccess = false
-                }            }){
-                loginContent()
-            }
-            
-            
             
             
             
@@ -75,19 +56,16 @@ struct loginView: View {
         }
         .padding()
             if authenticationDidSuccess{
-                Text("Login Successful")
+                Text("Account has been Created")
                     .font(.headline)
                     .frame(width: 250, height: 80)
                     .background(Color.green)
                     .cornerRadius(20.0)
                     .animation(Animation.default)
-                ContentView()
-                    .animation(.spring())
-                    .transition(.slide)
+                
             }
-            
-            if createAccountPressed{
-                createAccountLoginView()
+            if backPressed{
+                loginView()
                     .animation(.spring())
                                         .transition(.slide)
             }
@@ -96,29 +74,29 @@ struct loginView: View {
     }
 }
 
-struct loginView_Previews: PreviewProvider {
+struct createAccountLoginView_Previews: PreviewProvider {
     static var previews: some View {
         
         
-            loginView()
+            createAccountLoginView()
             
         
         
     }
 }
 
-struct TitleView: View{
+struct newTitleView: View{
     var body: some View{
-        Text("Hello User!")
+        Text("Create User Account!")
             .font(.largeTitle)
             .fontWeight(.semibold)
             .padding(.bottom, 20)
     }
 }
 
-struct UserImage: View{
+struct newUserImage: View{
     var body: some View{
-        Image("frisbee1")
+        Image(systemName: "person.circle.fill")
             .resizable()
             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
             .frame(width: 150, height: 150)
@@ -128,7 +106,7 @@ struct UserImage: View{
     }
 }
 
-struct createLoginContent: View{
+struct createAccountLoginContent: View{
     var body: some View{
         Text("Create Account")
             .font(.headline)
@@ -140,9 +118,9 @@ struct createLoginContent: View{
     }
 }
 
-struct loginContent: View{
+struct backButtonView: View{
     var body: some View{
-        Text("LOGIN")
+        Text("back")
             .font(.headline)
             .foregroundColor(.white)
             .padding()
@@ -150,11 +128,11 @@ struct loginContent: View{
             .background(Color.black)
             .cornerRadius(35.0)
     }
-    
-    
 }
 
-struct UsernameTextField: View {
+
+
+struct UsernameText: View {
     @Binding var username: String
     var body: some View {
         TextField("Username", text: $username)
@@ -166,7 +144,7 @@ struct UsernameTextField: View {
     }
 }
 
-struct passwordTextField: View {
+struct passwordText: View {
     @Binding var password: String
     var body: some View {
         SecureField("Password", text: $password)
