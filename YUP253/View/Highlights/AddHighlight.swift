@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct AddHighlight: View {
+    
     @State var text: String = ""
     
     
@@ -37,8 +38,11 @@ struct AddHighlight: View {
     }
     
     var body: some View {
+        VStack {
         NavigationView {
+            
             Form {
+                
                 Section(header: Text("New Highlight Info:")) {
                     TextField("Enter Text", text: $text)
                     
@@ -47,14 +51,24 @@ struct AddHighlight: View {
                 {
                     Text("Post")
                 }
+                
             }
+            
+            
             .navigationBarTitle("Add New Highlight")
             
+            
         }
+        //(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+        
+        }
+        
     }
+    
 }
 
 struct AddHighlight_Previews: PreviewProvider {
+    
     static var previews: some View {
         AddHighlight()
     }
