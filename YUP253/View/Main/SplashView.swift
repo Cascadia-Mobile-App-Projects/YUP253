@@ -30,10 +30,10 @@ struct SplashView: View {
                     .scaledToFill()
             }
             .background(
-                Image("yup_splash")
+                Image("Image")
                     .resizable()
                     .scaledToFill()
-                    .padding(-64)
+                    .padding(-66)
             )
             .padding()
             .onAppear {

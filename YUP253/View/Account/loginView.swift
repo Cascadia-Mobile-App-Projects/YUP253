@@ -11,16 +11,16 @@ let storedUsername = "John"
 let storedpassword = "Cena"
 
 struct loginView: View {
-    
+    //state may not be needed
+    @State private var selection: String? = nil
     @State var username: String = ""
     @State var password: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSuccess: Bool = false
     var body: some View {
-        
+        NavigationView {
         ZStack{
-            Color(red: 0.022, green: 0.24, blue: 0.561)
-                .ignoresSafeArea()
+            (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
         VStack{
             TitleView()
             UserImage()
@@ -79,6 +79,7 @@ struct TitleView: View{
     var body: some View{
         Text("Hello User!")
             .font(.largeTitle)
+            .foregroundColor(.white)
             .fontWeight(.semibold)
             .padding(.bottom, 20)
     }
@@ -90,9 +91,11 @@ struct UserImage: View{
             .resizable()
             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
             .frame(width: 150, height: 150)
+            
             .clipped()
             .cornerRadius(150)
             .padding(.bottom, 75)
+        
     }
 }
 
@@ -100,11 +103,12 @@ struct loginContent: View{
     var body: some View{
         Text("LOGIN")
             .font(.headline)
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .padding()
             .frame(width: 220, height: 60)
-            .background(Color.black)
+            .background(Color.gray)
             .cornerRadius(35.0)
+            .navigationBarTitle("LOGIN", displayMode: .inline)
     }
 }
 
@@ -113,7 +117,7 @@ struct UsernameTextField: View {
     var body: some View {
         TextField("Username", text: $username)
             .padding()
-            .background(Color.gray)
+            .background(Color.white)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
     }
@@ -124,8 +128,9 @@ struct passwordTextField: View {
     var body: some View {
         SecureField("Password", text: $password)
             .padding()
-            .background(Color.gray)
+            .background(Color.white)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
     }
+}
 }

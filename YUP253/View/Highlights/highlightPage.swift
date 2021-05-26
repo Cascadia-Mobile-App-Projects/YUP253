@@ -16,7 +16,8 @@ struct highlightPage: View {
         
         ZStack{
             
-            Color(red: 0.022, green: 0.24, blue: 0.561).ignoresSafeArea()
+            (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+
             
             VStack{
                 Image("253")
@@ -32,12 +33,14 @@ struct highlightPage: View {
                     
                     Spacer()
                     
-                    Label("Walter White", systemImage: "person.crop.circle")
+                    Label("Walter White", systemImage:
+                            "person.crop.circle").foregroundColor(.white)
                     Image("frisbee1")
                     .resizable()
                     .frame(width: 256.0, height: 128.0)
                     
                     Label("John Cena", systemImage: "person.crop.circle")
+                        .foregroundColor(.white)
                     Image("frisbee2")
                     .resizable()
                     .frame(width: 256.0, height: 128.0)

@@ -11,7 +11,7 @@ struct About_Us: View {
     var body: some View {
         
         ZStack{
-            Color(red: 0.022, green: 0.24, blue: 0.561).ignoresSafeArea()
+            (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
 
         
         VStack {
@@ -22,11 +22,12 @@ struct About_Us: View {
             
         Text("ABOUT US \n\nThe 253 Youth Ultimate Program\n has a mission to create a youth ultimate program in the Greater Tacoma Area that provides a radically inclusive, empowered, and joyful community. The program is committed to providing a safe place for all youth to participate, empower youth through ultimate, and play ultimate with joy. We plan to host clinics, tournaments, leagues, and more to help bring ultimate to all!")
             .font(.subheadline)
-                             .fontWeight(.bold)
-                             .multilineTextAlignment(.center)
-                             .lineLimit(nil)
-                         .lineSpacing(10)
-                             .padding(.bottom, 35.0)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .multilineTextAlignment(.center)
+            .lineLimit(nil)
+            .lineSpacing(10)
+            .padding(.bottom, 35.0)
             
             
         }
