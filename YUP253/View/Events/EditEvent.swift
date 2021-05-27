@@ -9,8 +9,10 @@ import SwiftUI
 
 struct EditEvent: View {
     
-    @State var EventName: String = ""    
+    @State var EventName: String = ""
     @State private var selectedDate = Date()
+    
+    let format = DateFormatter()
     
     func noop() {}
     //Mock code for Event Into read from DB
@@ -35,13 +37,20 @@ struct EditEvent: View {
         Binding<PresentationMode>
     
     //Need to call update method from DB Object
-    /*func updateEventinDB() {
-        guard Int (self.EventDate) != nil else {
-        print("Date was not a number")
+    func updateEventinDB() {
+        format.timeZone = .current
+        format.dateFormat = "yyyy-MM-dd '' HH:mm"
+        let dateString = format.string(from: selectedDate)
+        
+        print("showFormElts")
+        print("Event: \(EventName)")
+        print("Event Date: \(dateString)")
+        
+        
+        //guard Int (self.EventDate) != nil else {
+        //print("Date was not a number")
         return
-     }
-     
-     showFormElts()*/
+    }
     
     var body: some View {
         NavigationView {
