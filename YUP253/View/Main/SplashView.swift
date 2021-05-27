@@ -40,6 +40,7 @@ struct SplashView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     withAnimation {
                         self.message = "Looking for upcoming events"
+                        AppRepository.login(username: "John", password: "Cena")
                     }
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.00) {
