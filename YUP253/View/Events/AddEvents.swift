@@ -10,31 +10,29 @@ import SwiftUI
 struct AddEvents: View {
     
     @State var EventName: String = ""
-    @State var EventDate: String = ""
+    @State private var selectedDate = Date()
     
     //@EnvironmentObject var theDataRepo: DataRepository
-    
-    func showFormElts() {
-        print("showFormElts")
-        print("Event: \(EventName)")
-        print("Event Date: \(EventDate)")
-    }
+    let format = DateFormatter()
     
     func saveNewEvent() {
-        //Save logic needed
+
         if (self.EventName.isEmpty) {
             print("Event Name Empty")
             return
         }
-        if (self.EventDate.isEmpty) {
-            print("Event Date Empty")
-            return
-        }
+        format.timeZone = .current
+        format.dateFormat = "yyyy-MM-dd '' HH:mm"
+        let dateString = format.string(from: selectedDate)
         
-        
-        //For Debugging, show user input
-        showFormElts()
-        
+        print("showFormElts")
+        print("Event: \(EventName)")
+        print("Event Date: \(dateString)")
+
+        //Logic to save EventName and selectedDate to DB needed
+        //
+        //
+        //
         
         // Return to previous screen
         self.presentationMode.wrappedValue.dismiss()
@@ -48,7 +46,7 @@ struct AddEvents: View {
             Form {
                 Section(header: Text("New Event Info:")) {
                     TextField("Event Name or Location", text: $EventName)
-                    TextField("Event Date", text: $EventDate)
+                    DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
                 Button(action: saveNewEvent)
                 {
