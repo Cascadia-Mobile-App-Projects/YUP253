@@ -29,18 +29,9 @@ struct EventInfoRow: View {
             
             if (currUser == "Admin")
             {
-                Toggle("Event Toggle", isOn: $ToggleUser)
-                
-                if ToggleUser {
-                    NavigationLink(destination: AddEvents()){
-                        Text("Add Event")
-                    }.padding()}
-                
-                
-                if !ToggleUser {
                     NavigationLink(destination: EditEvent()){
-                        Text("Edit Event")
-                    }.padding()}
+                        Text("Edit Event").padding()
+                    }.padding()
             }
             else
             {
@@ -87,20 +78,9 @@ struct EventView: View {
                     .foregroundColor(.white)
             }.padding()
             
-//            Button() {
-//                selection = "AddEvent"
-//            }
-//            label: {
-//                Text("Add Event")
-//                    .padding(15)
-//                    .background(Color.white)
-//
-//            }
-//            .contentShape(Rectangle())
-            
-            List(EventList) { aEvent in
-                EventInfoRow(whichEvent:aEvent)
-            }
+  //          List(EventList) { aEvent in
+     //           EventInfoRow(whichEvent:aEvent)
+    //        }
         }
         .padding(.top, 40)
         .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))

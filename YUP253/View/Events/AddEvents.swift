@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct AddEvents: View {
     
     @State var EventName: String = ""
-    @State private var selectedDate = Date()
+    @State var selectedDate = Date()
+    //@State var testDay: String = "1"
     
-    //@EnvironmentObject var theDataRepo: DataRepository
+    @EnvironmentObject var theDataRepo: DataRepository
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     let format = DateFormatter()
     
     func saveNewEvent() {
@@ -28,17 +33,19 @@ struct AddEvents: View {
         print("showFormElts")
         print("Event: \(EventName)")
         print("Event Date: \(dateString)")
+        //print("Event Date: \(selectedDate)")
 
         //Logic to save EventName and selectedDate to DB needed
         //
+        //theDataRepo.saveEvent(newEventName: self.EventName, newEventDate: Int(self.testDay)!)
         //
-        //
+        theDataRepo.saveEvent(newEventName: self.EventName, newEventDate: self.selectedDate)
         
         // Return to previous screen
         self.presentationMode.wrappedValue.dismiss()
     }
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     
     
     var body: some View {
@@ -59,6 +66,8 @@ struct AddEvents: View {
 }
 
 struct AddEvents_Previews: PreviewProvider {
+    //repo code
+    //placeholder repo
     static var previews: some View {
         AddEvents()
     }
