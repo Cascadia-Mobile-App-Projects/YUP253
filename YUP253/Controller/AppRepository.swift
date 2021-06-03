@@ -76,6 +76,10 @@ class AppRepository {
         if username == "John" && password == "Cena" {
             responseFile = "JohnCenaSuccess"
         }
+        
+        if username == "Bob" && password == "Dylan" {
+            responseFile = "BobDylanSuccess"
+        }
 
         
         if let fileURL = Bundle.main.url(forResource: responseFile, withExtension: "json") {
@@ -90,6 +94,7 @@ class AppRepository {
         } else {
             print("NO DATA")
         }
+     
         
     }
 

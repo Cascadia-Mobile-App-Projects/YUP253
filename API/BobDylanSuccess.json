@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "message": "Login success",
+  "data": {
+    "user": {
+      "id": "A358BCBA-C0DE-0807-1973-00506CD0FFEF",
+      "username": "Bob",
+      "first_name": "Bob",
+      "last_name": "Dylan",
+      "birthdate": "1977-04-23T00:00:00Z",
+      "headline": "Looking for More Info",
+      "about": "Retired musician interested in Ultimate",
+    },
+    "permissions": 7
+    "authtoken": "MoBAS654321"
+  }
+}
