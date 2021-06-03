@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct EventInfo : Identifiable {
     let id = UUID()
@@ -13,6 +14,7 @@ struct EventInfo : Identifiable {
 }
 
 struct EventInfoRow: View {
+    @EnvironmentObject var theDataRepo: DataRepository
     
     //var User = "User"
     var currUser = "Admin"
@@ -23,9 +25,8 @@ struct EventInfoRow: View {
     
     var body: some View {
         HStack {
-            Text("Event Title:\n\(whichEvent.title)");
+            Text("\(whichEvent.title)");
             Spacer()
-            
             
             if (currUser == "Admin")
             {
@@ -55,8 +56,8 @@ struct EventView: View {
     let EventList = [
         EventInfo(title: "Meetup @ Madison Park 4/20/21"),
         EventInfo(title: "Meetup @ Stuart Park 5/1/21"),
-        EventInfo(title: "12+ Division Tournament 6/25/21"),
-        EventInfo(title: "Elite Division Game 6/26/21")
+        //EventInfo(title: "12+ Division Tournament 6/25/21"),
+        //EventInfo(title: "Elite Division Game 6/26/21")
     ]
     
     var body: some View {
@@ -78,9 +79,12 @@ struct EventView: View {
                     .foregroundColor(.white)
             }.padding()
             
-  //          List(EventList) { aEvent in
-     //           EventInfoRow(whichEvent:aEvent)
-    //        }
+            
+          List(EventList) { aEvent in
+                EventInfoRow(whichEvent:aEvent)
+            }
+        
+            
         }
         .padding(.top, 40)
         .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
@@ -93,5 +97,6 @@ struct EventView: View {
 struct EventView_Previews: PreviewProvider {
     static var previews: some View {
         EventView()
+            //.environmentObject(DataRepository(realm: try! Realm()))
     }
 }

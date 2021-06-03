@@ -27,7 +27,7 @@ struct AddEvents: View {
             return
         }
         format.timeZone = .current
-        format.dateFormat = "yyyy-MM-dd '' HH:mm"
+        format.dateFormat = "yyyy-MM-dd '' h:mm a"
         let dateString = format.string(from: selectedDate)
         
         print("showFormElts")
