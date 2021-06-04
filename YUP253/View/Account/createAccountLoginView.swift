@@ -6,152 +6,65 @@
 //
 
 import SwiftUI
-
+import RealmSwift
 
 
 struct createAccountLoginView: View {
-    let storedUsername = ""
-    let storedpassword = ""
+    
+    @EnvironmentObject var theDataRepo: DataRepository
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State var username: String = ""
     @State var password: String = ""
-    @State var backPressed: Bool = false
-    @State var authenticationDidFail: Bool = false
-    @State var authenticationDidSuccess: Bool = false
+    @State var email: String = ""
+    @State var fName: String = ""
+    @State var lName: String = ""
+    @State var age: String = ""
+    @State var phNum: String = ""
+     
+    
     var body: some View {
         
-        ZStack{
-            Color(red: 0.022, green: 0.24, blue: 0.561)
-                .ignoresSafeArea()
-        VStack{
-            newTitleView()
-            newUserImage()
-            UsernameText(username: $username)
-            
-            passwordText(password: $password)
-            if authenticationDidFail{
-                Text("Please enter input")
-                    .offset(y: -10)
-                    .foregroundColor(.red)
+        NavigationView{
+            VStack{
+                Form {
+                    Section(header: Text("Create A New Profile")){
+                    TextField("Username", text: $username)
+                        .padding()
+                    SecureField("Password", text: $password)
+                        .padding()
+                    TextField("First Name", text: $fName)
+                        .padding()
+                    TextField("Last Name", text: $lName)
+                        .padding()
+                    TextField("Age", text: $age)
+                        .keyboardType(.decimalPad)
+                        .padding()
+                    TextField("Phone Number", text: $phNum)
+                        .keyboardType(.decimalPad)
+                        .padding()
+                    TextField("Email", text: $email)
+                        .padding()
+                    }
+                }
+                    Button(
+                            action: {
+                            theDataRepo.savePerson(pUserName: username, pFName: fName, pPassword: password, pLName: lName, pAge: age, pNum: phNum, pEmail: email)
+                        }, label: {
+                            Text("SAVE PROFILE")
+                        })
                 
             }
-            
-            Button(action: {}){
-                createAccountLoginContent()
-            }
-            
-            Button(action: {
-                if backPressed == false {
-                    self.backPressed = true
-                    
-                    
-                    
-                }            }){
-                backButtonView()
-            }
-            
-            
-            
-        
-            
+            .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: .leading, endPoint: .trailing))
+                    .edgesIgnoringSafeArea(.all)
+                    .navigationTitle("PROFILE CREATION")
         }
-        .padding()
-            if authenticationDidSuccess{
-                Text("Account has been Created")
-                    .font(.headline)
-                    .frame(width: 250, height: 80)
-                    .background(Color.green)
-                    .cornerRadius(20.0)
-                    .animation(Animation.default)
-                
-            }
-            if backPressed{
-                loginView()
-                    .animation(.spring())
-                                        .transition(.slide)
-            }
         
-        }
     }
 }
 
 struct createAccountLoginView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        
             createAccountLoginView()
-            
-        
-        
-    }
-}
-
-struct newTitleView: View{
-    var body: some View{
-        Text("Create User Account!")
-            .font(.largeTitle)
-            .fontWeight(.semibold)
-            .padding(.bottom, 20)
-    }
-}
-
-struct newUserImage: View{
-    var body: some View{
-        Image(systemName: "person.circle.fill")
-            .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-            .frame(width: 150, height: 150)
-            .clipped()
-            .cornerRadius(150)
-            .padding(.bottom, 75)
-    }
-}
-
-struct createAccountLoginContent: View{
-    var body: some View{
-        Text("Create Account")
-            .font(.headline)
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 220, height: 50)
-            .background(Color.black)
-            .cornerRadius(35.0)
-    }
-}
-
-struct backButtonView: View{
-    var body: some View{
-        Text("back")
-            .font(.headline)
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 220, height: 50)
-            .background(Color.black)
-            .cornerRadius(35.0)
-    }
-}
-
-
-
-struct UsernameText: View {
-    @Binding var username: String
-    var body: some View {
-        TextField("Username", text: $username)
-            .padding()
-            .background(Color.gray)
-            .cornerRadius(5.0)
-            .padding(.bottom, 10)
-            
-    }
-}
-
-struct passwordText: View {
-    @Binding var password: String
-    var body: some View {
-        SecureField("Password", text: $password)
-            .padding()
-            .background(Color.gray)
-            .cornerRadius(5.0)
-            .padding(.bottom, 10)
-        
     }
 }

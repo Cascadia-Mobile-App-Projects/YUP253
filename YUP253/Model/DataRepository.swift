@@ -81,13 +81,13 @@ class DataRepository: ObservableObject {
     //Functions for Person data models
     //--------------------------------
     
-    func savePerson(pUserName: String, pFName: String, pLName: String, pAge: Int, pNum: Int, pEmail: String) {
+    func savePerson(pUserName: String, pFName: String, pPassword: String, pLName: String, pAge: String, pNum: String, pEmail: String) {
             objectWillChange.send()
             let realm = try! Realm()
 
             try! realm.write {
-                let newPerson = Person(id: UUID().hashValue, username: pUserName, fName: pFName, lName: pLName, age: pAge, phNum: pNum, email: pEmail)
-                realm.add(newPerson)
+                let newPerson = Person(id: UUID().hashValue, username: pUserName, password: pPassword, fName: pFName, lName: pLName, age: pAge, phNum: pNum, email: pEmail)
+                realm.add(newPerson, update: .modified)
             }
         }
         
@@ -126,7 +126,7 @@ class DataRepository: ObservableObject {
             }
         }
         
-    func updatePerson(id: Int, newUserName: String, newFName: String, newLName: String, newAge: Int, newNum: Int, newEmail: String) {
+    func updatePerson(id: Int, newUserName: String, newPassword: String, newFName: String, newLName: String, newAge: String, newNum: String, newEmail: String) {
             objectWillChange.send()
             do {
               let realm = try Realm()
