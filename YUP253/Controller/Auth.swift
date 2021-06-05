@@ -11,7 +11,7 @@ import Foundation
 
 
 // OptionSet for
-struct Auth: OptionSet, SetAlgebra, RawRepresentable {
+struct Auth: OptionSet, Codable {
 
     let rawValue: Int
     static let None =               Auth([])
@@ -23,3 +23,29 @@ struct Auth: OptionSet, SetAlgebra, RawRepresentable {
     static let ParentalAuthority =  Auth(rawValue: 1 << 6) // = 32
     
 }
+
+extension Auth {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let optionName = try container.decode(String.self)
+        guard let auth = Auth.mapping[optionName] else {
+            let context = DecodingError.Context(
+                codingPath: decoder.codingPath,
+                debugDescription: "Authentication type not recognized: \(optionName)")
+            throw DecodingError.valueNotFound(String.self, context)
+        }
+        self = auth
+    }
+
+    private static let mapping: [String : Auth] = [
+        "None" : .None,
+        "ViewEvents" : .ViewEvents,
+        "ViewHighlights" : .ViewHighlights,
+        "ViewFeed" : .ViewFeed,
+        "ModifyEvents" : .ModifyEvents,
+        "ModifyHighlights" : .ModifyHighlights,
+        "ParentalAuthority" : .ParentalAuthority,
+    ]
+
+}
+
