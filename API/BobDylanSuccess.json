@@ -1,17 +1,16 @@
 {
-  "success": true,
-  "message": "Login success",
-  "data": {
-    "user": {
-      "id": "A358BCBA-C0DE-0807-1973-00506CD0FFEF",
-      "username": "Bob",
-      "first_name": "Bob",
-      "last_name": "Dylan",
-      "birthdate": "1977-04-23T00:00:00Z",
-      "headline": "Looking for More Info",
-      "about": "Retired musician interested in Ultimate",
-    },
-    "permissions": 7
-    "authtoken": "MoBAS654321"
+  "success" : true,
+  "message" : "success",
+  "data" : {
+    "token" : "MoBAS654321",
+    "permissions" : [ 2, 4, 8 ],
+    "user" : {
+      "user_id" : "A358BCBA-C0DE-0807-1973-00506CD0FFEF",
+      "first_name" : "Bob",
+      "last_name" : "Dylan",
+      "headline" : "Looking for More Info",
+      "about" : "Retired musician interested in Ultimate",
+      "birthdate" : "1941-05-24T00:00:00Z"
+    }
   }
 }
