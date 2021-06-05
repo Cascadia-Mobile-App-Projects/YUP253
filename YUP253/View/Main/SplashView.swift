@@ -37,10 +37,10 @@ struct SplashView: View {
             )
             .padding()
             .onAppear {
+                LoginController.login(username: "Bob", password: "Dylan")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     withAnimation {
                         self.message = "Looking for upcoming events"
-                        AppRepository.login(username: "Bob", password: "Dylan")
                     }
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.00) {
