@@ -87,7 +87,7 @@ class DataRepository: ObservableObject {
 
             try! realm.write {
                 let newPerson = Person(id: UUID().hashValue, username: pUserName, password: pPassword, fName: pFName, lName: pLName, age: pAge, phNum: pNum, email: pEmail)
-                realm.add(newPerson, update: .modified)
+                realm.add(newPerson)
             }
         }
         

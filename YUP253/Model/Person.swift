@@ -11,7 +11,7 @@ import RealmSwift
 class Person: Object {
     @objc dynamic var id = 0
     @objc dynamic var username = ""
-    @objc dynamic var pasword = ""
+    @objc dynamic var password = ""
     @objc dynamic var fName = ""
     @objc dynamic var lName = ""
     @objc dynamic var age = ""
@@ -23,6 +23,7 @@ class Person: Object {
         self.init()
         self.id = id
         self.username = ""
+        self.password = ""
         self.fName = ""
         self.lName = ""
         self.age = ""

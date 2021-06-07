@@ -6,11 +6,23 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 let storedUsername = "John"
 let storedpassword = "Cena"
 
+
+
+
 struct loginView: View {
+    
+    let realmObj: Realm
+    init() {
+        do { realmObj = try Realm()}
+        catch let error {
+            fatalError("Failed to open Realm. Error:\(error.localizedDescription)")
+        }
+    }
     
     @State var username: String = ""
     @State var password: String = ""
@@ -23,7 +35,6 @@ struct loginView: View {
             (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
         VStack{
             
-            
             TitleView()
             UserImage()
             UsernameTextField(username: $username)
@@ -35,22 +46,13 @@ struct loginView: View {
                     .foregroundColor(.red)
                 
             }
-            
-            
-            
+
             Button(action: {
                 if createAccountPressed == false {
                     self.createAccountPressed = true
-                    
-                    
-                    
                 }            }){
                 createLoginContent()
             }
-
-                    
-            
-            
             
             Button(action: {
                 if self.username == storedUsername && self.password == storedpassword {
@@ -64,13 +66,6 @@ struct loginView: View {
                 }            }){
                 loginContent()
             }
-            
-            
-            
-            
-            
-        
-            
         }
         .padding()
             if authenticationDidSuccess{
@@ -86,23 +81,19 @@ struct loginView: View {
             }
             
             if createAccountPressed{
-                createAccountLoginView()
+                CreateAccountLoginView()
                     .animation(.spring())
                                         .transition(.slide)
             }
         
         }
+        .environmentObject(DataRepository(realm: realmObj))
     }
 }
 
 struct loginView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        
             loginView()
-            
-        
-        
     }
 }
 
