@@ -7,10 +7,17 @@
 
 
 import SwiftUI
+import RealmSwift
 
 struct AddHighlight: View {
     
     @State var text: String = ""
+    @State var showingImagePicker = false
+    @State var inputImage: UIImage?
+    @State var image: Image?
+    
+    
+    
     
     
 
@@ -19,8 +26,11 @@ struct AddHighlight: View {
     func showForm() {
         print("showForm")
         print("\(text)")
+        print("\(String(describing: inputImage))")
+        
         
     }
+    
     
     // To dismiss the screen:
     // https://stackoverflow.com/a/57279591/250610
@@ -31,41 +41,85 @@ struct AddHighlight: View {
         
         showForm()
         
-        theDataRepo.saveHighlight(newText: self.text)
+        theDataRepo.saveHighlight(newText: self.text, newImg: self.inputImage)
         
         // return to previous screen:
         self.presentationMode.wrappedValue.dismiss()
     }
     
     var body: some View {
-        VStack {
-        NavigationView {
-            
-            Form {
+        
+        NavigationView{
+            VStack{
                 
-                Section(header: Text("New Highlight Info:")) {
-                    TextField("Enter Text", text: $text)
+                Form {
+                    
+                    Section(header: Text("New Highlight Info:")) {
+                        TextField("Enter Text", text: $text)
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(Color.white)
+                            
+                            if image != nil {
+                                
+                                image?
+                                    .resizable()
+                                    .scaledToFit()
+                            } else {
+                                Text("Tap to select a picture")
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                                    .font(.headline)
+                            }
+                        }
+                        .onTapGesture {
+                            self.showingImagePicker = true
+                        }
+                        
+                        
+                        
+                        
+                        
+                    }
+                    
+                    
+                    
+                    Button(action: saveHighlightToDB)
+                    {
+                        Text("Post")
+                    }
                     
                 }
-                Button(action: saveHighlightToDB)
-                {
-                    Text("Post")
-                }
+                
+                
                 
             }
             
-            
-            .navigationBarTitle("Add New Highlight")
-            
-            
+            .padding([.horizontal, .bottom])
+            .navigationBarTitle("Select Image")
+            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                 ImagePicker(image: self.$inputImage)
+            }
         }
-        //(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
         
-        }
+        
+        
+    }
+    func loadImage() {
+        guard let inputImage = inputImage else {
+            return }
+        image = Image(uiImage: inputImage)
+        
+        
         
     }
     
+    
+
 }
+
+
+
 
 struct AddHighlight_Previews: PreviewProvider {
     
