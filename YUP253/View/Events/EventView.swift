@@ -79,7 +79,7 @@ struct EventView: View {
                 
                 NavigationLink(destination: AddEvents()){
                     Text("Add New Event")
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 }.padding()
             }
             
@@ -89,9 +89,10 @@ struct EventView: View {
                         aEvent in ListEventRow(theEvent: aEvent)
                 }
             }
+            .background(Color.white)
         }
         .padding(.top, 40)
-        //.background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+        .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
     }
     }
 }
