@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditEvent: View {
-    
+    @State private var showAlert = false
     @State var EventName: String = ""
     @State var selectedDate = Date()
     
@@ -54,10 +54,6 @@ struct EditEvent: View {
         self.presentationMode.wrappedValue.dismiss()
     }
     
-    func deleteEventfromDB() {
-        theDataRepo.deleteEvent(theEvent: original)
-    }
-    
     var body: some View {
         NavigationView {
             Form {
@@ -66,17 +62,20 @@ struct EditEvent: View {
                     TextField("Name: ", text: $EventName)
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
+                
+                //Button("Show alert"){
+                  //  showAlert = true
+                //}.alert(isPresented: $showAlert) {
+                  //  Alert(title: Text("Event Updated"))
+                //}
+                
                 Button(action: updateEventinDB)
                 {
-                    Text("Update Event")
+                    (Text("Update Event"))
                 }
                 Spacer()
-                Button(action: noop)
-                {
-                    Text("Delete this Event")
-                }
             }
-            .navigationBarTitle("Update/Delete Event")
+            .navigationBarTitle("Update Event Info")
         }
 
     }
