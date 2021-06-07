@@ -9,13 +9,13 @@ import Foundation
 import RealmSwift
 
 class DataRepository: ObservableObject {
+    
     init(realm: Realm) {
     }
     
-    func saveEvent(newEventName: String, newEventDate: Int) {
+    func saveEvent(newEventName: String, newEventDate: Date) {
         objectWillChange.send()
         let realm = try! Realm()
-
         try! realm.write {
             let newEvent = Event(id: UUID().hashValue, name: newEventName, date: newEventDate)
             realm.add(newEvent)
@@ -61,7 +61,7 @@ class DataRepository: ObservableObject {
         }
     }
     
-    func updateEvent( id: Int, newEventName:String, newEventDate:Int) {
+    func updateEvent( id: Int, newEventName:String, newEventDate:Date) {
         objectWillChange.send()
         do {
           let realm = try Realm()

@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct AddEvents: View {
     
     @State var EventName: String = ""
-    @State private var selectedDate = Date()
+    @State var selectedDate = Date()
+    @State var showAlert = false
     
-    //@EnvironmentObject var theDataRepo: DataRepository
+    @EnvironmentObject var theDataRepo: DataRepository
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     let format = DateFormatter()
     
     func saveNewEvent() {
@@ -22,23 +27,22 @@ struct AddEvents: View {
             return
         }
         format.timeZone = .current
-        format.dateFormat = "yyyy-MM-dd '' HH:mm"
+        format.dateFormat = "yyyy-MM-dd '' h:mm a"
         let dateString = format.string(from: selectedDate)
         
         print("showFormElts")
         print("Event: \(EventName)")
         print("Event Date: \(dateString)")
 
-        //Logic to save EventName and selectedDate to DB needed
+        //Logic to save EventName and selectedDate to DB
         //
-        //
-        //
+        theDataRepo.saveEvent(newEventName: self.EventName, newEventDate: self.selectedDate)
         
         // Return to previous screen
         self.presentationMode.wrappedValue.dismiss()
     }
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     
     
     var body: some View {
@@ -48,9 +52,15 @@ struct AddEvents: View {
                     TextField("Event Name or Location", text: $EventName)
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
-                Button(action: saveNewEvent)
-                {
-                    Text("Click to Add Event")
+                
+                Button("Add Event"){
+                    showAlert = true
+                }.alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Add New Event?"),
+                        primaryButton: .default(Text("Yes"), action: saveNewEvent),
+                        secondaryButton: .cancel()
+                        )
                 }
             }
             .navigationBarTitle("Add New Event Form")
@@ -59,6 +69,8 @@ struct AddEvents: View {
 }
 
 struct AddEvents_Previews: PreviewProvider {
+    //repo code
+    //placeholder repo
     static var previews: some View {
         AddEvents()
     }
