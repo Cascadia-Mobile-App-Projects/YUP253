@@ -149,12 +149,12 @@ class DataRepository: ObservableObject {
     //--------------------------------
 
     
-    func saveHighlight(newText: String, newImg: UIImage!) {
+    func saveHighlight(newText: String, newImg: UIImage?) {
         objectWillChange.send()
         let realm = try! Realm()
 
         try! realm.write {
-            let theHighlight = Highlight(id: UUID().hashValue, text: newText, img: newImg)
+            let theHighlight = Highlight(id: UUID().hashValue, text: newText, image: newImg)
             realm.add(theHighlight)
         }
     }
@@ -209,14 +209,14 @@ class DataRepository: ObservableObject {
         }
     }
     
-    func updateHighlight( id: Int, newText:String, newImg: Image?) {
+    func updateHighlight( id: Int, newText:String, newImg: UIImage?) {
         objectWillChange.send()
         do {
           let realm = try Realm()
           try realm.write {
             realm.create(
               Highlight.self,
-                value: ["id": id, "text": newText, "image": newImg!],
+                value: ["id": id, "text": newText, "inputImg": newImg!],
               update: .modified)
           }
         } catch let error {

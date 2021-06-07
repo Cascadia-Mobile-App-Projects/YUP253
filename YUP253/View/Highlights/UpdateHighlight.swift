@@ -23,7 +23,7 @@ struct UpdateHighlight: View {
         self.init()
         original = OD
         text = OD.text
-        inputImage = OD.img
+        inputImage = OD.image
     }
 
     @EnvironmentObject var theDataRepo: DataRepository
@@ -44,7 +44,7 @@ struct UpdateHighlight: View {
         
         showForm()
         
-        theDataRepo.updateHighlight(id: self.original.id, newText: self.text, newImg: self.image)
+        theDataRepo.updateHighlight(id: self.original.id, newText: self.text, newImg: self.inputImage)
         
         // return to previous screen:
         self.presentationMode.wrappedValue.dismiss()

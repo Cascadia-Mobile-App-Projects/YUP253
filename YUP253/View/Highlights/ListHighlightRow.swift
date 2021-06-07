@@ -60,7 +60,7 @@ struct ListHighlightRow: View {
                         }
                         
                         
-                        Image("\(thisHighlight.img)")
+                        Image("frisbee1")
                             .resizable()
                             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                             .frame(width: 150, height: 150)

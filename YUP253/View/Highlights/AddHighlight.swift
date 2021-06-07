@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+import RealmSwift
 
 struct AddHighlight: View {
     
@@ -14,6 +15,7 @@ struct AddHighlight: View {
     @State var showingImagePicker = false
     @State var inputImage: UIImage?
     @State var image: Image?
+    
     
     
     
@@ -29,6 +31,7 @@ struct AddHighlight: View {
         
     }
     
+    
     // To dismiss the screen:
     // https://stackoverflow.com/a/57279591/250610
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -38,7 +41,7 @@ struct AddHighlight: View {
         
         showForm()
         
-        theDataRepo.saveHighlight(newText: self.text, newImg: self.inputImage!)
+        theDataRepo.saveHighlight(newText: self.text, newImg: self.inputImage)
         
         // return to previous screen:
         self.presentationMode.wrappedValue.dismiss()
@@ -59,6 +62,7 @@ struct AddHighlight: View {
                                 .fill(Color.white)
                             
                             if image != nil {
+                                
                                 image?
                                     .resizable()
                                     .scaledToFit()
@@ -94,7 +98,7 @@ struct AddHighlight: View {
             .padding([.horizontal, .bottom])
             .navigationBarTitle("Select Image")
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                ImagePicker(image: self.$inputImage)
+                 ImagePicker(image: self.$inputImage)
             }
         }
         
