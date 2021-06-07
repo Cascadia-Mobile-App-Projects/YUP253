@@ -34,7 +34,7 @@ struct AddEvents: View {
         print("Event: \(EventName)")
         print("Event Date: \(dateString)")
 
-        //Logic to save EventName and selectedDate to DB needed
+        //Logic to save EventName and selectedDate to DB
         //
         theDataRepo.saveEvent(newEventName: self.EventName, newEventDate: self.selectedDate)
         

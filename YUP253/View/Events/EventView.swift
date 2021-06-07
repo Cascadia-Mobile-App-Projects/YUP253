@@ -13,7 +13,7 @@ struct EventInfo : Identifiable {
     let title: String
 }
 
-struct EventInfoRow: View {
+/*struct EventInfoRow: View {
     @EnvironmentObject var theDataRepo: DataRepository
     private let thisEvent:Event
     
@@ -35,7 +35,7 @@ struct EventInfoRow: View {
             Text("Name: \(thisEvent.eventDate)")
             Spacer()
             
-            if (currUser == "Admin")
+            if (currUser != "Admin")
             {
                     NavigationLink(destination: EditEvent()){
                         Text("Edit Event").padding()
@@ -55,26 +55,18 @@ struct EventInfoRow: View {
             
             }
         }
-    }
+    }*/
 
 struct EventView: View {
     @State private var selection: String? = nil
     
     @EnvironmentObject var theDataRepo: DataRepository
     
-    let EventList = [
-
-        EventInfo(title: "Meetup @ Madison Park 4/20/21"),
-        EventInfo(title: "Meetup @ Stuart Park 5/1/21")
-        //EventInfo(title: "12+ Division Tournament 6/25/21"),
-        //EventInfo(title: "Elite Division Game 6/26/21")
-    ]
-    
     var body: some View {
         NavigationView{
         VStack {
 
-            
+            let currUser = "Admin"
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
             Text("Ultimate Events:").font(.title).foregroundColor(.white)
             
@@ -83,16 +75,13 @@ struct EventView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
                     .navigationBarTitle("EVENTS", displayMode: .inline)
-            
-            NavigationLink(destination: AddEvents()){
-                Text("Add New Event")
-                    .foregroundColor(.black)
-            }.padding()
-            
-            
-    //      List(EventList) { aEvent in
-      //      EventInfoRow(theEvent:aEvent)
-        //    }
+            if (currUser == "Admin") {
+                
+                NavigationLink(destination: AddEvents()){
+                    Text("Add New Event")
+                        .foregroundColor(.black)
+                }.padding()
+            }
             
             ScrollView(.vertical) {
                 ForEach(self.theDataRepo.loadEvents().map(Event.init),
@@ -100,13 +89,9 @@ struct EventView: View {
                         aEvent in ListEventRow(theEvent: aEvent)
                 }
             }
-            
-        
-            
         }
         .padding(.top, 40)
         //.background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
-
     }
     }
 }

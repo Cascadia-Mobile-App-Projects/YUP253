@@ -19,15 +19,31 @@ struct ListEventRow: View {
     
     @EnvironmentObject var theDataRepo: DataRepository
     
+    func deleteEvent(){
+        theDataRepo.deleteEvent(theEvent: thisEvent)
+    }
     var body: some View {
+        let currUser = "Admin"
+        
         HStack{
             VStack(alignment: .leading) {
                 Text("Event Name: \(thisEvent.eventName)")
                 Text("Date: \(thisEvent.eventDate)")
             }
             Spacer()
-            Button(action:noop){
-                Text("Edit")
+            
+            if (currUser == "Admin") {
+            NavigationLink(destination: EditEvent()){
+                Text("Edit Event").padding()
+            }.padding()
+                Button(action:deleteEvent) {
+                    Text("Remove Event")
+                }
+            }
+            else {
+                NavigationLink(destination: loginView()){
+                    Text("RSVP").padding()
+                }.padding()
             }
         }
         .padding()
@@ -37,7 +53,7 @@ struct ListEventRow: View {
 
 struct ListEventRow_Previews: PreviewProvider {
     static var previews: some View {
-        let demoEvent = Event(id: UUID().hashValue, name: "E1", date: Date())
+        let demoEvent = Event(id: UUID().hashValue, name: "DemoEvent", date: Date())
         ListEventRow(theEvent: demoEvent)
     }
 }

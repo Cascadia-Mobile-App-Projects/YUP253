@@ -61,7 +61,7 @@ class DataRepository: ObservableObject {
         }
     }
     
-    func updateEvent( id: Int, newEventName:String, newEventDate:Int) {
+    func updateEvent( id: Int, newEventName:String, newEventDate:Date) {
         objectWillChange.send()
         do {
           let realm = try Realm()

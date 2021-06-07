@@ -10,57 +10,63 @@ import SwiftUI
 struct EditEvent: View {
     
     @State var EventName: String = ""
-    @State private var selectedDate = Date()
+    @State var selectedDate = Date()
+    
+    private var original: Event = Event()
+    
+    init () {}
+    
+    init(originalEvent OE: Event) {
+        self.init()
+        original = OE
+        EventName = OE.eventName
+        selectedDate = OE.eventDate
+    }
+    
+    @EnvironmentObject var theDataRepo: DataRepository
     
     let format = DateFormatter()
     
     func noop() {}
-    //Mock code for Event Into read from DB
-    /*private var original: Event = Event()
-    
-    init () {}
-    
-    init(originalEvent origEvent: Event) {
-        self.init()
-        original = origEvent
-        EventName = origEvent.name
-        EventDate = origEvent.date
-    }*/
- 
-    func showFormElts() {
-        print("showFormElts")
-        print("Updated Event Name: \(EventName)")
-        print("Updated Event Date: \(selectedDate)")
-    }
-    
+
     @Environment(\.presentationMode) var presentationMode:
         Binding<PresentationMode>
     
     //Need to call update method from DB Object
     func updateEventinDB() {
+        
+        guard !(self.EventName.isEmpty) else {
+            print("Event Name Empty")
+            return
+        }
+        
         format.timeZone = .current
-        format.dateFormat = "yyyy-MM-dd '' HH:mm"
+        format.dateFormat = "yyyy-MM-dd '' h:mm a"
         let dateString = format.string(from: selectedDate)
         
-        print("showFormElts")
+        print("OE name: \(original.eventName)")
+        print("showUpdateEventInfo")
         print("Event: \(EventName)")
         print("Event Date: \(dateString)")
         
+        theDataRepo.updateEvent(id: self.original.id, newEventName: self.EventName, newEventDate: self.selectedDate)
         
-        //guard Int (self.EventDate) != nil else {
-        //print("Date was not a number")
-        return
+        self.presentationMode.wrappedValue.dismiss()
+    }
+    
+    func deleteEventfromDB() {
+        theDataRepo.deleteEvent(theEvent: original)
     }
     
     var body: some View {
         NavigationView {
             Form {
                 //Need to add calls to get Original Event info and display
-                Section(header: Text("New Info")) {
-                    TextField("Name:", text:self.$EventName)
+                Section(header: Text(self.original.eventName + "'s New Info:")) {
+                    TextField("Name: ", text: $EventName)
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
-                Button(action: noop)
+                Button(action: updateEventinDB)
                 {
                     Text("Update Event")
                 }
