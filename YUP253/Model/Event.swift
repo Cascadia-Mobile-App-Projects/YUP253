@@ -11,9 +11,9 @@ import RealmSwift
 class Event: Object {
     @objc dynamic var id = 0
     @objc dynamic var eventName = ""
-    @objc dynamic var eventDate = 0
+    @objc dynamic var eventDate = Date()
     
-    convenience init(id: Int, name: String, date:Int) {
+    convenience init(id: Int, name: String, date:Date) {
         self.init()
         self.id = id
         self.eventName = name

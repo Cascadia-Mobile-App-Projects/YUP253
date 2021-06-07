@@ -42,15 +42,32 @@ struct ListHighlightRow: View {
             
             VStack(alignment: .leading) {
                 
-                HStack{
-                    
-                    Image("profile")
-                        .resizable()
-                        .frame(width: 32.0, height: 32.0)
+                
                     
                     
-                    Text("John Cena:")
-                    Text("\(thisHighlight.text)")
+                    
+                    
+                    
+                    
+                    VStack{
+                        HStack{
+                            Image("profile")
+                                .resizable()
+                                .frame(width: 32.0, height: 32.0)
+                            
+                            Text("John Cena:")
+                            Text("\(thisHighlight.text)")
+                        }
+                        
+                        
+                        Image("frisbee1")
+                            .resizable()
+                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                            .frame(width: 150, height: 150)
+                    }
+                    
+                        
+                    
                     
 
                     
@@ -58,7 +75,7 @@ struct ListHighlightRow: View {
                     
                     
                     
-                }
+                
                 
                 
                 
@@ -89,12 +106,12 @@ struct ListHighlightRow: View {
     }
 }
 
-struct ListHighlightRow_Previews: PreviewProvider {
-    
-
-    static var previews: some View {
-        let demoHighlight = Highlight(id: UUID().hashValue, text: "Fred")
-        
-        ListHighlightRow(theHighlight: demoHighlight, mode: .Update)
-    }
-}
+//struct ListHighlightRow_Previews: PreviewProvider {
+//
+//
+//    static var previews: some View {
+//        let demoHighlight = Highlight(id: UUID().hashValue, text: "Fred", img:)
+//
+//        ListHighlightRow(theHighlight: demoHighlight, mode: .Update)
+//    }
+//}
