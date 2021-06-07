@@ -31,6 +31,7 @@
 		55E0A018265F040C00583492 /* ListAllHighlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A017265F040C00583492 /* ListAllHighlights.swift */; };
 		55E0A01A265F044000583492 /* ListHighlightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A019265F044000583492 /* ListHighlightRow.swift */; };
 		55E0A01C265F045700583492 /* HighlightListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A01B265F045700583492 /* HighlightListMode.swift */; };
+		55E0A01E2668226C00583492 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A01D2668226C00583492 /* ImagePicker.swift */; };
 		55F889842655B9390032831A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F889832655B9390032831A /* HomeView.swift */; };
 		DC2CE722265E4CA4002AEA57 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2CE721265E4CA4002AEA57 /* Auth.swift */; };
 		DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC91F8E72637616B001C88BB /* AppSettings.swift */; };
@@ -88,6 +89,7 @@
 		55E0A017265F040C00583492 /* ListAllHighlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllHighlights.swift; sourceTree = "<group>"; };
 		55E0A019265F044000583492 /* ListHighlightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHighlightRow.swift; sourceTree = "<group>"; };
 		55E0A01B265F045700583492 /* HighlightListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightListMode.swift; sourceTree = "<group>"; };
+		55E0A01D2668226C00583492 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		55F889832655B9390032831A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DC2CE721265E4CA4002AEA57 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		DC91F8E72637616B001C88BB /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				55E0A017265F040C00583492 /* ListAllHighlights.swift */,
 				55E0A019265F044000583492 /* ListHighlightRow.swift */,
 				55E0A01B265F045700583492 /* HighlightListMode.swift */,
+				55E0A01D2668226C00583492 /* ImagePicker.swift */,
 			);
 			path = Highlights;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				55E0A01A265F044000583492 /* ListHighlightRow.swift in Sources */,
 				55E0A016265F03EE00583492 /* UpdateHighlight.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
+				55E0A01E2668226C00583492 /* ImagePicker.swift in Sources */,
 				E99C0C812649EC0600EF7CDC /* Core_Val.swift in Sources */,
 				3F253C48265EFA1200395521 /* Event.swift in Sources */,
 				E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */,

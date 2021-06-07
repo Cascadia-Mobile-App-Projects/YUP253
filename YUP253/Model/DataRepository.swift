@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import SwiftUI
 
 class DataRepository: ObservableObject {
     init(realm: Realm) {
@@ -148,12 +149,12 @@ class DataRepository: ObservableObject {
     //--------------------------------
 
     
-    func saveHighlight(newText: String) {
+    func saveHighlight(newText: String, newImg: UIImage!) {
         objectWillChange.send()
         let realm = try! Realm()
 
         try! realm.write {
-            let theHighlight = Highlight(id: UUID().hashValue, text: newText)
+            let theHighlight = Highlight(id: UUID().hashValue, text: newText, img: newImg)
             realm.add(theHighlight)
         }
     }
@@ -208,14 +209,14 @@ class DataRepository: ObservableObject {
         }
     }
     
-    func updateHighlight( id: Int, newText:String) {
+    func updateHighlight( id: Int, newText:String, newImg: Image?) {
         objectWillChange.send()
         do {
           let realm = try Realm()
           try realm.write {
             realm.create(
               Highlight.self,
-                value: ["id": id, "text": newText],
+                value: ["id": id, "text": newText, "image": newImg!],
               update: .modified)
           }
         } catch let error {

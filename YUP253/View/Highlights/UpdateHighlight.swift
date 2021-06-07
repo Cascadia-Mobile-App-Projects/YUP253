@@ -12,8 +12,9 @@ struct UpdateHighlight: View {
         
     
     @State var text: String = ""
-    
-    
+    @State var showingImagePicker = false
+    @State var inputImage: UIImage?
+    @State var image: Image?
     private var original: Highlight = Highlight()
     
     init() { }
@@ -22,6 +23,7 @@ struct UpdateHighlight: View {
         self.init()
         original = OD
         text = OD.text
+        inputImage = OD.img
     }
 
     @EnvironmentObject var theDataRepo: DataRepository
@@ -29,6 +31,7 @@ struct UpdateHighlight: View {
     func showForm() {
         print("showForm")
         print("text: \(text)")
+        
         
     }
     
@@ -41,7 +44,7 @@ struct UpdateHighlight: View {
         
         showForm()
         
-        theDataRepo.updateHighlight(id: self.original.id, newText: self.text)
+        theDataRepo.updateHighlight(id: self.original.id, newText: self.text, newImg: self.image)
         
         // return to previous screen:
         self.presentationMode.wrappedValue.dismiss()
@@ -52,6 +55,23 @@ struct UpdateHighlight: View {
             Form {
                 Section(header: Text("Edit Text:")) {
                     TextField("\(self.original.text)", text: self.$text)
+                    ZStack{
+                        Rectangle()
+                            .fill(Color.white)
+                        
+                        if image != nil {
+                            image?
+                                .resizable()
+                                .scaledToFit()
+                        } else {
+                            Text("Tap to select a picture")
+                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                                .font(.headline)
+                        }
+                    }
+                    .onTapGesture {
+                        self.showingImagePicker = true
+                    }
                     
                 }
                 Button(action: updateHighlightInDB)
@@ -62,14 +82,29 @@ struct UpdateHighlight: View {
             .navigationBarTitle("Edit Post")
             
         }
+        .padding([.horizontal, .bottom])
+        .navigationBarTitle("Select Image")
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+            ImagePicker(image: self.$inputImage)
+        }
         
         
     }
+    func loadImage() {
+        guard let inputImage = inputImage else {
+            return }
+        image = Image(uiImage: inputImage)
+        
+        
+        
+    }
+
 }
+
 
 struct UpdateHighlight_Previews: PreviewProvider {
     static var previews: some View {
-        Text("HELLO")
+        UpdateHighlight()
         
     }
 }

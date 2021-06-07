@@ -7,14 +7,25 @@
 
 import Foundation
 import RealmSwift
+import SwiftUI
 
 class Highlight: Object {
     @objc dynamic var id = 0
     @objc dynamic var text = ""
-    convenience init(id: Int, text:String) {
+    dynamic var img: UIImage!
+    
+    
+    
+    convenience init(id: Int, text:String, img:UIImage!) {
         self.init()
         self.id = id
         self.text = text
+        self.img = img
+        
+        
+        
+        
+        
         
     }
     
