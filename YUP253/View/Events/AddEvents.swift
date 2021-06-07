@@ -12,7 +12,7 @@ struct AddEvents: View {
     
     @State var EventName: String = ""
     @State var selectedDate = Date()
-    //@State var testDay: String = "1"
+    @State var showAlert = false
     
     @EnvironmentObject var theDataRepo: DataRepository
     
@@ -52,9 +52,15 @@ struct AddEvents: View {
                     TextField("Event Name or Location", text: $EventName)
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
-                Button(action: saveNewEvent)
-                {
-                    Text("Click to Add Event")
+                
+                Button("Add Event"){
+                    showAlert = true
+                }.alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Add New Event?"),
+                        primaryButton: .default(Text("Yes"), action: saveNewEvent),
+                        secondaryButton: .cancel()
+                        )
                 }
             }
             .navigationBarTitle("Add New Event Form")

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditEvent: View {
-    @State private var showAlert = false
+    @State var showAlert = false
     @State var EventName: String = ""
     @State var selectedDate = Date()
     
@@ -63,17 +63,15 @@ struct EditEvent: View {
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
                 
-                //Button("Show alert"){
-                  //  showAlert = true
-                //}.alert(isPresented: $showAlert) {
-                  //  Alert(title: Text("Event Updated"))
-                //}
-                
-                Button(action: updateEventinDB)
-                {
-                    (Text("Update Event"))
+                Button("Update Event"){
+                    showAlert = true
+                }.alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Update Event?"),
+                        primaryButton: .default(Text("Yes"), action: updateEventinDB),
+                        secondaryButton: .cancel()
+                        )
                 }
-                Spacer()
             }
             .navigationBarTitle("Update Event Info")
         }
