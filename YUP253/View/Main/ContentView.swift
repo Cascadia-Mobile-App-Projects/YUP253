@@ -20,6 +20,16 @@ struct ContentView: View {
     }
     
     @State private var selection = 0
+    let realmObj: Realm
+    init() {
+        do { realmObj = try Realm()}
+        catch let error {
+            fatalError("Failed to open Realm. Error\(error.localizedDescription)")
+        }
+    }
+    
+    
+    
     var body: some View {
         TabView(selection: $selection) {
             
@@ -50,8 +60,7 @@ struct ContentView: View {
             }
         .accentColor(.gray)
         .environmentObject(DataRepository(realm: realmObj))
-        
-    }
+        }
 }
 
 extension TabView {
@@ -60,6 +69,7 @@ extension TabView {
         self.background(Color.orange)
 
     }
+    
 }
 
 
