@@ -2,7 +2,7 @@
   "success": true,
   "message": "Login success",
   "data": {
-    "permissions": [15],
+    "permissions": ["ViewEvents", "ViewHighlights", "ViewFeed"],
     "token": "MoBAS123456",
     "user": {
       "user_id": "68753A44-4D6F-1226-9C60-0050E4C00067",

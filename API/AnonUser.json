@@ -2,12 +2,13 @@
   "success": true,
   "message": "Login success",
   "data": {
+    "permissions": ["ViewEvents", "ViewHighlights", "ViewFeed"],
+    "token" : "anon123456"
     "user": {
-      "id": "CA5CAD1A-0000-0000-0000-000000000000",
+      "user_id": "CA5CAD1A-0000-0000-0000-000000000000",
       "username": "anonymous",
       "first_name": "New User",
       "last_name": ""
-    },
-    "permissions": 1
+    }
   }
 }
