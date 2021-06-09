@@ -11,7 +11,7 @@ import Foundation
 
 
 // OptionSet for
-struct Auth: OptionSet, Codable {
+struct Auth: OptionSet, Encodable {
 
     let rawValue: Int
     static let None =               Auth([])
@@ -24,19 +24,8 @@ struct Auth: OptionSet, Codable {
     
 }
 
-extension Auth {
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let optionName = try container.decode(String.self)
-        guard let auth = Auth.mapping[optionName] else {
-            let context = DecodingError.Context(
-                codingPath: decoder.codingPath,
-                debugDescription: "Authentication type not recognized: \(optionName)")
-            throw DecodingError.valueNotFound(String.self, context)
-        }
-        self = auth
-    }
-
+extension Auth : Decodable {
+    
     private static let mapping: [String : Auth] = [
         "None" : .None,
         "ViewEvents" : .ViewEvents,
@@ -46,6 +35,26 @@ extension Auth {
         "ModifyHighlights" : .ModifyHighlights,
         "ParentalAuthority" : .ParentalAuthority,
     ]
+    
+    init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        var optionName = ""
+        var auth : Auth = []
+        do {
+            while !container.isAtEnd {
+                optionName = try container.decode(String.self)
+                if let permission = Auth.mapping[optionName] {
+                    auth.insert(permission)
+                } else {
+                    print("unknown permission: \(optionName)")
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        self = auth
+    }
 
 }
 
