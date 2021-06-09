@@ -280,8 +280,11 @@
 				E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */,
 				E99C0C762649E24B00EF7CDC /* About_Us.swift */,
 			);
+			indentWidth = 0;
 			path = About;
 			sourceTree = "<group>";
+			tabWidth = 1;
+			usesTabs = 1;
 		};
 		DC4673FD264C6B5E00704066 /* Events */ = {
 			isa = PBXGroup;

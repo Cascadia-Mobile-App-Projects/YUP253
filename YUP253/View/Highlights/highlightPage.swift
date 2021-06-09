@@ -37,7 +37,7 @@ struct highlightPage: View {
             
             
             VStack{
-                
+                Spacer().padding()
                 
                 Image("253")
                 
@@ -95,7 +95,7 @@ struct highlightPage: View {
                 }
                     
                 .edgesIgnoringSafeArea(.all)
-                .navigationBarTitle("Highlights", displayMode: .inline)
+                .navigationBarTitle("HIGHLIGHTS", displayMode: .inline)
                 
                     
             }

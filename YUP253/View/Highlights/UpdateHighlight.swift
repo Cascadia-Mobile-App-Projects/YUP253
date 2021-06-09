@@ -56,15 +56,14 @@ struct UpdateHighlight: View {
                 Section(header: Text("Edit Text:")) {
                     TextField("\(self.original.text)", text: self.$text)
                     ZStack{
-                        Rectangle()
-                            .fill(Color.white)
+                        
                         
                         if image != nil {
                             image?
                                 .resizable()
                                 .scaledToFit()
                         } else {
-                            Text("Tap to select a picture")
+                            Text("Tap to select a picture").padding(.leading, 40)
                                 .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                                 .font(.headline)
                         }

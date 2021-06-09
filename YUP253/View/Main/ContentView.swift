@@ -10,15 +10,6 @@ import RealmSwift
 
 struct ContentView: View {
     
-    let realmObj: Realm
-    init() {
-        do {
-            realmObj = try Realm()
-        } catch let error {
-            fatalError("Failed to open Realm. Error: \(error.localizedDescription)")
-        }
-    }
-    
     @State private var selection = 0
     let realmObj: Realm
     init() {
@@ -58,7 +49,7 @@ struct ContentView: View {
                     }
                 .tag(3)
             }
-        .accentColor(.gray)
+        .foregroundColor(.white)
         .environmentObject(DataRepository(realm: realmObj))
         }
 }

@@ -1,4 +1,4 @@
-//
+ //
 //  EventView.swift
 //  YUP253
 //
@@ -65,13 +65,13 @@ struct EventView: View {
     var body: some View {
         NavigationView{
         VStack {
-
+            (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
             let currUser = "Admin"
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
             Text("Ultimate Events:").font(.title).foregroundColor(.white)
             
                 Image("253")
-            
+                    .padding(-20)
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
                     .navigationBarTitle("EVENTS", displayMode: .inline)
@@ -89,9 +89,9 @@ struct EventView: View {
                         aEvent in ListEventRow(theEvent: aEvent)
                 }
             }
-            .background(Color.white)
+            
         }
-        .padding(.top, 40)
+        .padding(.top, 10)
         .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
     }
     }
@@ -101,6 +101,8 @@ struct EventView: View {
 struct EventView_Previews: PreviewProvider {
     static var previews: some View {
         EventView()
+            .padding(-15)
+            .foregroundColor(.blue)
             .environmentObject(DataRepository(realm: try! Realm()))
     }
 }
