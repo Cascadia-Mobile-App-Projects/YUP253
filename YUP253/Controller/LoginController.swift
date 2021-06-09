@@ -1,8 +1,8 @@
 //
-//  AppRepository.swift
+//  LoginController.swift
 //  YUP253
 //
-//  Created by Stephen Gomez-Fox on 5/28/21.
+//  Created by Stephen Gomez-Fox on 6/1/21.
 //
 
 import Foundation
@@ -19,18 +19,29 @@ import Foundation
 class LoginController {
 
 
-    static func login(username: String?, password: String? = nil, authtoken: String? = nil) {
+    static func login(username: String?, password: String? = nil, authtoken: String? = nil) -> LoginResponse {
         
         // login details sent to server (password -or- authtoken)
 
+        let authJson = """
+            [ "ModifyEvents", "ViewEvents" ]
+            """
         
-        var loginDetails : LoginDetails! = LoginDetails()
-        var loginResponse : LoginResponse
+        
+        
+        var loginDetails : LoginDetails = LoginDetails()
+        var response : LoginResponse = LoginResponse()
         let decoder = JSONDecoder()
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         encoder.dateEncodingStrategy = .iso8601
         decoder.dateDecodingStrategy = .iso8601
+        //encoder.keyEncodingStrategy = .convertToSnakeCase
+        //decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        
+        var authtest : Auth = try! decoder.decode(Auth.self, from: Data(authJson.utf8))
+        
         
         // Use MockLogin to get response
         /*
@@ -69,14 +80,6 @@ class LoginController {
 
 
         // MARK - Send Login ( MOCK - Prints to console)
-        
-        print("Logging in as \(loginDetails.username) ")
-        if loginDetails.password != nil {
-            print("Using password")
-        }
-        if loginDetails.authtoken != nil {
-            print("Using authentication token)")
-        }
 
         do {
             let jsonLogin = try encoder.encode(loginDetails)
@@ -87,20 +90,14 @@ class LoginController {
             print(error.localizedDescription)
         }
         
-
-        
-        
-        
-        
-        
-        
         
         // MARK - Get Login Response ( MOCK - Loads from file)
         
         var responseFile : String
-        var response : Data?
-        responseFile = "LoginFailure"
-        if username == "anonymous" {
+        var data : Data?
+        responseFile = "LoginFailure"  // Default
+        let anonUsers : [String?] = ["anonymous", "anon", ""]
+        if anonUsers.contains(username ?? "") {
             responseFile = "AnonUser"
         }
         if username == "John" && password == "Cena" {
@@ -111,33 +108,33 @@ class LoginController {
             responseFile = "BobDylanSuccess"
         }
 
-        
         if let fileURL = Bundle.main.url(forResource: responseFile, withExtension: "json") {
-            do {
-                let data = try? String(contentsOf: fileURL)
-                response = Data(data!.utf8)
-            }
+                let text = try? String(contentsOf: fileURL)
+            if let server = text { print("SERVER RESPONSE: \n\(server)\n") }
+                data = Data(text!.utf8)
         }
         
-        if let output = response {
-            print(String(decoding: output, as: UTF8.self))
+        // Decode the response
+        if let resp = data {
+            do {
+                try response = decoder.decode(LoginResponse.self, from: resp)
+            } catch {
+                print(error.localizedDescription)
+            }
         } else {
             print("NO DATA")
         }
-     
-        do {
-            try loginResponse = decoder.decode( LoginResponse.self, from: response!)
-            print("Success: \(loginResponse.success ?? false)\n")
-        } catch {
-            print(error.localizedDescription)
+        
+        // Print results to console
+        if let user = response.data?.user {
+            print("\nLOGON\nusername: \(user.username ?? "none")")
+            print("Name: \(user.first_name ?? "First") \(user.last_name ?? "Last")")
+            print("Headline: \(user.headline ?? "none")")
+            print("About: \(user.about ?? "none") ")
+            if let permissions = response.data?.permissions {
+                print("Permissions: \(permissions)\n")
+            }
         }
-        
-        
-        
-
-        
-        
+        return response
     }
-    
-
 }
