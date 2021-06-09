@@ -10,42 +10,29 @@ import RealmSwift
 
 struct UserProfileView: View {
     
-    private let currentUser:Person
-    
-    init(userProfile:Person) {
-        currentUser = userProfile
-    }
+    @State private var selection: String? = nil
     
     @EnvironmentObject var theDataRepo: DataRepository
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
-        ZStack {  (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
-            
-        VStack {
-            HStack {
-                padding()
-                //imageselector load user's profile picture here
-                padding()
-            }
+        NavigationView{
             VStack {
-                padding()
-                Text("Profile Info:").fontWeight(.bold)
-                
-                ForEach(self.theDataRepo.loadPerson().map(Person.init()), id: \.self) {
-                    
-                    
-                    
-                }
-                padding()
-            }
+                Image("253")
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.bottom)
+                    .navigationBarTitle("User Profile", displayMode: .inline)
+                Text("user information goes here :)")
         }
-        
+        .padding(.top, 40)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+            .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
         UserProfileView()
+            .environmentObject(DataRepository(realm: try! Realm()))
     }
 }

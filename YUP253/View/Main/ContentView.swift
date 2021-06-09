@@ -25,10 +25,10 @@ struct ContentView: View {
         TabView(selection: $selection) {
             
 
-            HomeView()
-                        .tabItem {
-                            Label("Home", systemImage: "house.fill")
-                        }
+            UserProfileView()
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
+                }
                 .tag(0)
             EventView()
                 .tabItem {
