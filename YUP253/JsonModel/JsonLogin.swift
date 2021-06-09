@@ -28,7 +28,7 @@ struct UserDetails : Codable {
 // sections returned under "data"
 struct LoginResponseData : Codable {
     var token: String?
-    var permissions: [Auth]?
+    var permissions: Auth?
     var user : UserDetails?
 }
 
