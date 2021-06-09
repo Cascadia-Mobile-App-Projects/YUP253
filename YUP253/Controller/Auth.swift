@@ -11,7 +11,7 @@ import Foundation
 
 
 // OptionSet for
-struct Auth: OptionSet, SetAlgebra, RawRepresentable {
+struct Auth: OptionSet, Encodable {
 
     let rawValue: Int
     static let None =               Auth([])
@@ -23,3 +23,38 @@ struct Auth: OptionSet, SetAlgebra, RawRepresentable {
     static let ParentalAuthority =  Auth(rawValue: 1 << 6) // = 32
     
 }
+
+extension Auth : Decodable {
+    
+    private static let mapping: [String : Auth] = [
+        "None" : .None,
+        "ViewEvents" : .ViewEvents,
+        "ViewHighlights" : .ViewHighlights,
+        "ViewFeed" : .ViewFeed,
+        "ModifyEvents" : .ModifyEvents,
+        "ModifyHighlights" : .ModifyHighlights,
+        "ParentalAuthority" : .ParentalAuthority,
+    ]
+    
+    init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        var optionName = ""
+        var auth : Auth = []
+        do {
+            while !container.isAtEnd {
+                optionName = try container.decode(String.self)
+                if let permission = Auth.mapping[optionName] {
+                    auth.insert(permission)
+                } else {
+                    print("unknown permission: \(optionName)")
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        self = auth
+    }
+
+}
+

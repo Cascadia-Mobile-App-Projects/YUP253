@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "message": "Login success",
+  "data": {
+    "permissions": ["ViewEvents", "ViewHighlights", "ViewFeed"],
+    "token": "MoBAS123456",
+    "user": {
+      "user_id": "A358BCBA-C0DE-0807-1973-00506CD0FFEF",
+      "username": "Bob",
+      "first_name": "Bob",
+      "last_name": "Dylan",
+      "birthdate": "1941-05-24T00:00:00Z",
+      "headline": "Looking for More Info",
+      "about": "Retired musician interested in Ultimate",
+    }
+  }
+}

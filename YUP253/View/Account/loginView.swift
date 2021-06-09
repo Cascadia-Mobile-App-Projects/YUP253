@@ -8,14 +8,14 @@
 import SwiftUI
 import RealmSwift
 
-let storedUsername = "John"
-let storedpassword = "Cena"
+
 
 
 
 
 struct loginView: View {
     
+    let session = AppSettings.shared()
     let realmObj: Realm
     init() {
         do { realmObj = try Realm()}
@@ -55,21 +55,23 @@ struct loginView: View {
             }
             
             Button(action: {
-                if self.username == storedUsername && self.password == storedpassword {
+                let login : LoginResponse = LoginController.login(username: self.username, password: self.password)
+                if login.success == true {
                     self.authenticationDidSuccess = true
                     self.authenticationDidFail = false
-                    
-                    
                 } else {
                     self.authenticationDidFail = true
                     self.authenticationDidSuccess = false
-                }            }){
+                }
+                
+            })
+            {
                 loginContent()
             }
         }
         .padding()
             if authenticationDidSuccess{
-                Text("Login Successful")
+                Text("Logged in as \(session.username)")
                     .font(.headline)
                     .frame(width: 250, height: 80)
                     .background(Color.green)

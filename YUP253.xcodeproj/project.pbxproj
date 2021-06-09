@@ -34,10 +34,18 @@
 		55E0A01C265F045700583492 /* HighlightListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A01B265F045700583492 /* HighlightListMode.swift */; };
 		55E0A01E2668226C00583492 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A01D2668226C00583492 /* ImagePicker.swift */; };
 		55F889842655B9390032831A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F889832655B9390032831A /* HomeView.swift */; };
+		DC158F312661E9A1005FE3AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC158F302661E9A1005FE3AA /* User.swift */; };
+		DC158F3E2668079E005FE3AA /* JohnCenaSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = DC158F3D2668079E005FE3AA /* JohnCenaSuccess.json */; };
+		DC158F4326680805005FE3AA /* UpcomingEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = DC158F4226680805005FE3AA /* UpcomingEvents.json */; };
+		DC158F4826681021005FE3AA /* AnonUser.json in Resources */ = {isa = PBXBuildFile; fileRef = DC158F4726681021005FE3AA /* AnonUser.json */; };
+		DC158F502668176E005FE3AA /* LoginFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = DC158F4F2668176E005FE3AA /* LoginFailure.json */; };
+		DC158F5626681B72005FE3AA /* JsonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC158F5526681B72005FE3AA /* JsonLogin.swift */; };
 		DC2CE722265E4CA4002AEA57 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2CE721265E4CA4002AEA57 /* Auth.swift */; };
 		DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC91F8E72637616B001C88BB /* AppSettings.swift */; };
 		DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBF9D2A264C463F006ED4E8 /* SplashView.swift */; };
 		DCE9010C2653A93600E853D0 /* yup_splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCE9010B2653A93600E853D0 /* yup_splash.jpg */; };
+		DCF3D45626700AB600FA6909 /* BobDylanSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF3D45526700AB600FA6909 /* BobDylanSuccess.json */; };
+		DCF3D46C2670968400FA6909 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3D46B2670968400FA6909 /* LoginController.swift */; };
 		E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C762649E24B00EF7CDC /* About_Us.swift */; };
 		E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */; };
 		E99C0C812649EC0600EF7CDC /* Core_Val.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0C802649EC0600EF7CDC /* Core_Val.swift */; };
@@ -93,6 +101,12 @@
 		55E0A01B265F045700583492 /* HighlightListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightListMode.swift; sourceTree = "<group>"; };
 		55E0A01D2668226C00583492 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		55F889832655B9390032831A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DC158F302661E9A1005FE3AA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DC158F3D2668079E005FE3AA /* JohnCenaSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JohnCenaSuccess.json; sourceTree = "<group>"; };
+		DC158F4226680805005FE3AA /* UpcomingEvents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UpcomingEvents.json; sourceTree = "<group>"; };
+		DC158F4726681021005FE3AA /* AnonUser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnonUser.json; sourceTree = "<group>"; };
+		DC158F4F2668176E005FE3AA /* LoginFailure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LoginFailure.json; sourceTree = "<group>"; };
+		DC158F5526681B72005FE3AA /* JsonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLogin.swift; sourceTree = "<group>"; };
 		DC2CE721265E4CA4002AEA57 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		DC91F8E72637616B001C88BB /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		DCBF9D2A264C463F006ED4E8 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -100,6 +114,8 @@
 		DCE901012653A78700E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCE901022653A80100E853D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCE9010B2653A93600E853D0 /* yup_splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yup_splash.jpg; sourceTree = "<group>"; };
+		DCF3D45526700AB600FA6909 /* BobDylanSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BobDylanSuccess.json; sourceTree = "<group>"; };
+		DCF3D46B2670968400FA6909 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E99C0C762649E24B00EF7CDC /* About_Us.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About_Us.swift; sourceTree = "<group>"; };
 		E99C0C7B2649EA9A00EF7CDC /* Mission_V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission_V.swift; sourceTree = "<group>"; };
 		E99C0C802649EC0600EF7CDC /* Core_Val.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core_Val.swift; sourceTree = "<group>"; };
@@ -160,6 +176,7 @@
 		3FAE0FBA2630C91C0094FEBF /* YUP253 */ = {
 			isa = PBXGroup;
 			children = (
+				DC158F5426681B1E005FE3AA /* JsonModel */,
 				DC4673F7264C6A4100704066 /* Controller */,
 				DC4673F6264C6A2D00704066 /* Model */,
 				DC4673F5264C6A0E00704066 /* View */,
@@ -204,6 +221,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		DC158F5426681B1E005FE3AA /* JsonModel */ = {
+			isa = PBXGroup;
+			children = (
+				DC158F5526681B72005FE3AA /* JsonLogin.swift */,
+			);
+			path = JsonModel;
+			sourceTree = "<group>";
+		};
 		DC4673F5264C6A0E00704066 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,9 +248,9 @@
 			isa = PBXGroup;
 			children = (
 				3F253C4B265EFA2000395521 /* Person.swift */,
+				3F253C45265EFA0700395521 /* DataRepository.swift */,
 				3F253C49265EFA1A00395521 /* Highlight.swift */,
 				3F253C47265EFA1200395521 /* Event.swift */,
-				3F253C45265EFA0700395521 /* DataRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,8 +258,10 @@
 		DC4673F7264C6A4100704066 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DCF3D46B2670968400FA6909 /* LoginController.swift */,
 				DC91F8E72637616B001C88BB /* AppSettings.swift */,
 				DC2CE721265E4CA4002AEA57 /* Auth.swift */,
+				DC158F302661E9A1005FE3AA /* User.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -332,6 +359,11 @@
 			isa = PBXGroup;
 			children = (
 				DCE901002653A69C00E853D0 /* README.md */,
+				DC158F3D2668079E005FE3AA /* JohnCenaSuccess.json */,
+				DC158F4226680805005FE3AA /* UpcomingEvents.json */,
+				DC158F4726681021005FE3AA /* AnonUser.json */,
+				DC158F4F2668176E005FE3AA /* LoginFailure.json */,
+				DCF3D45526700AB600FA6909 /* BobDylanSuccess.json */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -454,9 +486,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF3D45626700AB600FA6909 /* BobDylanSuccess.json in Resources */,
+				DC158F4826681021005FE3AA /* AnonUser.json in Resources */,
+				DC158F4326680805005FE3AA /* UpcomingEvents.json in Resources */,
 				DCE9010C2653A93600E853D0 /* yup_splash.jpg in Resources */,
 				3FAE0FC32630C91C0094FEBF /* Preview Assets.xcassets in Resources */,
 				3FAE0FC02630C91C0094FEBF /* Assets.xcassets in Resources */,
+				DC158F502668176E005FE3AA /* LoginFailure.json in Resources */,
+				DC158F3E2668079E005FE3AA /* JohnCenaSuccess.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +518,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF3D46C2670968400FA6909 /* LoginController.swift in Sources */,
 				55E0A018265F040C00583492 /* ListAllHighlights.swift in Sources */,
+				DC158F5626681B72005FE3AA /* JsonLogin.swift in Sources */,
 				3F52E7172630DD3700EC6112 /* EventView.swift in Sources */,
 				3FAE0FBE2630C91C0094FEBF /* ContentView.swift in Sources */,
 				3F3C74F7266D3F7200A4FCA1 /* ListEventRow.swift in Sources */,
@@ -490,6 +529,7 @@
 				3F253C46265EFA0700395521 /* DataRepository.swift in Sources */,
 				55F889842655B9390032831A /* HomeView.swift in Sources */,
 				55E0A012265F03B100583492 /* AddHighlight.swift in Sources */,
+				DC158F312661E9A1005FE3AA /* User.swift in Sources */,
 				3F253C4C265EFA2000395521 /* Person.swift in Sources */,
 				E9D2B0592630E3E00053234F /* About.swift in Sources */,
 				E99C0C7C2649EA9A00EF7CDC /* Mission_V.swift in Sources */,

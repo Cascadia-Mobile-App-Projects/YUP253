@@ -58,15 +58,15 @@ struct EventInfo : Identifiable {
     }*/
 
 struct EventView: View {
+    var settings: AppSettings = AppSettings.shared()
     @State private var selection: String? = nil
-    
     @EnvironmentObject var theDataRepo: DataRepository
     
     var body: some View {
         NavigationView{
         VStack {
             (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
-            let currUser = "Admin"
+            let auth : Auth = settings.permissions
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
             Text("Ultimate Events:").font(.title).foregroundColor(.white)
             
@@ -75,7 +75,7 @@ struct EventView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
                     .navigationBarTitle("EVENTS", displayMode: .inline)
-            if (currUser == "Admin") {
+            if (auth.contains(.ModifyEvents)) {
                 
                 NavigationLink(destination: AddEvents()){
                     Text("Add New Event")
