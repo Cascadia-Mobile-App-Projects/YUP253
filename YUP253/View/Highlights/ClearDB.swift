@@ -79,7 +79,7 @@ struct ClearDB: View {
 
              
 
-            Text("Are you sure you want to delete all of the following highlights?")
+            Text("delete all highlights?")
 
                 .font(.subheadline)
 
