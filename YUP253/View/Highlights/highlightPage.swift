@@ -12,26 +12,31 @@ import RealmSwift
 
 struct highlightPage: View {
     
-
+    
+    var session = AppSettings.shared()
+    var user : UserDetails = UserDetails()
+    var permissions : Auth = Auth()
     
     let realmObj: Realm
     
     init() {
         do {
-          realmObj = try Realm()
+            realmObj = try Realm()
         } catch let error {
-          // Handle error
+            // Handle error
             fatalError("Failed to open Realm. Error: \(error.localizedDescription)")
             
         }
+        user = session.user
+        permissions = session.permissions
         
     }
     
     var body: some View {
         
         
-            
-    
+        
+        
         NavigationView {
             
             
@@ -48,61 +53,61 @@ struct highlightPage: View {
                     
                     Spacer()
                     
-            HStack{
-                
-                NavigationLink(destination: AddHighlight()) {
-                    Text("Add")
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
-                    
-                    
+                    HStack{
                         
-                    Spacer()
-                    
-                }
-                    
-                
-                NavigationLink(destination: ListAllHighlights(whichMode:.List)) {
-                    Text("View")
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
-                    Spacer()
-                }
-                    
-                
-                NavigationLink(destination: ListAllHighlights(whichMode: .Update)) {
-                    Text("Edit")
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
-                    Spacer()
-                    
-    
-                }
-                    
-                
-                NavigationLink(destination: ListAllHighlights(whichMode: .Delete)) {
-                    Text("Delete")
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color(red: 0.022, green: 0.24, blue: 0.561))
-                    
-                    Spacer()
+                        NavigationLink(destination: AddHighlight()) {
+                            Text("Add")
+                                .padding()
+                                .foregroundColor(Color.white)
+                                .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                            
+                            
+                            
+                            Spacer()
+                            
+                        }
                         
+                        
+                        NavigationLink(destination: ListAllHighlights(whichMode:.List)) {
+                            Text("View")
+                                .padding()
+                                .foregroundColor(Color.white)
+                                .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                            Spacer()
+                        }
+                        
+                        
+                        NavigationLink(destination: ListAllHighlights(whichMode: .Update)) {
+                            Text("Edit")
+                                .padding()
+                                .foregroundColor(Color.white)
+                                .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                            Spacer()
+                            
+                            
+                        }
+                        
+                        
+                        NavigationLink(destination: ListAllHighlights(whichMode: .Delete)) {
+                            Text("Delete")
+                                .padding()
+                                .foregroundColor(Color.white)
+                                .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+                            
+                            Spacer()
+                            
+                            
+                        }
+                        
+                        .edgesIgnoringSafeArea(.all)
+                        .navigationBarTitle("HIGHLIGHTS", displayMode: .inline)
+                        
+                        
+                    }
                     
                 }
-                    
-                .edgesIgnoringSafeArea(.all)
-                .navigationBarTitle("HIGHLIGHTS", displayMode: .inline)
                 
-                    
             }
-                    
-                }
-            
-        }
             
             .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
             
@@ -110,8 +115,8 @@ struct highlightPage: View {
             
         }
         
-            
-            .environmentObject(DataRepository(realm: realmObj))
+        
+        .environmentObject(DataRepository(realm: realmObj))
         .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: .leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing))
         
         

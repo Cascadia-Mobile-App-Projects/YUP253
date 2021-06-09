@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListEventRow: View {
     
+    let permissions: Auth = AppSettings.shared().permissions
     let thisEvent:Event
     
     init(theEvent:Event){
@@ -23,7 +24,6 @@ struct ListEventRow: View {
         theDataRepo.deleteEvent(theEvent: thisEvent)
     }
     var body: some View {
-        let currUser = "Admin"
         
         HStack{
             VStack(alignment: .leading) {
@@ -32,7 +32,7 @@ struct ListEventRow: View {
             }
             Spacer()
             
-            if (currUser == "Admin") {
+            if (permissions.contains(.ModifyEvents)) {
             NavigationLink(destination: EditEvent()){
                 Text("Edit Event").padding()
             }.padding()
