@@ -15,6 +15,7 @@ import RealmSwift
 
 struct loginView: View {
     
+    let session = AppSettings.shared()
     let realmObj: Realm
     init() {
         do { realmObj = try Realm()}
@@ -70,7 +71,7 @@ struct loginView: View {
         }
         .padding()
             if authenticationDidSuccess{
-                Text("Login Successful")
+                Text("Logged in as \(session.username)")
                     .font(.headline)
                     .frame(width: 250, height: 80)
                     .background(Color.green)
