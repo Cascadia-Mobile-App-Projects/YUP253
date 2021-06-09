@@ -80,12 +80,22 @@ class LoginController {
         
         // Print results to console
         if let user = response.data?.user {
+            let settings = AppSettings.shared()
+            settings.username = user.username!
+            settings.user = user
+            settings.isLoggedIn = true
             print("\nLOGON\nusername: \(user.username ?? "none")")
             print("Name: \(user.first_name ?? "First") \(user.last_name ?? "Last")")
             print("Headline: \(user.headline ?? "none")")
             print("About: \(user.about ?? "none") ")
             if let permissions = response.data?.permissions {
+                settings.permissions = permissions
                 print("Permissions: \(permissions)\n")
+                
+            }
+            if let tok = response.data?.token {
+                settings.token = tok
+                print("Token: \(tok)\n")
             }
         }
         return response

@@ -14,8 +14,10 @@ class AppSettings {
     
     // default property values
     private var _username = "anonymous"
-    private var _authToken = ""
-    
+    private var _token = ""
+    private var _userDetails = UserDetails()
+    private var _permissions = Auth()
+    private var _isLoggedIn = false
     
     // private initializer; initialize with default property values
     private init() {
@@ -27,10 +29,10 @@ class AppSettings {
         }
         
         // initialize auth token if not previously set
-        if let token = UserDefaults.standard.string(forKey:"authToken") {
-            self._authToken = token
+        if let token = UserDefaults.standard.string(forKey:"token") {
+            self._token = token
         } else {
-            UserDefaults.standard.set(_authToken, forKey:"authToken")
+            UserDefaults.standard.set(_token, forKey:"token")
         }
     }
     
@@ -48,22 +50,52 @@ class AppSettings {
                 return _username
             }
         }
-        set(user) {
-            UserDefaults.standard.set(user, forKey:"username")
+        set(uname) {
+            UserDefaults.standard.set(uname, forKey:"username")
         }
     }
     
-    // authToken property
-    var authToken : String {
+    // token property
+    var token : String {
         get {
-            if let token = UserDefaults.standard.string(forKey:"authToken") {
+            if let token = UserDefaults.standard.string(forKey:"token") {
                 return token
             } else {
-                return _authToken
+                return _token
             }
         }
         set(token) {
-            UserDefaults.standard.set(token, forKey:"authToken")
+            UserDefaults.standard.set(token, forKey:"token")
         }
+    }
+    var user : UserDetails {
+        get {
+            return _userDetails
+        }
+        set(value) {
+            
+            _userDetails = value
+            _isLoggedIn = true
+        }
+    }
+    
+    var permissions : Auth {
+        get {
+            return _permissions
+        }
+        set(auth) {
+            _permissions = auth
+        }
+    }
+    
+    var isLoggedIn : Bool {
+        get {
+            return _isLoggedIn
+        }
+        set {
+            _isLoggedIn = true
+        }
+        
+        
     }
 }

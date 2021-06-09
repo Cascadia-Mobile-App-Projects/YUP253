@@ -8,8 +8,7 @@
 import SwiftUI
 import RealmSwift
 
-let storedUsername = "John"
-let storedpassword = "Cena"
+
 
 
 
@@ -55,15 +54,17 @@ struct loginView: View {
             }
             
             Button(action: {
-                if self.username == storedUsername && self.password == storedpassword {
+                let login : LoginResponse = LoginController.login(username: self.username, password: self.password)
+                if login.success == true {
                     self.authenticationDidSuccess = true
                     self.authenticationDidFail = false
-                    
-                    
                 } else {
                     self.authenticationDidFail = true
                     self.authenticationDidSuccess = false
-                }            }){
+                }
+                
+            })
+            {
                 loginContent()
             }
         }
