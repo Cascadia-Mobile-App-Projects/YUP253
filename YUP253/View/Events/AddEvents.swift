@@ -49,19 +49,22 @@ struct AddEvents: View {
         NavigationView {
             Form {
                 Section(header: Text("New Event Info:")) {
-                    TextField("Event Name or Location", text: $EventName)
+                    TextField("Event Name or Location", text: $EventName).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
                 
                 Button("Add Event"){
                     showAlert = true
-                }.alert(isPresented: $showAlert) {
+                }.foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).alert(isPresented: $showAlert) {
                     Alert(
                         title: Text("Add New Event?"),
                         primaryButton: .default(Text("Yes"), action: saveNewEvent),
-                        secondaryButton: .cancel()
+                        secondaryButton:
+                            .cancel()
                         )
+                    
                 }
+                
             }
             .navigationBarTitle("Add New Event Form")
         }
