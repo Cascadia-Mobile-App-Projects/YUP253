@@ -58,8 +58,7 @@ struct AddHighlight: View {
                         TextField("Enter Text", text: $text)
                         
                         ZStack{
-                            Rectangle()
-                                .fill(Color.white)
+                            
                             
                             if image != nil {
                                 
@@ -68,7 +67,7 @@ struct AddHighlight: View {
                                     .scaledToFit()
                             } else {
                                 Text("Tap to select a picture")
-                                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).padding(.leading, 40)
                                     .font(.headline)
                             }
                         }
