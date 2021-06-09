@@ -23,14 +23,19 @@ class LoginController {
         
         // login details sent to server (password -or- authtoken)
 
-        var login : MockLogin
-        //var loginDetails : LoginDetails! = LoginDetails()
-        //var loginResponse : LoginResponse?
-        //let decoder = JSONDecoder()
+        
+        var loginDetails : LoginDetails! = LoginDetails()
+        var loginResponse : LoginResponse
+        let decoder = JSONDecoder()
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
+        encoder.dateEncodingStrategy = .iso8601
+        decoder.dateDecodingStrategy = .iso8601
         
         // Use MockLogin to get response
+        /*
+        var login : MockLogin
+        
         if (username == nil || username == "") {
             login = MockLogin(username: nil, token: nil)
         } else if password != nil {
@@ -51,8 +56,8 @@ class LoginController {
         
         
     }
+        */
         
-        /*
         // Place provided info into struct for JSON encoding
         if let username = username {
             loginDetails.username = username
@@ -65,7 +70,7 @@ class LoginController {
 
         // MARK - Send Login ( MOCK - Prints to console)
         
-        print("Logging in as \(loginDetails.username)")
+        print("Logging in as \(loginDetails.username) ")
         if loginDetails.password != nil {
             print("Using password")
         }
@@ -121,20 +126,18 @@ class LoginController {
         }
      
         do {
-            loginResponse = try decoder.decode( LoginResponse.self, from: response!)
-            if let resp = loginResponse {
-            
-                print("GOT A RESPONSE")
-                print("Success: \(resp.success)\n")
-            }
+            try loginResponse = decoder.decode( LoginResponse.self, from: response!)
+            print("Success: \(loginResponse.success ?? false)\n")
         } catch {
             print(error.localizedDescription)
         }
+        
+        
         
 
         
         
     }
-    */
+    
 
 }

@@ -1,9 +1,9 @@
 {
   "success" : true,
   "message" : "success",
+  "permissions": ["ModifyEvents"]
   "data" : {
     "token" : "MoBAS654321",
-    "permissions" : [ 2, 4, 8 ],
     "user" : {
       "user_id" : "A358BCBA-C0DE-0807-1973-00506CD0FFEF",
       "first_name" : "Bob",
