@@ -8,26 +8,12 @@
 import Foundation
 
 
-
-
-
-// Login to server
-// (Mock login)
-
-
-
 class LoginController {
 
 
     static func login(username: String?, password: String? = nil, authtoken: String? = nil) -> LoginResponse {
         
         // login details sent to server (password -or- authtoken)
-
-        let authJson = """
-            [ "ModifyEvents", "ViewEvents" ]
-            """
-        
-        
         
         var loginDetails : LoginDetails = LoginDetails()
         var response : LoginResponse = LoginResponse()
@@ -39,45 +25,12 @@ class LoginController {
         //encoder.keyEncodingStrategy = .convertToSnakeCase
         //decoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        
-        var authtest : Auth = try! decoder.decode(Auth.self, from: Data(authJson.utf8))
-        
-        
-        // Use MockLogin to get response
-        /*
-        var login : MockLogin
-        
-        if (username == nil || username == "") {
-            login = MockLogin(username: nil, token: nil)
-        } else if password != nil {
-            login = MockLogin(username: username, password: password)
-        } else if authtoken != nil {
-            login = MockLogin(username: username, token: authtoken)
-        } else {
-            login = MockLogin(username: "Invalid", password: "Login")
-        }
-        
-        let jsonData = try! encoder.encode(login.loginResponse)
-        let jsonString = String(data: jsonData, encoding: .utf8)
-        print("RESPONSE:\n\(jsonString ?? "No Response")")
-        
-        // Inform app of results
-        
-        
-        
-        
-    }
-        */
-        
         // Place provided info into struct for JSON encoding
         if let username = username {
             loginDetails.username = username
             loginDetails.password = password
             loginDetails.authtoken = authtoken
         }
-        
-
-
 
         // MARK - Send Login ( MOCK - Prints to console)
 
@@ -138,3 +91,23 @@ class LoginController {
         return response
     }
 }
+
+
+// Procedure to use MockLogin to get response
+/*
+var login : MockLogin
+
+if (username == nil || username == "") {
+    login = MockLogin(username: nil, token: nil)
+} else if password != nil {
+    login = MockLogin(username: username, password: password)
+} else if authtoken != nil {
+    login = MockLogin(username: username, token: authtoken)
+} else {
+    login = MockLogin(username: "Invalid", password: "Login")
+}
+
+let jsonData = try! encoder.encode(login.loginResponse)
+let jsonString = String(data: jsonData, encoding: .utf8)
+print("RESPONSE:\n\(jsonString ?? "No Response")")
+*/
