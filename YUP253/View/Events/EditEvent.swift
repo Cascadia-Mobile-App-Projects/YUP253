@@ -8,60 +8,72 @@
 import SwiftUI
 
 struct EditEvent: View {
-    
+    @State var showAlert = false
     @State var EventName: String = ""
-    @State var EventDate: String = ""
+    @State var selectedDate = Date()
     
-    func noop() {}
-    //Mock code for Event Into read from DB
-    /*private var original: Event = Event()
+    private var original: Event = Event()
     
     init () {}
     
-    init(originalEvent origEvent: Event) {
+    init(originalEvent OE: Event) {
         self.init()
-        original = origEvent
-        EventName = origEvent.name
-        EventDate = origEvent.date
-    }*/
- 
-    func showFormElts() {
-        print("showFormElts")
-        print("Updated Event Name: \(EventName)")
-        print("Updated Event Date: \(EventDate)")
+        original = OE
+        EventName = OE.eventName
+        selectedDate = OE.eventDate
     }
     
+    @EnvironmentObject var theDataRepo: DataRepository
+    
+    let format = DateFormatter()
+    
+    func noop() {}
+
     @Environment(\.presentationMode) var presentationMode:
         Binding<PresentationMode>
     
     //Need to call update method from DB Object
-    /*func updateEventinDB() {
-        guard Int (self.EventDate) != nil else {
-        print("Date was not a number")
-        return
-     }
-     
-     showFormElts()*/
+    func updateEventinDB() {
+        
+        guard !(self.EventName.isEmpty) else {
+            print("Event Name Empty")
+            return
+        }
+        
+        format.timeZone = .current
+        format.dateFormat = "yyyy-MM-dd '' h:mm a"
+        let dateString = format.string(from: selectedDate)
+        
+        print("OE name: \(original.eventName)")
+        print("showUpdateEventInfo")
+        print("Event: \(EventName)")
+        print("Event Date: \(dateString)")
+        
+        theDataRepo.updateEvent(id: self.original.id, newEventName: self.EventName, newEventDate: self.selectedDate)
+        
+        self.presentationMode.wrappedValue.dismiss()
+    }
     
     var body: some View {
         NavigationView {
             Form {
                 //Need to add calls to get Original Event info and display
-                Section(header: Text("New Info")) {
-                    TextField("Name:", text:self.$EventName)
-                    TextField("Event Date:", text:self.$EventDate)
+                Section(header: Text(self.original.eventName + "'s New Info:")) {
+                    TextField("Name: ", text: $EventName)
+                    DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
-                Button(action: noop)
-                {
-                    Text("Update Event")
-                }
-                Spacer()
-                Button(action: noop)
-                {
-                    Text("Delete this Event")
+                
+                Button("Update Event"){
+                    showAlert = true
+                }.alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Update Event?"),
+                        primaryButton: .default(Text("Yes"), action: updateEventinDB),
+                        secondaryButton: .cancel()
+                        )
                 }
             }
-            .navigationBarTitle("Update/Delete Event")
+            .navigationBarTitle("Update Event Info")
         }
 
     }

@@ -7,15 +7,16 @@
 
 import Foundation
 import RealmSwift
+import SwiftUI
 
 class DataRepository: ObservableObject {
+    
     init(realm: Realm) {
     }
     
-    func saveEvent(newEventName: String, newEventDate: Int) {
+    func saveEvent(newEventName: String, newEventDate: Date) {
         objectWillChange.send()
         let realm = try! Realm()
-
         try! realm.write {
             let newEvent = Event(id: UUID().hashValue, name: newEventName, date: newEventDate)
             realm.add(newEvent)
@@ -61,7 +62,7 @@ class DataRepository: ObservableObject {
         }
     }
     
-    func updateEvent( id: Int, newEventName:String, newEventDate:Int) {
+    func updateEvent( id: Int, newEventName:String, newEventDate:Date) {
         objectWillChange.send()
         do {
           let realm = try Realm()
@@ -81,12 +82,12 @@ class DataRepository: ObservableObject {
     //Functions for Person data models
     //--------------------------------
     
-    func savePerson(pUserName: String, pFName: String, pLName: String, pAge: Int, pNum: Int, pEmail: String) {
+    func savePerson(pUserName: String, pFName: String, pPassword: String, pLName: String, pAge: String, pNum: String, pEmail: String) {
             objectWillChange.send()
             let realm = try! Realm()
 
             try! realm.write {
-                let newPerson = Person(id: UUID().hashValue, username: pUserName, fName: pFName, lName: pLName, age: pAge, phNum: pNum, email: pEmail)
+                let newPerson = Person(id: UUID().hashValue, username: pUserName, password: pPassword, fName: pFName, lName: pLName, age: pAge, phNum: pNum, email: pEmail)
                 realm.add(newPerson)
             }
         }
@@ -126,7 +127,7 @@ class DataRepository: ObservableObject {
             }
         }
         
-    func updatePerson(id: Int, newUserName: String, newFName: String, newLName: String, newAge: Int, newNum: Int, newEmail: String) {
+    func updatePerson(id: Int, newUserName: String, newPassword: String, newFName: String, newLName: String, newAge: String, newNum: String, newEmail: String) {
             objectWillChange.send()
             do {
               let realm = try Realm()
@@ -148,12 +149,12 @@ class DataRepository: ObservableObject {
     //--------------------------------
 
     
-    func saveHighlight(newText: String) {
+    func saveHighlight(newText: String, newImg: UIImage?) {
         objectWillChange.send()
         let realm = try! Realm()
 
         try! realm.write {
-            let theHighlight = Highlight(id: UUID().hashValue, text: newText)
+            let theHighlight = Highlight(id: UUID().hashValue, text: newText, image: newImg)
             realm.add(theHighlight)
         }
     }
@@ -208,14 +209,14 @@ class DataRepository: ObservableObject {
         }
     }
     
-    func updateHighlight( id: Int, newText:String) {
+    func updateHighlight( id: Int, newText:String, newImg: UIImage?) {
         objectWillChange.send()
         do {
           let realm = try Realm()
           try realm.write {
             realm.create(
               Highlight.self,
-                value: ["id": id, "text": newText],
+                value: ["id": id, "text": newText, "inputImg": newImg!],
               update: .modified)
           }
         } catch let error {

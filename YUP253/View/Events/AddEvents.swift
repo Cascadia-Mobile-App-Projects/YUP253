@@ -6,41 +6,43 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct AddEvents: View {
     
     @State var EventName: String = ""
-    @State var EventDate: String = ""
+    @State var selectedDate = Date()
+    @State var showAlert = false
     
-    //@EnvironmentObject var theDataRepo: DataRepository
+    @EnvironmentObject var theDataRepo: DataRepository
     
-    func showFormElts() {
-        print("showFormElts")
-        print("Event: \(EventName)")
-        print("Event Date: \(EventDate)")
-    }
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    let format = DateFormatter()
     
     func saveNewEvent() {
-        //Save logic needed
+
         if (self.EventName.isEmpty) {
             print("Event Name Empty")
             return
         }
-        if (self.EventDate.isEmpty) {
-            print("Event Date Empty")
-            return
-        }
+        format.timeZone = .current
+        format.dateFormat = "yyyy-MM-dd '' h:mm a"
+        let dateString = format.string(from: selectedDate)
         
-        
-        //For Debugging, show user input
-        showFormElts()
-        
+        print("showFormElts")
+        print("Event: \(EventName)")
+        print("Event Date: \(dateString)")
+
+        //Logic to save EventName and selectedDate to DB
+        //
+        theDataRepo.saveEvent(newEventName: self.EventName, newEventDate: self.selectedDate)
         
         // Return to previous screen
         self.presentationMode.wrappedValue.dismiss()
     }
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     
     
     var body: some View {
@@ -48,11 +50,17 @@ struct AddEvents: View {
             Form {
                 Section(header: Text("New Event Info:")) {
                     TextField("Event Name or Location", text: $EventName)
-                    TextField("Event Date", text: $EventDate)
+                    DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
-                Button(action: saveNewEvent)
-                {
-                    Text("Click to Add Event")
+                
+                Button("Add Event"){
+                    showAlert = true
+                }.alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Add New Event?"),
+                        primaryButton: .default(Text("Yes"), action: saveNewEvent),
+                        secondaryButton: .cancel()
+                        )
                 }
             }
             .navigationBarTitle("Add New Event Form")
@@ -61,6 +69,8 @@ struct AddEvents: View {
 }
 
 struct AddEvents_Previews: PreviewProvider {
+    //repo code
+    //placeholder repo
     static var previews: some View {
         AddEvents()
     }
