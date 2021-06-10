@@ -2,6 +2,20 @@
 
 Find out what is happening in the 253 Ultimate Community in the Tacoma area! See up-to-date events, connect with other players, sign up for tournaments and much more!
 
+# End of BIT 381 - iOS Development for 253YUP APP
+MVP - App has consistent navigation through views including home, events, highlights and about.  Admin users can create new events that are stored and displayed on Event screen and edit/delete events.  Users can RSVP for Events.  App includes create new user form and 253 info.  Design and layout are consistent throughout the app.
+
+iOS 253YUP App developed by Anton Tran, Adam Kohler, Jason Lacy, Sean Jones and Stephan Gomex-Fox.  Team created a functional app with navigation to different views, admin/user roles, EventView with add/edit Events, Highlights view with add/edit highlights and a 253YUP about view.  Login verification for 2 coded users to show admin and user differences.
+Backlog and issues for future consideration:
+XCode preview fail for 2 views
+Edit Event Form bug
+Event Modification enhancement
+Image Picker for Highlight View bug
+User Profile view enhancement
+Event Details page enhancement
+Event RSVP enhancement
+New User saving bug
+
 # Customers
 ## Personas
 * Youth potential Ultimate player: Miska, 16 year old soccer player, interested in trying Ultimate
