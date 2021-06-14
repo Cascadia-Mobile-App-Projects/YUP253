@@ -6,15 +6,26 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
     
     @State private var selection = 0
+    let realmObj: Realm
+    init() {
+        do { realmObj = try Realm()}
+        catch let error {
+            fatalError("Failed to open Realm. Error\(error.localizedDescription)")
+        }
+    }
+    
+    
+    
     var body: some View {
         TabView(selection: $selection) {
             
 
-            loginView()
+            HomeView()
                         .tabItem {
                             Label("Home", systemImage: "house.fill")
                         }
@@ -38,8 +49,8 @@ struct ContentView: View {
                     }
                 .tag(3)
             }
-        .accentColor(.black)
-        
+        .foregroundColor(.white)
+        .environmentObject(DataRepository(realm: realmObj))
         }
 }
 
@@ -49,6 +60,7 @@ extension TabView {
         self.background(Color.orange)
 
     }
+    
 }
 
 

@@ -8,22 +8,17 @@ import SwiftUI
 
 
 struct About: View {
+@State private var selection: String? = nil
     
-    @State private var selection: String? = nil
     var body: some View {
         
-        
-       
-            
-           
         NavigationView {
             
             VStack {
-                
+                Spacer()
                 Image("253")
+                 
                     
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.bottom, 200.0)
                 
                 
                 NavigationLink(destination:  About_Us(),
@@ -52,30 +47,34 @@ struct About: View {
                 .padding(15.0)
                 Button("Mission/Vision") {
                     self.selection = "Third"
+                        
                 }
                 .padding(15.0)
                 Button("Core Values") {
                     self.selection = "Fourth"
+                        
                 }
                 .padding(15.0)
                 
             }
-            .padding(35.0)
-            .background(Color(red: 0.022, green: 0.24, blue: 0.561))
+            .padding(110.0)
+            
+            .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+            //.background(Color(red: 0.022, green: 0.24, blue: 0.561))
+            
             .navigationBarTitle("ABOUT", displayMode: .inline)
-            .edgesIgnoringSafeArea(.all)
-            
-            
-        
-        }
-            .padding(2.0)
+            }
+           
                }
-        
-    }
+        }
 
 
 struct About_Previews: PreviewProvider {
     static var previews: some View {
-        About()
+        Group {
+            About()
+                
+        }
     }
 }
+
