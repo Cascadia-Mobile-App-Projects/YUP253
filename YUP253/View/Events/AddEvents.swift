@@ -49,7 +49,7 @@ struct AddEvents: View {
         NavigationView {
             Form {
                 Section(header: Text("New Event Info:")) {
-                    TextField("Event Name or Location", text: $EventName).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    TextField("Event Name or Location", text: $EventName)
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
                 

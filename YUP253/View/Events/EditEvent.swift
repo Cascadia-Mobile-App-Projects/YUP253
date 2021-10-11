@@ -59,7 +59,7 @@ struct EditEvent: View {
             Form {
                 //Need to add calls to get Original Event info and display
                 Section(header: Text(self.original.eventName + "'s New Info:")) {
-                    TextField("Name: ", text: $EventName)
+                    TextField("Name: ", text: $EventName).foregroundColor(.white)
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                 }
                 
