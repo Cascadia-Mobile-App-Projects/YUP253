@@ -13,50 +13,6 @@ struct EventInfo : Identifiable {
     let title: String
 }
 
-/*struct EventInfoRow: View {
-    @EnvironmentObject var theDataRepo: DataRepository
-    private let thisEvent:Event
-    
-    init(theEvent:Event) {
-        thisEvent = theEvent
-    }
-    
-    //var User = "User"
-    var currUser = "Admin"
-    
-    //let whichEvent: EventInfo
-    
-    @State private var ToggleUser = true
-    
-    var body: some View {
-        HStack {
-            //Text("\(whichEvent.title)");
-            Text("Name: \(thisEvent.eventName)")
-            Text("Name: \(thisEvent.eventDate)")
-            Spacer()
-            
-            if (currUser != "Admin")
-            {
-                    NavigationLink(destination: EditEvent()){
-                        Text("Edit Event").padding()
-                    }.padding()
-            }
-            else
-            {
-                Button() {}
-                    label: {
-                    Text("Sign Up")
-                        .padding(15)
-                        .background(Color.blue)
-                        
-                }
-                .contentShape(Rectangle())
-            }
-            
-            }
-        }
-    }*/
-
 struct EventView: View {
     var settings: AppSettings = AppSettings.shared()
     @State private var selection: String? = nil

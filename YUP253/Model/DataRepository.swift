@@ -65,12 +65,15 @@ class DataRepository: ObservableObject {
     func updateEvent( id: Int, newEventName:String, newEventDate:Date) {
         objectWillChange.send()
         do {
-          let realm = try Realm()
-          try realm.write {
-            realm.create(
-              Event.self,
-                value: ["id": id, "name": newEventName, "date": newEventDate],
-              update: .modified)
+          let realm = try! Realm()
+          try! realm.write {
+              let theEvent = Event(id: UUID().hashValue, name: newEventName, date: newEventDate)
+              realm.add(theEvent)
+            //realm.create(
+              //Event.self,
+                //value: ["id": id, "name": newEventName, "date": newEventDate],
+              //update: .modified)
+
           }
         } catch let error {
           // Handle error
