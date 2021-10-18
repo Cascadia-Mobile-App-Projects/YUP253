@@ -33,7 +33,7 @@ struct ListEventRow: View {
             Spacer()
             
             if (permissions.contains(.ModifyEvents)) {
-            NavigationLink(destination: EditEvent()){
+            NavigationLink(destination: EditEvent(originalEvent: thisEvent)){
                 Text("Edit Event").padding()
             }.padding()
                 Button(action:deleteEvent) {
