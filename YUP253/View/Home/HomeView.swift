@@ -14,12 +14,6 @@ struct HomeView: View {
         NavigationView {
            
         ZStack{
-        
-
-           
-            
-            
-
            
            (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
             //.background(Color(red: 0.022, green: 0.24, blue: 0.561))
