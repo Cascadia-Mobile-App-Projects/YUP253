@@ -19,20 +19,17 @@ struct EventView: View {
     @EnvironmentObject var theDataRepo: DataRepository
     
     var body: some View {
+        ZStack(alignment: .top){
         NavigationView{
-        VStack {
-            (LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+            VStack() {
+
             let auth : Auth = settings.permissions
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
-            Text("Ultimate Events:").font(.title).foregroundColor(.white)
-            
-                Image("253")
-                    .padding(-20)
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.bottom)
+                Text("Ultimate Events:").font(.title).foregroundColor(.white)
                     .navigationBarTitle("EVENTS", displayMode: .inline)
+            Spacer()
+            
             if (auth.contains(.ModifyEvents)) {
-                
                 NavigationLink(destination: AddEvents()){
                     Text("Add New Event")
                         .foregroundColor(.white)
@@ -45,14 +42,15 @@ struct EventView: View {
                         aEvent in ListEventRow(theEvent: aEvent)
                 }
             }
+            Spacer()
             
         }
         .padding(.top, 10)
         .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
-    }
+            }
+        }
     }
 }
-
 
 struct EventView_Previews: PreviewProvider {
     static var previews: some View {
