@@ -58,18 +58,19 @@ struct EditEvent: View {
         NavigationView {
             Form {
                 //Need to add calls to get Original Event info and display
-                Section(header: Text(self.original.eventName + "'s New Info:")) {
-                    TextField("Name: ", text: $EventName).foregroundColor(.black)
-                    DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
+                Section(header: Text(self.original.eventName + "'s New Info:").foregroundColor(.blue)) {
+                    TextField("Name: ", text: $EventName).foregroundColor(.blue)
+                    DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute]).foregroundColor(.blue)
                 }
                 
                 Button("Update Event"){
                     showAlert = true
-                }.alert(isPresented: $showAlert) {
+                }.foregroundColor(.blue).alert(isPresented: $showAlert) {
                     Alert(
                         title: Text("Update Event?"),
                         primaryButton: .default(Text("Yes"), action: updateEventinDB),
                         secondaryButton: .cancel()
+                        
                         )
                 }
             }
