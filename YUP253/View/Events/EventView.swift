@@ -58,7 +58,7 @@ struct EventView_Previews: PreviewProvider {
     static var previews: some View {
         EventView()
             .padding(-15)
-            .foregroundColor(.blue)
+            .foregroundColor(.primary)
             .environmentObject(DataRepository(realm: try! Realm()))
     }
 }
