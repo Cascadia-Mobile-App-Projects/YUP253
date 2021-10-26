@@ -35,9 +35,9 @@ struct ContentView: View {
                     Label("Events", systemImage: "calendar")
                 }
                 .tag(1)
-            highlightPage()
+            HighlightPage()
                         .tabItem {
-                            Label("Highlights", systemImage: "star.fill")
+                            Label("Highlights", image: "instagram")
                         }
 
                 .tag(2)

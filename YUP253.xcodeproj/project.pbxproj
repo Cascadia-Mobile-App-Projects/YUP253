@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		3F253C46265EFA0700395521 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F253C45265EFA0700395521 /* DataRepository.swift */; };
 		3F253C48265EFA1200395521 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F253C47265EFA1200395521 /* Event.swift */; };
-		3F253C4A265EFA1A00395521 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F253C49265EFA1A00395521 /* Highlight.swift */; };
 		3F253C4C265EFA2000395521 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F253C4B265EFA2000395521 /* Person.swift */; };
 		3F3C74F1264F78D100A4FCA1 /* AddEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */; };
 		3F3C74F52655AF8500A4FCA1 /* EditEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */; };
 		3F3C74F7266D3F7200A4FCA1 /* ListEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C74F6266D3F7200A4FCA1 /* ListEventRow.swift */; };
+		3F457B2A2714D9C400AB5BB1 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F457B292714D9C400AB5BB1 /* Highlight.swift */; };
+		3F457B2E2715086300AB5BB1 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F457B2D2715086300AB5BB1 /* SafariView.swift */; };
 		3F52E7172630DD3700EC6112 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52E7162630DD3700EC6112 /* EventView.swift */; };
 		3F94004E2655B22E00CBFC3D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3F94004D2655B22E00CBFC3D /* Realm */; };
 		3F9400502655B22E00CBFC3D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F94004F2655B22E00CBFC3D /* RealmSwift */; };
@@ -25,14 +26,8 @@
 		3FAE0FD92630C91D0094FEBF /* YUP253UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE0FD82630C91D0094FEBF /* YUP253UITests.swift */; };
 		559C371D2649129300960668 /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C371C2649129300960668 /* loginView.swift */; };
 		55DD70082655A53800ADC314 /* createAccountLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DD70072655A53800ADC314 /* createAccountLoginView.swift */; };
-		55E0A010265F039400583492 /* highlightPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A00F265F039400583492 /* highlightPage.swift */; };
-		55E0A012265F03B100583492 /* AddHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A011265F03B100583492 /* AddHighlight.swift */; };
-		55E0A014265F03CF00583492 /* ClearDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A013265F03CF00583492 /* ClearDB.swift */; };
-		55E0A016265F03EE00583492 /* UpdateHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A015265F03EE00583492 /* UpdateHighlight.swift */; };
-		55E0A018265F040C00583492 /* ListAllHighlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A017265F040C00583492 /* ListAllHighlights.swift */; };
-		55E0A01A265F044000583492 /* ListHighlightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A019265F044000583492 /* ListHighlightRow.swift */; };
+		55E0A010265F039400583492 /* HighlightPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A00F265F039400583492 /* HighlightPage.swift */; };
 		55E0A01C265F045700583492 /* HighlightListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A01B265F045700583492 /* HighlightListMode.swift */; };
-		55E0A01E2668226C00583492 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0A01D2668226C00583492 /* ImagePicker.swift */; };
 		55F889842655B9390032831A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F889832655B9390032831A /* HomeView.swift */; };
 		DC158F312661E9A1005FE3AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC158F302661E9A1005FE3AA /* User.swift */; };
 		DC158F3E2668079E005FE3AA /* JohnCenaSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = DC158F3D2668079E005FE3AA /* JohnCenaSuccess.json */; };
@@ -72,11 +67,12 @@
 /* Begin PBXFileReference section */
 		3F253C45265EFA0700395521 /* DataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		3F253C47265EFA1200395521 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		3F253C49265EFA1A00395521 /* Highlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		3F253C4B265EFA2000395521 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3F3C74F0264F78D100A4FCA1 /* AddEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvents.swift; sourceTree = "<group>"; };
 		3F3C74F42655AF8500A4FCA1 /* EditEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEvent.swift; sourceTree = "<group>"; };
 		3F3C74F6266D3F7200A4FCA1 /* ListEventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventRow.swift; sourceTree = "<group>"; };
+		3F457B292714D9C400AB5BB1 /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
+		3F457B2D2715086300AB5BB1 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		3F52E7162630DD3700EC6112 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		3FAE0FB82630C91C0094FEBF /* YUP253.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUP253.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAE0FBB2630C91C0094FEBF /* YUP253App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUP253App.swift; sourceTree = "<group>"; };
@@ -92,14 +88,8 @@
 		3FAE0FDA2630C91D0094FEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559C371C2649129300960668 /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		55DD70072655A53800ADC314 /* createAccountLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAccountLoginView.swift; sourceTree = "<group>"; };
-		55E0A00F265F039400583492 /* highlightPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highlightPage.swift; sourceTree = "<group>"; };
-		55E0A011265F03B100583492 /* AddHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHighlight.swift; sourceTree = "<group>"; };
-		55E0A013265F03CF00583492 /* ClearDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDB.swift; sourceTree = "<group>"; };
-		55E0A015265F03EE00583492 /* UpdateHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateHighlight.swift; sourceTree = "<group>"; };
-		55E0A017265F040C00583492 /* ListAllHighlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllHighlights.swift; sourceTree = "<group>"; };
-		55E0A019265F044000583492 /* ListHighlightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHighlightRow.swift; sourceTree = "<group>"; };
+		55E0A00F265F039400583492 /* HighlightPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightPage.swift; sourceTree = "<group>"; };
 		55E0A01B265F045700583492 /* HighlightListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightListMode.swift; sourceTree = "<group>"; };
-		55E0A01D2668226C00583492 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		55F889832655B9390032831A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DC158F302661E9A1005FE3AA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DC158F3D2668079E005FE3AA /* JohnCenaSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JohnCenaSuccess.json; sourceTree = "<group>"; };
@@ -149,6 +139,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F012971271E405900C99B99 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3FAE0FBF2630C91C0094FEBF /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		3FAE0FAF2630C91C0094FEBF = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +178,7 @@
 				DC4673F7264C6A4100704066 /* Controller */,
 				DC4673F6264C6A2D00704066 /* Model */,
 				DC4673F5264C6A0E00704066 /* View */,
-				3FAE0FBF2630C91C0094FEBF /* Assets.xcassets */,
+				3F012971271E405900C99B99 /* Assets */,
 				3FAE0FC42630C91C0094FEBF /* Info.plist */,
 				3FAE0FC12630C91C0094FEBF /* Preview Content */,
 			);
@@ -249,8 +247,8 @@
 			children = (
 				3F253C4B265EFA2000395521 /* Person.swift */,
 				3F253C45265EFA0700395521 /* DataRepository.swift */,
-				3F253C49265EFA1A00395521 /* Highlight.swift */,
 				3F253C47265EFA1200395521 /* Event.swift */,
+				3F457B292714D9C400AB5BB1 /* Highlight.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,14 +325,9 @@
 		DC4673FE264C6B6700704066 /* Highlights */ = {
 			isa = PBXGroup;
 			children = (
-				55E0A00F265F039400583492 /* highlightPage.swift */,
-				55E0A011265F03B100583492 /* AddHighlight.swift */,
-				55E0A013265F03CF00583492 /* ClearDB.swift */,
-				55E0A015265F03EE00583492 /* UpdateHighlight.swift */,
-				55E0A017265F040C00583492 /* ListAllHighlights.swift */,
-				55E0A019265F044000583492 /* ListHighlightRow.swift */,
+				55E0A00F265F039400583492 /* HighlightPage.swift */,
+				3F457B2D2715086300AB5BB1 /* SafariView.swift */,
 				55E0A01B265F045700583492 /* HighlightListMode.swift */,
-				55E0A01D2668226C00583492 /* ImagePicker.swift */,
 			);
 			path = Highlights;
 			sourceTree = "<group>";
@@ -519,16 +512,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCF3D46C2670968400FA6909 /* LoginController.swift in Sources */,
-				55E0A018265F040C00583492 /* ListAllHighlights.swift in Sources */,
+				3F457B2A2714D9C400AB5BB1 /* Highlight.swift in Sources */,
 				DC158F5626681B72005FE3AA /* JsonLogin.swift in Sources */,
 				3F52E7172630DD3700EC6112 /* EventView.swift in Sources */,
 				3FAE0FBE2630C91C0094FEBF /* ContentView.swift in Sources */,
+				3F457B2E2715086300AB5BB1 /* SafariView.swift in Sources */,
 				3F3C74F7266D3F7200A4FCA1 /* ListEventRow.swift in Sources */,
 				3F3C74F52655AF8500A4FCA1 /* EditEvent.swift in Sources */,
 				559C371D2649129300960668 /* loginView.swift in Sources */,
 				3F253C46265EFA0700395521 /* DataRepository.swift in Sources */,
 				55F889842655B9390032831A /* HomeView.swift in Sources */,
-				55E0A012265F03B100583492 /* AddHighlight.swift in Sources */,
 				DC158F312661E9A1005FE3AA /* User.swift in Sources */,
 				3F253C4C265EFA2000395521 /* Person.swift in Sources */,
 				E9D2B0592630E3E00053234F /* About.swift in Sources */,
@@ -536,20 +529,15 @@
 				DCBF9D2B264C463F006ED4E8 /* SplashView.swift in Sources */,
 				55E0A01C265F045700583492 /* HighlightListMode.swift in Sources */,
 				DC2CE722265E4CA4002AEA57 /* Auth.swift in Sources */,
-				55E0A01A265F044000583492 /* ListHighlightRow.swift in Sources */,
-				55E0A016265F03EE00583492 /* UpdateHighlight.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
-				55E0A01E2668226C00583492 /* ImagePicker.swift in Sources */,
 				E99C0C812649EC0600EF7CDC /* Core_Val.swift in Sources */,
 				3F253C48265EFA1200395521 /* Event.swift in Sources */,
 				E99C0C772649E24B00EF7CDC /* About_Us.swift in Sources */,
 				3F3C74F1264F78D100A4FCA1 /* AddEvents.swift in Sources */,
 				DC91F8E82637616B001C88BB /* AppSettings.swift in Sources */,
-				55E0A014265F03CF00583492 /* ClearDB.swift in Sources */,
 				3FAE0FBC2630C91C0094FEBF /* YUP253App.swift in Sources */,
 				55DD70082655A53800ADC314 /* createAccountLoginView.swift in Sources */,
-				55E0A010265F039400583492 /* highlightPage.swift in Sources */,
-				3F253C4A265EFA1A00395521 /* Highlight.swift in Sources */,
+				55E0A010265F039400583492 /* HighlightPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
