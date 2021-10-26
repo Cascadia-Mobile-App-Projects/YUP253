@@ -49,7 +49,7 @@ struct ContentView: View {
                     }
                 .tag(3)
             }
-        .foregroundColor(.white)
+        .foregroundColor(ColoredText.color)
         .environmentObject(DataRepository(realm: realmObj))
         }
 }

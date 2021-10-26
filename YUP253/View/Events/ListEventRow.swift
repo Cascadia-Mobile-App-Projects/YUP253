@@ -30,6 +30,7 @@ struct ListEventRow: View {
                 Text("Event Name: \(thisEvent.eventName)")
                 Text("Date: \(thisEvent.eventDate)")
             }
+            .foregroundColor(ColoredText.color)
             Spacer()
             
             if (permissions.contains(.ModifyEvents)) {
