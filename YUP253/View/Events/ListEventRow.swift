@@ -28,6 +28,7 @@ struct ListEventRow: View {
         HStack{
             VStack(alignment: .leading) {
                 Text("Event Name: \(thisEvent.eventName)")
+                Text("Location: \(thisEvent.eventLocation)")
                 Text("Date: \(thisEvent.eventDate)")
             }
             .foregroundColor(ColoredText.color)
@@ -54,7 +55,7 @@ struct ListEventRow: View {
 
 struct ListEventRow_Previews: PreviewProvider {
     static var previews: some View {
-        let demoEvent = Event(id: UUID().hashValue, name: "DemoEvent", date: Date())
+        let demoEvent = Event(id: UUID().hashValue, name: "DemoEvent", date: Date(), location: "School")
         ListEventRow(theEvent: demoEvent)
     }
 }
