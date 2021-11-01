@@ -13,6 +13,7 @@ struct AddEvents: View {
     @State var EventName: String = ""
     @State var selectedDate = Date()
     @State var showAlert = false
+    @State var EventLocation: String = ""
     
     @EnvironmentObject var theDataRepo: DataRepository
     
@@ -33,10 +34,11 @@ struct AddEvents: View {
         print("showFormElts")
         print("Event: \(EventName)")
         print("Event Date: \(dateString)")
+        print("Event Location: \(EventLocation)")
 
         //Logic to save EventName and selectedDate to DB
         //
-        theDataRepo.saveEvent(newEventName: self.EventName, newEventDate: self.selectedDate)
+        theDataRepo.saveEvent(newEventName: self.EventName, newEventDate: self.selectedDate, newEventLocation: self.EventLocation)
         
         // Return to previous screen
         self.presentationMode.wrappedValue.dismiss()
@@ -48,9 +50,10 @@ struct AddEvents: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("New Event Info:")) {
-                    TextField("Event Name or Location", text: $EventName)
-                    DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
+                Section(header: Text("New Event Info:").foregroundColor(.blue)) {
+                    TextField("Event Name", text: $EventName).foregroundColor(.blue)
+                    TextField("Location", text: $EventLocation).foregroundColor(.blue)
+                    DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute]).foregroundColor(.blue)
                 }
                 
                 Button("Add Event"){

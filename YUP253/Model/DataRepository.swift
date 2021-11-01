@@ -14,11 +14,11 @@ class DataRepository: ObservableObject {
     init(realm: Realm) {
     }
     
-    func saveEvent(newEventName: String, newEventDate: Date) {
+    func saveEvent(newEventName: String, newEventDate: Date, newEventLocation: String) {
         objectWillChange.send()
         let realm = try! Realm()
         try! realm.write {
-            let newEvent = Event(id: UUID().hashValue, name: newEventName, date: newEventDate)
+            let newEvent = Event(id: UUID().hashValue, name: newEventName, date: newEventDate, location: newEventLocation)
             realm.add(newEvent)
         }
     }
@@ -62,7 +62,7 @@ class DataRepository: ObservableObject {
         }
     }
     
-    func updateEvent( id: Int, newEventName:String, newEventDate:Date) {
+    func updateEvent( id: Int, newEventName:String, newEventDate:Date, newEventLocation:String) {
         objectWillChange.send()
         do {
           let realm = try! Realm()
@@ -72,7 +72,7 @@ class DataRepository: ObservableObject {
               //realm.add(theEvent)
             realm.create(
               Event.self,
-                value: ["id": id, "eventName": newEventName, "eventDate": newEventDate],
+              value: ["id": id, "eventName": newEventName, "eventDate": newEventDate, "eventLocation": newEventLocation],
               update: .modified)
 
           }
