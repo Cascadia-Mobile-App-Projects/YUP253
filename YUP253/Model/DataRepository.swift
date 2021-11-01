@@ -86,6 +86,14 @@ class DataRepository: ObservableObject {
     //Functions for Person data models
     //--------------------------------
     
+    func saveProfilePic() {
+        
+    }
+    
+    func loadProfilePic() {
+        
+    }
+    
     func savePerson(pUserName: String, pFName: String, pPassword: String, pLName: String, pAge: String, pNum: String, pEmail: String) {
             objectWillChange.send()
             let realm = try! Realm()
