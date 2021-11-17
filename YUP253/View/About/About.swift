@@ -32,7 +32,7 @@ struct About: View {
                                tag: "Third", selection: $selection)
                     { EmptyView()}
                 
-                NavigationLink(destination:  Core_Val(),
+                NavigationLink(destination:  Safety_Waivers(),
                                
                                
                                tag: "Fourth", selection: $selection)
@@ -49,12 +49,11 @@ struct About: View {
                     self.selection = "Third"
                         
                 }
-                .padding(15.0)
-                Button("Core Values") {
+                .padding(20.0)
+                Button("Safety") {
                     self.selection = "Fourth"
                         
                 }
-                .padding(15.0)
                 
             }
             .padding(110.0)
