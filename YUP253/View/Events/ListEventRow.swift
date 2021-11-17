@@ -17,19 +17,27 @@ struct ListEventRow: View {
     }
     
     func noop(){}
-    
+    let format = DateFormatter()
     @EnvironmentObject var theDataRepo: DataRepository
+    
+    func dateformatter() -> String{
+        format.timeZone = .current
+        format.dateFormat = "yyyy-MM-dd '' h:mm a"
+        let dateString = format.string(from: thisEvent.eventDate)
+        print("Test format: \(dateString)")
+        return dateString;
+    }
     
     func deleteEvent(){
         theDataRepo.deleteEvent(theEvent: thisEvent)
     }
+    
     var body: some View {
-        
-        HStack{
+        return HStack{
             VStack(alignment: .leading) {
-                Text("Event Name: \(thisEvent.eventName)")
-                Text("Location: \(thisEvent.eventLocation)")
-                Text("Date: \(thisEvent.eventDate)")
+                Text("\(thisEvent.eventName)").padding(.bottom, 1)
+                Text("\(thisEvent.eventLocation)").padding(.bottom, 1)
+                Text("\(self.dateformatter())")
             }
             .foregroundColor(ColoredText.color)
             Spacer()
