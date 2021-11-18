@@ -37,18 +37,16 @@ struct SplashView: View {
             )
             .padding()
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
                     withAnimation {
-                        self.message = "Looking for upcoming events"
+                        self.message = "Welcome to 253 YUP!"
                     }
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.00) {
-                        self.message = "Getting the latest highlights"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
+                        self.message = "Loading the app..."
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4.00) {
-                        self.message = "Updating your feed"
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     self.dismiss = true
                 }
             }

@@ -11,6 +11,7 @@ struct EditEvent: View {
     @State var showAlert = false
     @State var EventName: String = ""
     @State var selectedDate = Date()
+    @State var EventLocation: String = ""
     
     private var original: Event = Event()
     
@@ -21,6 +22,7 @@ struct EditEvent: View {
         original = OE
         EventName = OE.eventName
         selectedDate = OE.eventDate
+        EventLocation = OE.eventLocation
     }
     
     @EnvironmentObject var theDataRepo: DataRepository
@@ -48,8 +50,9 @@ struct EditEvent: View {
         print("showUpdateEventInfo")
         print("Event: \(EventName)")
         print("Event Date: \(dateString)")
+        print("Location: \(EventLocation)")
         
-        theDataRepo.updateEvent(id: self.original.id, newEventName: self.EventName, newEventDate: self.selectedDate)
+        theDataRepo.updateEvent(id: self.original.id, newEventName: self.EventName, newEventDate: self.selectedDate, newEventLocation: EventLocation)
         
         self.presentationMode.wrappedValue.dismiss()
     }
@@ -60,6 +63,7 @@ struct EditEvent: View {
                 //Need to add calls to get Original Event info and display
                 Section(header: Text(self.original.eventName + "'s New Info:").foregroundColor(.blue)) {
                     TextField("Name: ", text: $EventName).foregroundColor(.blue)
+                    TextField("Location: ", text: $EventLocation).foregroundColor(.blue)
                     DatePicker("Date/Time", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute]).foregroundColor(.blue)
                 }
                 
