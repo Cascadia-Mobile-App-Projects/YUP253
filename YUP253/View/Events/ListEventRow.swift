@@ -50,11 +50,6 @@ struct ListEventRow: View {
                     Text("Remove Event")
                 }
             }
-            else {
-                NavigationLink(destination: loginView()){
-                    Text("RSVP").padding()
-                }.padding()
-            }
         }
         .padding()
         .border(Color.black, width: 2)

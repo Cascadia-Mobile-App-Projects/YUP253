@@ -4,11 +4,10 @@
 //
 //  Created by Sean Jones on 11/3/21.
 //
-
 import SwiftUI
 
 struct Safety_Waivers: View {
-    var body: some View {
+				var body: some View {
 					VStack {
 						
 						ScrollView {
@@ -46,14 +45,14 @@ struct Safety_Waivers: View {
 					}
 					
 					
-    }
+				}
 }
 
 struct Safety_Waivers_Previews: PreviewProvider {
-    static var previews: some View {
+				static var previews: some View {
 					Safety_Waivers()
 						.preferredColorScheme(.light)
 						
 						
-    }
+				}
 }

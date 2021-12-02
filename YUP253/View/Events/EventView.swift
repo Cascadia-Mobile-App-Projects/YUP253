@@ -35,6 +35,12 @@ struct EventView: View {
                         .foregroundColor(.white)
                 }.padding()
             }
+                if !(auth.contains(.ModifyEvents)) {
+                    NavigationLink(destination: Safety_Waivers()){
+                        Text("View Waiver")
+                            .foregroundColor(.white)
+                    }.padding()
+                }
             
             ScrollView(.vertical) {
                 ForEach(self.theDataRepo.loadEvents().map(Event.init),
