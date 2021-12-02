@@ -1,12 +1,16 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+  platform :ios, '14.0'
 
 target 'YUP253' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for YUP253
-
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  
+end
+  
   target 'YUP253Tests' do
     inherit! :search_paths
     # Pods for testing
@@ -15,5 +19,3 @@ target 'YUP253' do
   target 'YUP253UITests' do
     # Pods for testing
   end
-
-end

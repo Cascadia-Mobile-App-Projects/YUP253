@@ -1,0 +1,6 @@
+framework module Pods_YUP253_YUP253UITests {
+  umbrella header "Pods-YUP253-YUP253UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
