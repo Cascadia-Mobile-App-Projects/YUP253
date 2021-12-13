@@ -15,6 +15,7 @@ struct EventInfo : Identifiable {
 
 struct EventView: View {
     var settings: AppSettings = AppSettings.shared()
+        
     @State private var selection: String? = nil
     @EnvironmentObject var theDataRepo: DataRepository
     
@@ -25,8 +26,8 @@ struct EventView: View {
 
             let auth : Auth = settings.permissions
             //(Color(red: 0.002, green: 0.24, blue: 0.561))
-                Text("Ultimate Events:").font(.title).foregroundColor(.white)
-                    .navigationBarTitle("EVENTS", displayMode: .inline)
+                //background bug!!!!!
+                Image("253").padding(.horizontal, 40.0).navigationBarTitle("EVENTS", displayMode: .inline)
             Spacer()
             
             if (auth.contains(.ModifyEvents)) {
@@ -47,15 +48,21 @@ struct EventView: View {
                         id: \.self) {
                         aEvent in ListEventRow(theEvent: aEvent)
                 }
+                
             }
             Spacer()
             
-        }
-        .padding(.top, 10)
+            }
+            .padding(.horizontal, 20.016)
         .background(LinearGradient(gradient: Gradient(colors: [Color.black, (Color(red: 0.022, green: 0.24, blue: 0.561))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
             }
         }
+        
+        
+        
+       
     }
+    
 }
 
 struct EventView_Previews: PreviewProvider {
