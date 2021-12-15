@@ -17,7 +17,7 @@ class SplashViewState {
 struct SplashView: View {
     
     @State private var message : String = ""
-    @State private var dismiss : Bool = false
+    @State private var dismiss : Bool = true
     
     var body: some View {
         if self.dismiss {
@@ -36,20 +36,20 @@ struct SplashView: View {
                     .padding(-64)
             )
             .padding()
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
-                    withAnimation {
-                        self.message = "Welcome to 253 YUP!"
-                    }
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
-                        self.message = "Loading the app..."
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                    self.dismiss = true
-                }
-            }
+//            .onAppear {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
+//                    withAnimation {
+//                        self.message = "Welcome to 253 YUP!"
+//                    }
+//                }
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
+//                        self.message = "Loading the app..."
+//                }
+//
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+//                    self.dismiss = true
+//                }
+//            }
         }
     }
 }
